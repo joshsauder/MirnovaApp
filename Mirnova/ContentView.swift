@@ -10,7 +10,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack{
+            Text("Mirnova")
+            .font(.title)
+        
+            Button("Sign in", action: signIn)
+            .padding()
+        }
+    }
+    
+    func signIn(){
+        print("Hit")
     }
 }
 
@@ -18,4 +28,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+    
 }
