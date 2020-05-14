@@ -14,6 +14,7 @@
 		19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19737A55246CDE45006A32D6 /* Preview Assets.xcassets */; };
 		19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */; };
 		19737A64246CDE45006A32D6 /* MirnovaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A63246CDE45006A32D6 /* MirnovaTests.swift */; };
+		19737A6F246CE415006A32D6 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A6E246CE415006A32D6 /* CourseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		19737A5F246CDE45006A32D6 /* MirnovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MirnovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19737A63246CDE45006A32D6 /* MirnovaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirnovaTests.swift; sourceTree = "<group>"; };
 		19737A65246CDE45006A32D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19737A6E246CE415006A32D6 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */,
 				19737A5A246CDE45006A32D6 /* Info.plist */,
 				19737A54246CDE45006A32D6 /* Preview Content */,
+				19737A6E246CE415006A32D6 /* CourseView.swift */,
 			);
 			path = Mirnova;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */,
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
+				19737A6F246CE415006A32D6 /* CourseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
