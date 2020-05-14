@@ -83,15 +83,14 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				19737A73246DBBFC006A32D6 /* Views */,
 				19737A70246DB6D4006A32D6 /* Models */,
 				19737A4C246CDE42006A32D6 /* AppDelegate.swift */,
 				19737A4E246CDE43006A32D6 /* SceneDelegate.swift */,
-				19737A50246CDE43006A32D6 /* ContentView.swift */,
 				19737A52246CDE45006A32D6 /* Assets.xcassets */,
 				19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */,
 				19737A5A246CDE45006A32D6 /* Info.plist */,
 				19737A54246CDE45006A32D6 /* Preview Content */,
-				19737A6E246CE415006A32D6 /* CourseView.swift */,
 			);
 			path = Mirnova;
 			sourceTree = "<group>";
@@ -119,6 +118,15 @@
 				19737A71246DB6F7006A32D6 /* CourseData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		19737A73246DBBFC006A32D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19737A50246CDE43006A32D6 /* ContentView.swift */,
+				19737A6E246CE415006A32D6 /* CourseView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
