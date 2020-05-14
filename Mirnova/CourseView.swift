@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct CourseView: View {
-    let contentData = ["test1", "test2"]
+    let contentData: [CourseData] = [CourseData(id: UUID(uuidString: UUID().uuidString)!, name: "test")]
     
     var body: some View {
-        List() { data in
-            CourseCell(data: data)
+        List(contentData) { data in
+            CourseCell(data: data.name)
         }
     }
 }
