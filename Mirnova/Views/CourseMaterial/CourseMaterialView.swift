@@ -26,24 +26,7 @@ struct CourseMaterialView: View {
                     .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
                 
             }
-            HStack{
-                Group{
-                    Button("Practice", action: courseMaterial.handleClick)
-                        .frame(width: 70, height: 40)
-                        .foregroundColor(.white)
-                    Divider()
-                    .frame(width: 1)
-                        .background(Color.white)
-                    Button("Test", action: courseMaterial.handleClick)
-                    .frame(width: 70, height: 40)
-                    .foregroundColor(.white)
-                    
-                }
-            }.zIndex(2)
-                .frame(width: 170, height: 40)
-                .background(Color.green)
-                .cornerRadius(20)
-                .position(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height - 70)
+            DualButton(clickFirst: courseMaterial.handleClick, clickSecond: courseMaterial.handleClick, titleFirst: "Practice", titleSeciond: "Test").body
                 
         }
     }
