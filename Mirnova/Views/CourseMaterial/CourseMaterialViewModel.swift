@@ -29,4 +29,8 @@ class CourseMaterialViewModel: ObservableObject {
             CourseMaterial(id: 1, image: "test2", answer: "answer2")
         ]
     }
+    
+    func handleClick() {
+        print("test")
+    }
 }
