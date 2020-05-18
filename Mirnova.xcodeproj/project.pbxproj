@@ -23,6 +23,8 @@
 		19737A6F246CE415006A32D6 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A6E246CE415006A32D6 /* CourseView.swift */; };
 		19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A71246DB6F7006A32D6 /* CourseData.swift */; };
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
+		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
+		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,12 @@
 		19737A6E246CE415006A32D6 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		19737A71246DB6F7006A32D6 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
+		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.release.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.release.xcconfig"; sourceTree = "<group>"; };
+		C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.debug.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.release.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +118,8 @@
 				19737A4B246CDE42006A32D6 /* Mirnova */,
 				19737A62246CDE45006A32D6 /* MirnovaTests */,
 				19737A4A246CDE42006A32D6 /* Products */,
+				276FBABB73ED2424AE58C858 /* Pods */,
+				F377F85E9D3788359B84B444 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +194,27 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
+		276FBABB73ED2424AE58C858 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */,
+				DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */,
+				C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */,
+				B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F377F85E9D3788359B84B444 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */,
+				34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19737A68246CDE45006A32D6 /* Build configuration list for PBXNativeTarget "Mirnova" */;
 			buildPhases = (
+				D749A7482200B1887B472444 /* [CP] Check Pods Manifest.lock */,
 				19737A45246CDE42006A32D6 /* Sources */,
 				19737A46246CDE42006A32D6 /* Frameworks */,
 				19737A47246CDE42006A32D6 /* Resources */,
+				C2A0BF0CE2C0C9E1A79C0B17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19737A6B246CDE45006A32D6 /* Build configuration list for PBXNativeTarget "MirnovaTests" */;
 			buildPhases = (
+				AFCAC6FCE7F96FA361A563F2 /* [CP] Check Pods Manifest.lock */,
 				19737A5B246CDE45006A32D6 /* Sources */,
 				19737A5C246CDE45006A32D6 /* Frameworks */,
 				19737A5D246CDE45006A32D6 /* Resources */,
@@ -277,6 +313,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AFCAC6FCE7F96FA361A563F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MirnovaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2A0BF0CE2C0C9E1A79C0B17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D749A7482200B1887B472444 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mirnova-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19737A45246CDE42006A32D6 /* Sources */ = {
@@ -444,6 +544,7 @@
 		};
 		19737A69246CDE45006A32D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +565,7 @@
 		};
 		19737A6A246CDE45006A32D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +586,7 @@
 		};
 		19737A6C246CDE45006A32D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +609,7 @@
 		};
 		19737A6D246CDE45006A32D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
