@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19062DE3247380CB00C478E8 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19062DE2247380CB00C478E8 /* schema.json */; };
 		1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E148247054E3001B7697 /* CourseMaterialView.swift */; };
 		1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14A24705581001B7697 /* CourseMaterial.swift */; };
 		1921E14D247056B4001B7697 /* CourseMaterialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */; };
@@ -24,7 +25,6 @@
 		19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A71246DB6F7006A32D6 /* CourseData.swift */; };
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
 		197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EADF924721DAA0002919B /* GraphQLRequests.swift */; };
-		197EADFE247225E60002919B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 197EADFD247225E60002919B /* schema.json */; };
 		197EAE002472273B0002919B /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 197EADFF2472273B0002919B /* schema.graphql */; };
 		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
 		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19062DE2247380CB00C478E8 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = Mirnova/schema.json; sourceTree = SOURCE_ROOT; };
 		1921E148247054E3001B7697 /* CourseMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialView.swift; sourceTree = "<group>"; };
 		1921E14A24705581001B7697 /* CourseMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterial.swift; sourceTree = "<group>"; };
 		1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewModel.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		19737A71246DB6F7006A32D6 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		197EADF924721DAA0002919B /* GraphQLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
-		197EADFD247225E60002919B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		197EADFF2472273B0002919B /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +141,6 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
-				197EADFD247225E60002919B /* schema.json */,
 				197EADF824721D9C0002919B /* Services */,
 				19737A73246DBBFC006A32D6 /* Views */,
 				19737A70246DB6D4006A32D6 /* Models */,
@@ -150,6 +149,7 @@
 				19737A52246CDE45006A32D6 /* Assets.xcassets */,
 				19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */,
 				19737A5A246CDE45006A32D6 /* Info.plist */,
+				19062DE2247380CB00C478E8 /* schema.json */,
 				19737A54246CDE45006A32D6 /* Preview Content */,
 				197EADFF2472273B0002919B /* schema.graphql */,
 			);
@@ -239,6 +239,7 @@
 			buildConfigurationList = 19737A68246CDE45006A32D6 /* Build configuration list for PBXNativeTarget "Mirnova" */;
 			buildPhases = (
 				D749A7482200B1887B472444 /* [CP] Check Pods Manifest.lock */,
+				19062DDE24737AD200C478E8 /* Generate Apollo GraphQL API */,
 				19737A45246CDE42006A32D6 /* Sources */,
 				19737A46246CDE42006A32D6 /* Frameworks */,
 				19737A47246CDE42006A32D6 /* Resources */,
@@ -315,8 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197EADFE247225E60002919B /* schema.json in Resources */,
 				19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */,
+				19062DE3247380CB00C478E8 /* schema.json in Resources */,
 				19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */,
 				197EAE002472273B0002919B /* schema.graphql in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,
@@ -333,6 +334,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		19062DDE24737AD200C478E8 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Services/GraphQLRequests.swift\n";
+		};
 		AFCAC6FCE7F96FA361A563F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
