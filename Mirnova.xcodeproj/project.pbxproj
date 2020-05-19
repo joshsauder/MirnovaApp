@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,9 @@
 		19737A6F246CE415006A32D6 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A6E246CE415006A32D6 /* CourseView.swift */; };
 		19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A71246DB6F7006A32D6 /* CourseData.swift */; };
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
+		197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EADF924721DAA0002919B /* GraphQLRequests.swift */; };
+		197EADFE247225E60002919B /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 197EADFD247225E60002919B /* schema.json */; };
+		197EAE002472273B0002919B /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 197EADFF2472273B0002919B /* schema.graphql */; };
 		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
 		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		19737A6E246CE415006A32D6 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		19737A71246DB6F7006A32D6 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		197EADF924721DAA0002919B /* GraphQLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
+		197EADFD247225E60002919B /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		197EADFF2472273B0002919B /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +141,8 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				197EADFD247225E60002919B /* schema.json */,
+				197EADF824721D9C0002919B /* Services */,
 				19737A73246DBBFC006A32D6 /* Views */,
 				19737A70246DB6D4006A32D6 /* Models */,
 				19737A4C246CDE42006A32D6 /* AppDelegate.swift */,
@@ -143,6 +151,7 @@
 				19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */,
 				19737A5A246CDE45006A32D6 /* Info.plist */,
 				19737A54246CDE45006A32D6 /* Preview Content */,
+				197EADFF2472273B0002919B /* schema.graphql */,
 			);
 			path = Mirnova;
 			sourceTree = "<group>";
@@ -194,6 +203,14 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
+		197EADF824721D9C0002919B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				197EADF924721DAA0002919B /* GraphQLRequests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		276FBABB73ED2424AE58C858 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +219,6 @@
 				C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */,
 				B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -299,8 +315,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197EADFE247225E60002919B /* schema.json in Resources */,
 				19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */,
 				19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */,
+				197EAE002472273B0002919B /* schema.graphql in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */,
 				19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */,
 				1921E15524707E0A001B7697 /* PracticeViewModel.swift in Sources */,
 				1921E15024707BAB001B7697 /* SwiftUI.swift in Sources */,

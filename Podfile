@@ -3,6 +3,7 @@ target 'Mirnova' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
+  pod 'Apollo'
 
   target 'MirnovaTests' do
     inherit! :search_paths

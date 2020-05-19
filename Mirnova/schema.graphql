@@ -1,0 +1,12 @@
+query CourseInfo($user:String!) {
+  Courses{
+    name
+    questionCount
+  }
+  Completions(user: $user){
+    course
+    completed
+    questionsMissed
+    points
+  }
+}
