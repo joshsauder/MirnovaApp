@@ -9,18 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showLogin = true
+    
     var body: some View {
-        VStack{
-            Text("Mirnova")
-            .font(.title)
-        
-            Button("Sign in", action: signIn)
-            .padding()
+        ZStack {
+            VStack{
+                Text("Mirnova")
+                .font(.title)
+                
+                Button("Sign in", action: signIn)
+                    .padding()
+            }
+            if !showLogin {
+                CourseView()
+                    .transition(.slide)
+            }
         }
     }
     
     func signIn(){
-        print("Hit")
+        showLogin.toggle()
     }
 }
 
