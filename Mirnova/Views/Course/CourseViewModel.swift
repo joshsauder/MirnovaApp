@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Apollo
 
 class CourseViewModel: ObservableObject {
     let didChange = PassthroughSubject<CourseViewModel, Never>()
@@ -25,27 +26,33 @@ class CourseViewModel: ObservableObject {
     }
     
     private func fetchData(){
-        let apolloClient = getApolloClient()
-        
-        apolloClient.fetch(query: CourseInfoQuery(user: user)){ result in
-            guard let data = try? result.get().data else { return }
-            
-            var completionDict: [String: Int] = [:]
-            
-            data.completions!.enumerated().forEach { (index, completion) -> () in
-                 completionDict[completion!.course] = index
-            }
-            
-            self.courses = data.courses!.map { course -> CourseData in
+
+        Network.shared.apollo.fetch(query: CourseInfoQuery(user: user)){ result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let result):
+                let data = result.data!
+                print(data)
                 
-                var completionItem: CourseInfoQuery.Data.Completion?
-                if let i = completionDict[course!.name] {
-                    completionItem = data.completions![i]
-                }else {
-                    completionItem = nil
+                var completionDict: [String: Int] = [:]
+                
+                data.completions!.enumerated().forEach { (index, completion) -> () in
+                     completionDict[completion!.course] = index
                 }
                 
-                return CourseData(id: UUID(uuidString: UUID().uuidString)!, name: course!.name, correct: completionItem?.points ?? 0, questions: course!.questionCount, completed: completionItem?.completed ?? false, attempts: completionItem?.numberOfTries ?? 0)
+                self.courses.append(contentsOf: data.courses!.map { course -> CourseData in
+                    
+                    var completionItem: CourseInfoQuery.Data.Completion?
+                    if let i = completionDict[course!.name] {
+                        completionItem = data.completions![i]
+                    }else {
+                        completionItem = nil
+                    }
+                    
+                    return CourseData(id: UUID(uuidString: UUID().uuidString)!, name: course!.name, correct: completionItem?.points ?? 0, questions: course!.questionCount, completed: completionItem?.completed ?? false, attempts: completionItem?.numberOfTries ?? 0)
+                })
+                
             }
         }
     }

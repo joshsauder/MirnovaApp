@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19062DE3247380CB00C478E8 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19062DE2247380CB00C478E8 /* schema.json */; };
-		19062DE5247385FC00C478E8 /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19062DE4247385FC00C478E8 /* ObjectFactory.swift */; };
+		19062DE5247385FC00C478E8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19062DE4247385FC00C478E8 /* Network.swift */; };
 		1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E148247054E3001B7697 /* CourseMaterialView.swift */; };
 		1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14A24705581001B7697 /* CourseMaterial.swift */; };
 		1921E14D247056B4001B7697 /* CourseMaterialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		19062DE2247380CB00C478E8 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = Mirnova/schema.json; sourceTree = SOURCE_ROOT; };
-		19062DE4247385FC00C478E8 /* ObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
+		19062DE4247385FC00C478E8 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1921E148247054E3001B7697 /* CourseMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialView.swift; sourceTree = "<group>"; };
 		1921E14A24705581001B7697 /* CourseMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterial.swift; sourceTree = "<group>"; };
 		1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewModel.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				197EADF924721DAA0002919B /* GraphQLRequests.swift */,
-				19062DE4247385FC00C478E8 /* ObjectFactory.swift */,
+				19062DE4247385FC00C478E8 /* Network.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 				1921E15524707E0A001B7697 /* PracticeViewModel.swift in Sources */,
 				1921E15024707BAB001B7697 /* SwiftUI.swift in Sources */,
 				19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */,
-				19062DE5247385FC00C478E8 /* ObjectFactory.swift in Sources */,
+				19062DE5247385FC00C478E8 /* Network.swift in Sources */,
 				19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */,
 				1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */,
 				1921E15324707DF8001B7697 /* PracticeView.swift in Sources */,
