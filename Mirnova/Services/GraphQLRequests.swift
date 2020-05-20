@@ -20,6 +20,7 @@ public final class CourseInfoQuery: GraphQLQuery {
         completed
         questionsMissed
         points
+        numberOfTries
       }
     }
     """
@@ -128,6 +129,7 @@ public final class CourseInfoQuery: GraphQLQuery {
         GraphQLField("completed", type: .nonNull(.scalar(Bool.self))),
         GraphQLField("questionsMissed", type: .list(.scalar(String.self))),
         GraphQLField("points", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("numberOfTries", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -136,8 +138,8 @@ public final class CourseInfoQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(course: String, completed: Bool, questionsMissed: [String?]? = nil, points: Int) {
-        self.init(unsafeResultMap: ["__typename": "Completion", "course": course, "completed": completed, "questionsMissed": questionsMissed, "points": points])
+      public init(course: String, completed: Bool, questionsMissed: [String?]? = nil, points: Int, numberOfTries: Int) {
+        self.init(unsafeResultMap: ["__typename": "Completion", "course": course, "completed": completed, "questionsMissed": questionsMissed, "points": points, "numberOfTries": numberOfTries])
       }
 
       public var __typename: String {
@@ -182,6 +184,15 @@ public final class CourseInfoQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "points")
+        }
+      }
+
+      public var numberOfTries: Int {
+        get {
+          return resultMap["numberOfTries"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "numberOfTries")
         }
       }
     }
