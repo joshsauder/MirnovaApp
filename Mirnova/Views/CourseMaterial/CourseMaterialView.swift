@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseMaterialView: View {
     
-    @State var courseMaterial = CourseMaterialViewModel()
+    var courseMaterial = CourseMaterialViewModel()
     
     var body: some View {
         ZStack{

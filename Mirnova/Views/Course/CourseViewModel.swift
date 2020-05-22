@@ -11,18 +11,13 @@ import Combine
 import Apollo
 
 class CourseViewModel: ObservableObject {
-    let didChange = PassthroughSubject<CourseViewModel, Never>()
     
-    let user = "test"
+    @Published var courses: [CourseData] = []
+    let user: String
     
-    init() {
+    init(user: String) {
+        self.user = user
         fetchData()
-    }
-    
-    var courses: [CourseData] = [] {
-        didSet {
-            didChange.send(self)
-        }
     }
     
     private func fetchData(){
@@ -37,8 +32,8 @@ class CourseViewModel: ObservableObject {
                 
                 var completionDict: [String: Int] = [:]
                 
-                data.completions!.enumerated().forEach { (index, completion) -> () in
-                     completionDict[completion!.course] = index
+                data.completions?.enumerated().forEach { (index, completion) -> () in
+                    completionDict[completion?.course ?? ""] = index
                 }
                 
                 self.courses.append(contentsOf: data.courses!.map { course -> CourseData in
@@ -52,7 +47,6 @@ class CourseViewModel: ObservableObject {
                     
                     return CourseData(id: UUID(uuidString: UUID().uuidString)!, name: course!.name, correct: completionItem?.points ?? 0, questions: course!.questionCount, completed: completionItem?.completed ?? false, attempts: completionItem?.numberOfTries ?? 0)
                 })
-                
             }
         }
     }

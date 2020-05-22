@@ -13,6 +13,6 @@ import Apollo
 class Network {
     //create Singleton
     static let shared = Network()
-    let apollo = ApolloClient(url: URL(string: "http://localhost:4000/graphql")!)
+    private(set) lazy var apollo = ApolloClient(url: URL(string: "http://localhost:4000/graphql")!)
 }
 

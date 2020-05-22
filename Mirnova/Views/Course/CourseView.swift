@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseView: View {
     
-    @State var model = CourseViewModel()
+    @ObservedObject var model = CourseViewModel(user: "test")
     
     var body: some View {
         VStack {
