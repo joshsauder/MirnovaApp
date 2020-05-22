@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct CourseMaterialView: View {
+    var courseMaterial: CourseMaterialViewModel
     
-    var courseMaterial = CourseMaterialViewModel()
+    init(name: String) {
+        self.courseMaterial = CourseMaterialViewModel(name: name)
+    }
     
     var body: some View {
         ZStack{
@@ -45,8 +48,3 @@ struct CourseMaterialListItem: View {
     }
 }
 
-struct CourseMaterialView_Previews: PreviewProvider {
-    static var previews: some View {
-        CourseMaterialView()
-    }
-}

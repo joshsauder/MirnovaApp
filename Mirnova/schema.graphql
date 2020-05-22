@@ -11,3 +11,13 @@ query CourseInfo($user:String!) {
     numberOfTries
   }
 }
+
+query Course($name:String!) {
+    Course(name: $name){
+        questions{
+            question
+            answer
+            images
+        }
+    }
+}

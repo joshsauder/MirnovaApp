@@ -8,26 +8,32 @@
 
 import SwiftUI
 import Combine
+import Apollo
 
 class CourseMaterialViewModel: ObservableObject {
+
+    var name: String
+    var courseMaterial: [CourseMaterial] = []
     
-    let didChange = PassthroughSubject<CourseMaterialViewModel, Never>()
-    
-    init() {
+    init(name: String) {
+        self.name = name
         fetchData()
     }
     
-    var courseMaterial: [CourseMaterial] = [] {
-        didSet {
-            didChange.send(self)
-        }
-    }
     
     private func fetchData(){
-        courseMaterial = [
-            CourseMaterial(id: 0, image: "test", answer: "answer"),
-            CourseMaterial(id: 1, image: "test2", answer: "answer2")
-        ]
+        Network.shared.apollo.fetch(query: CourseQuery(name: name)){ result in
+            
+            switch result {
+            case .failure(let error):
+                    print(error)
+            case .success(let result):
+                let data = result.data!
+                print(data)
+            }
+            
+        }
+        
     }
     
     func handleClick() {

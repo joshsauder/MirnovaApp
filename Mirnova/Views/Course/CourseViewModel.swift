@@ -28,8 +28,6 @@ class CourseViewModel: ObservableObject {
                 print(error)
             case .success(let result):
                 let data = result.data!
-                print(data)
-                
                 var completionDict: [String: Int] = [:]
                 
                 data.completions?.enumerated().forEach { (index, completion) -> () in
