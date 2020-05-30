@@ -12,19 +12,17 @@ struct PracticeView: View {
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                HStack(){
-                    Text("Practice").font(.system(size: 24))
-                    Spacer()
-                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/7)
-                Text("Question").frame(width: UIScreen.main.bounds.width, height: 3 * UIScreen.main.bounds.height/7)
+                Text("Question")
+                .frame(minHeight: 0, maxHeight: .infinity)
                 Divider()
-                
-                Text("Answer").frame(width: UIScreen.main.bounds.width, height: 3 * UIScreen.main.bounds.height/7)
+
+                Text("Answer")
+                .frame(minHeight: 0, maxHeight: .infinity)
             }
+            .zIndex(1)
+            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: AnyView(CourseMaterialView(name: "test")), titleFirst: "Home", titleSecond: "Test")
             
-            DualButton(clickFirst: {print("test")}, clickSecond: {print("test")}, titleFirst: "Home", titleSeciond: "Test").body
-        }
-            
+        }.navigationBarTitle("Practice")
     }
 }
 

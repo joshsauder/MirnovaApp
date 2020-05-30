@@ -8,26 +8,32 @@
 
 import SwiftUI
 
-struct DualButton {
-    var clickFirst: () -> ()
-    var clickSecond: () -> ()
-    
+
+struct DualButton: View {
+    var destinationFirst: AnyView
+    var destinationSecond: AnyView
     var titleFirst: String
-    var titleSeciond: String
+    var titleSecond: String
+    
+    init(destinationFirst: AnyView, destinationSecond: AnyView, titleFirst: String, titleSecond: String) {
+        self.destinationFirst = destinationFirst
+        self.destinationSecond = destinationSecond
+        self.titleFirst = titleFirst
+        self.titleSecond = titleSecond
+    }
     
     var body: some View {
         HStack{
             Group{
-                Button(titleFirst, action: clickFirst)
-                    .frame(width: 70, height: 40)
-                    .foregroundColor(.white)
+                NavigationLink(destination: destinationFirst){
+                    Text(titleFirst)
+                        .foregroundColor(.white)
+                }
                 Divider()
-                .frame(width: 1)
-                    .background(Color.white)
-                Button(titleSeciond, action: clickSecond)
-                .frame(width: 70, height: 40)
-                .foregroundColor(.white)
-                
+                NavigationLink(destination: destinationSecond){
+                    Text(titleSecond)
+                        .foregroundColor(.white)
+                }
             }
         }.zIndex(2)
             .frame(width: 170, height: 40)
