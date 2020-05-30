@@ -17,21 +17,16 @@ struct CourseMaterialView: View {
     
     var body: some View {
         ZStack{
-            VStack {
-                HStack{
-                    Text("Heres What You’ll Need to Know").font(.system(size: 24))
-                    Spacer()
-                }.padding(EdgeInsets(top: 15, leading: 20, bottom: 0, trailing: 0))
-                
-                List(courseMaterial.courseMaterial){ material in
-                    CourseMaterialListItem(data: material)
-                }.cornerRadius(10)
-                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
-                
-            }
+            List(courseMaterial.courseMaterial){ material in
+                CourseMaterialListItem(data: material)
+            }.cornerRadius(10)
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
+            
             DualButton(clickFirst: courseMaterial.handleClick, clickSecond: courseMaterial.handleClick, titleFirst: "Practice", titleSeciond: "Test").body
-                
+            
         }
+        .navigationBarTitle(Text("Course Material"))
+        
     }
 }
 
@@ -48,3 +43,9 @@ struct CourseMaterialListItem: View {
     }
 }
 
+
+struct CourseMaterialView_Previews: PreviewProvider {
+    static var previews: some View {
+        CourseMaterialView(name: "test")
+    }
+}
