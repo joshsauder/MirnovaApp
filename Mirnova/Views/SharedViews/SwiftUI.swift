@@ -33,6 +33,6 @@ struct DualButton {
             .frame(width: 170, height: 40)
             .background(Color.green)
             .cornerRadius(20)
-            .position(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height - 70)
+            .position(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height - 160)
     }
 }
