@@ -29,11 +29,17 @@ struct DualButton: View {
                     Text(titleFirst)
                         .foregroundColor(.white)
                 }
+                .frame(width: 70, height: 40)
+                
                 Divider()
+                .frame(width: 1)
+                .background(Color.white)
+                
                 NavigationLink(destination: destinationSecond){
                     Text(titleSecond)
                         .foregroundColor(.white)
                 }
+                .frame(width: 70, height: 40)
             }
         }.zIndex(2)
             .frame(width: 170, height: 40)
