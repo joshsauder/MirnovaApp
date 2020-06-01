@@ -37,7 +37,7 @@ struct CourseMaterialListItem: View {
     
     var body: some View {
         HStack{
-            Text(data.image)
+            Text(data.question)
             Spacer()
             Text(data.answer)
         }

@@ -17,7 +17,6 @@ query Course($name:String!) {
         questions{
             question
             answer
-            points
             images
         }
     }
