@@ -9,18 +9,26 @@
 import SwiftUI
 
 struct PracticeView: View {
+    let question: String
+    let answer: String
+    
+    init(question: String, answer: String){
+        self.answer = answer
+        self.question = question
+    }
+    
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                Text("Question")
+                Text(question)
                 .frame(minHeight: 0, maxHeight: .infinity)
                 Divider()
 
-                Text("Answer")
+                Text(answer)
                 .frame(minHeight: 0, maxHeight: .infinity)
             }
             .zIndex(1)
-            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: AnyView(CourseMaterialView(name: "test")), titleFirst: "Home", titleSecond: "Test")
+            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: AnyView(CourseMaterialView(name: "test")), titleFirst: "Test", titleSecond: "Next")
             
         }.navigationBarTitle("Practice")
     }
@@ -28,6 +36,6 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
     static var previews: some View {
-        PracticeView()
+        PracticeView(question: "test", answer: "test")
     }
 }
