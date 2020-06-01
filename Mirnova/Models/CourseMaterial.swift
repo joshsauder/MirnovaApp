@@ -10,9 +10,9 @@ import Foundation
 
 struct CourseMaterial: Identifiable {
     
-    var id: Int
+    var id: UUID
     
-    var image: String
+    var image: [String]
     var question: String
     var answer: String
 }

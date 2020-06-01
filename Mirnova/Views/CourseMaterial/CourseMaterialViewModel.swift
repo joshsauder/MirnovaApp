@@ -29,11 +29,18 @@ class CourseMaterialViewModel: ObservableObject {
                     print(error)
             case .success(let result):
                 let data = result.data!
-                print(data)
+                self.courseMaterial = data.course?.questions.map({ self.buildCourseMaterial(question: $0!)}) ?? []
             }
             
         }
         
+    }
+    
+    private func buildCourseMaterial(question: CourseQuery.Data.Course.Question) -> CourseMaterial {
+        return CourseMaterial(id: UUID(),
+                              image: question.images ?? [],
+                              question: question.question,
+                              answer: question.answer)
     }
     
     func handleClick() {
