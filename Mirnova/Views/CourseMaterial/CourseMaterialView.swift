@@ -23,7 +23,7 @@ struct CourseMaterialView: View {
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
                 .zIndex(1)
             
-            DualButton(destinationFirst: AnyView(PracticeView(question: "test", answer: "test")), destinationSecond: AnyView(PracticeView()), titleFirst: "Practice", titleSecond: "Test")
+            DualButton(destinationFirst: AnyView(PracticeView(question: "test", answer: "test")), destinationSecond: AnyView(PracticeView(question: "test", answer: "test")), titleFirst: "Practice", titleSecond: "Test")
             
         }
         .navigationBarTitle(Text("Course Material"))

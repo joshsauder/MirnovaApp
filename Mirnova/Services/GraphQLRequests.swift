@@ -210,6 +210,7 @@ public final class CourseQuery: GraphQLQuery {
           __typename
           question
           answer
+          points
           images
         }
       }
@@ -297,6 +298,7 @@ public final class CourseQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("question", type: .nonNull(.scalar(String.self))),
           GraphQLField("answer", type: .nonNull(.scalar(String.self))),
+          GraphQLField("points", type: .scalar(Int.self)),
           GraphQLField("images", type: .list(.scalar(String.self))),
         ]
 
@@ -306,8 +308,8 @@ public final class CourseQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(question: String, answer: String, images: [String?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Questions", "question": question, "answer": answer, "images": images])
+        public init(question: String, answer: String, points: Int? = nil, images: [String?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Questions", "question": question, "answer": answer, "points": points, "images": images])
         }
 
         public var __typename: String {
@@ -334,6 +336,15 @@ public final class CourseQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "answer")
+          }
+        }
+
+        public var points: Int? {
+          get {
+            return resultMap["points"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "points")
           }
         }
 

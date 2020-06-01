@@ -9,9 +9,15 @@
 import Foundation
 
 struct CourseMaterial: Identifiable {
-    
     var id: Int
-    
-    var image: String
+    var name: String
+    var questions: [Questions]
+}
+
+
+struct Questions {
+    var question: String
     var answer: String
+    var points: Int
+    var images: [String]
 }
