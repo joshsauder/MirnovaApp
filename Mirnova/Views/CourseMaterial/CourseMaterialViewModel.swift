@@ -29,7 +29,7 @@ class CourseMaterialViewModel: ObservableObject {
                     print(error)
             case .success(let result):
                 let data = result.data!
-                self.courseMaterial = data.course?.questions.map({ self.buildCourseMaterial(question: $0!)}) ?? []
+                self.courseMaterial = data.course?.questions.map({ self.buildCourseMaterial(question: $0)}) ?? []
             }
             
         }

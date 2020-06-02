@@ -31,7 +31,7 @@ class CourseViewModel: ObservableObject {
                 var completionDict: [String: Int] = [:]
                 
                 data.completions?.enumerated().forEach { (index, completion) -> () in
-                    completionDict[completion?.course ?? ""] = index
+                    completionDict[completion.course] = index
                 }
                 
                 self.courses.append(contentsOf: data.courses!.map { course -> CourseData in

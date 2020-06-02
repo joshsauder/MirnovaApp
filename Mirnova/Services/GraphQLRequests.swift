@@ -42,7 +42,7 @@ public final class CourseInfoQuery: GraphQLQuery {
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("Courses", type: .list(.object(Course.selections))),
-      GraphQLField("Completions", arguments: ["user": GraphQLVariable("user")], type: .list(.object(Completion.selections))),
+      GraphQLField("Completions", arguments: ["user": GraphQLVariable("user")], type: .list(.nonNull(.object(Completion.selections)))),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -51,8 +51,8 @@ public final class CourseInfoQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(courses: [Course?]? = nil, completions: [Completion?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "Courses": courses.flatMap { (value: [Course?]) -> [ResultMap?] in value.map { (value: Course?) -> ResultMap? in value.flatMap { (value: Course) -> ResultMap in value.resultMap } } }, "Completions": completions.flatMap { (value: [Completion?]) -> [ResultMap?] in value.map { (value: Completion?) -> ResultMap? in value.flatMap { (value: Completion) -> ResultMap in value.resultMap } } }])
+    public init(courses: [Course?]? = nil, completions: [Completion]? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "Courses": courses.flatMap { (value: [Course?]) -> [ResultMap?] in value.map { (value: Course?) -> ResultMap? in value.flatMap { (value: Course) -> ResultMap in value.resultMap } } }, "Completions": completions.flatMap { (value: [Completion]) -> [ResultMap] in value.map { (value: Completion) -> ResultMap in value.resultMap } }])
     }
 
     public var courses: [Course?]? {
@@ -64,12 +64,12 @@ public final class CourseInfoQuery: GraphQLQuery {
       }
     }
 
-    public var completions: [Completion?]? {
+    public var completions: [Completion]? {
       get {
-        return (resultMap["Completions"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Completion?] in value.map { (value: ResultMap?) -> Completion? in value.flatMap { (value: ResultMap) -> Completion in Completion(unsafeResultMap: value) } } }
+        return (resultMap["Completions"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Completion] in value.map { (value: ResultMap) -> Completion in Completion(unsafeResultMap: value) } }
       }
       set {
-        resultMap.updateValue(newValue.flatMap { (value: [Completion?]) -> [ResultMap?] in value.map { (value: Completion?) -> ResultMap? in value.flatMap { (value: Completion) -> ResultMap in value.resultMap } } }, forKey: "Completions")
+        resultMap.updateValue(newValue.flatMap { (value: [Completion]) -> [ResultMap] in value.map { (value: Completion) -> ResultMap in value.resultMap } }, forKey: "Completions")
       }
     }
 
@@ -127,7 +127,7 @@ public final class CourseInfoQuery: GraphQLQuery {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("course", type: .nonNull(.scalar(String.self))),
         GraphQLField("completed", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("questionsMissed", type: .list(.scalar(String.self))),
+        GraphQLField("questionsMissed", type: .list(.nonNull(.scalar(String.self)))),
         GraphQLField("points", type: .nonNull(.scalar(Int.self))),
         GraphQLField("numberOfTries", type: .nonNull(.scalar(Int.self))),
       ]
@@ -138,7 +138,7 @@ public final class CourseInfoQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(course: String, completed: Bool, questionsMissed: [String?]? = nil, points: Int, numberOfTries: Int) {
+      public init(course: String, completed: Bool, questionsMissed: [String]? = nil, points: Int, numberOfTries: Int) {
         self.init(unsafeResultMap: ["__typename": "Completion", "course": course, "completed": completed, "questionsMissed": questionsMissed, "points": points, "numberOfTries": numberOfTries])
       }
 
@@ -169,9 +169,9 @@ public final class CourseInfoQuery: GraphQLQuery {
         }
       }
 
-      public var questionsMissed: [String?]? {
+      public var questionsMissed: [String]? {
         get {
-          return resultMap["questionsMissed"] as? [String?]
+          return resultMap["questionsMissed"] as? [String]
         }
         set {
           resultMap.updateValue(newValue, forKey: "questionsMissed")
@@ -259,7 +259,7 @@ public final class CourseQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("questions", type: .nonNull(.list(.object(Question.selections)))),
+        GraphQLField("questions", type: .nonNull(.list(.nonNull(.object(Question.selections))))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -268,8 +268,8 @@ public final class CourseQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(questions: [Question?]) {
-        self.init(unsafeResultMap: ["__typename": "Course", "questions": questions.map { (value: Question?) -> ResultMap? in value.flatMap { (value: Question) -> ResultMap in value.resultMap } }])
+      public init(questions: [Question]) {
+        self.init(unsafeResultMap: ["__typename": "Course", "questions": questions.map { (value: Question) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -281,12 +281,12 @@ public final class CourseQuery: GraphQLQuery {
         }
       }
 
-      public var questions: [Question?] {
+      public var questions: [Question] {
         get {
-          return (resultMap["questions"] as! [ResultMap?]).map { (value: ResultMap?) -> Question? in value.flatMap { (value: ResultMap) -> Question in Question(unsafeResultMap: value) } }
+          return (resultMap["questions"] as! [ResultMap]).map { (value: ResultMap) -> Question in Question(unsafeResultMap: value) }
         }
         set {
-          resultMap.updateValue(newValue.map { (value: Question?) -> ResultMap? in value.flatMap { (value: Question) -> ResultMap in value.resultMap } }, forKey: "questions")
+          resultMap.updateValue(newValue.map { (value: Question) -> ResultMap in value.resultMap }, forKey: "questions")
         }
       }
 
@@ -297,7 +297,7 @@ public final class CourseQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("question", type: .nonNull(.scalar(String.self))),
           GraphQLField("answer", type: .nonNull(.scalar(String.self))),
-          GraphQLField("images", type: .list(.scalar(String.self))),
+          GraphQLField("images", type: .list(.nonNull(.scalar(String.self)))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -306,7 +306,7 @@ public final class CourseQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(question: String, answer: String, images: [String?]? = nil) {
+        public init(question: String, answer: String, images: [String]? = nil) {
           self.init(unsafeResultMap: ["__typename": "Questions", "question": question, "answer": answer, "images": images])
         }
 
@@ -337,9 +337,9 @@ public final class CourseQuery: GraphQLQuery {
           }
         }
 
-        public var images: [String?]? {
+        public var images: [String]? {
           get {
-            return resultMap["images"] as? [String?]
+            return resultMap["images"] as? [String]
           }
           set {
             resultMap.updateValue(newValue, forKey: "images")

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19062DE3247380CB00C478E8 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19062DE2247380CB00C478E8 /* schema.json */; };
 		19062DE5247385FC00C478E8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19062DE4247385FC00C478E8 /* Network.swift */; };
 		1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E148247054E3001B7697 /* CourseMaterialView.swift */; };
 		1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14A24705581001B7697 /* CourseMaterial.swift */; };
@@ -27,6 +26,7 @@
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
 		197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EADF924721DAA0002919B /* GraphQLRequests.swift */; };
 		197EAE002472273B0002919B /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 197EADFF2472273B0002919B /* schema.graphql */; };
+		19ED93D12485E14100EE6E51 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19ED93D02485E14100EE6E51 /* schema.json */; };
 		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
 		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19062DE2247380CB00C478E8 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schema.json; path = Mirnova/schema.json; sourceTree = SOURCE_ROOT; };
 		19062DE4247385FC00C478E8 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1921E148247054E3001B7697 /* CourseMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialView.swift; sourceTree = "<group>"; };
 		1921E14A24705581001B7697 /* CourseMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterial.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		197EADF924721DAA0002919B /* GraphQLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
 		197EADFF2472273B0002919B /* schema.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
+		19ED93D02485E14100EE6E51 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +151,7 @@
 				19737A52246CDE45006A32D6 /* Assets.xcassets */,
 				19737A57246CDE45006A32D6 /* LaunchScreen.storyboard */,
 				19737A5A246CDE45006A32D6 /* Info.plist */,
-				19062DE2247380CB00C478E8 /* schema.json */,
+				19ED93D02485E14100EE6E51 /* schema.json */,
 				19737A54246CDE45006A32D6 /* Preview Content */,
 				197EADFF2472273B0002919B /* schema.graphql */,
 			);
@@ -320,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */,
-				19062DE3247380CB00C478E8 /* schema.json in Resources */,
+				19ED93D12485E14100EE6E51 /* schema.json in Resources */,
 				19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */,
 				197EAE002472273B0002919B /* schema.graphql in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,
