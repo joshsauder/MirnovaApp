@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct PracticeView: View {
-    let question: String
-    let answer: String
+    @State var question: String = ""
+    @State var answer: String = ""
+    @State var i: Int = 0
     
-    init(question: String, answer: String){
-        self.answer = answer
-        self.question = question
+    let model: [CourseMaterial]
+    
+    init(model: [CourseMaterial]){
+        self.model = model
+        question = model[0].question
+        answer = model[0].answer
     }
     
     var body: some View {
@@ -32,10 +36,19 @@ struct PracticeView: View {
             
         }.navigationBarTitle("Practice")
     }
+    
+    func nextQuestion(){
+        i += 1;
+        if(i < model.count){
+            question = model[i].question
+            answer = model[i].answer
+        }
+    }
 }
 
 struct PracticeView_Previews: PreviewProvider {
     static var previews: some View {
-        PracticeView(question: "test", answer: "test")
+        let model = [CourseMaterial(id: UUID(), image: ["test"], question: "test", answer: "test")]
+        return PracticeView(model: model)
     }
 }
