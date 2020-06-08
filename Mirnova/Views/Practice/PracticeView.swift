@@ -32,7 +32,7 @@ struct PracticeView: View {
                 .frame(minHeight: 0, maxHeight: .infinity)
             }
             .zIndex(1)
-            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: AnyView(CourseMaterialView(name: "test")), titleFirst: "Test", titleSecond: "Next")
+            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: nil, funcSecond: nextQuestion, titleFirst: "Test", titleSecond: "Next")
             
         }.navigationBarTitle("Practice")
     }
