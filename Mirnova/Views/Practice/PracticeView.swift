@@ -32,17 +32,25 @@ struct PracticeView: View {
                 .frame(minHeight: 0, maxHeight: .infinity)
             }
             .zIndex(1)
-            DualButton(destinationFirst: AnyView(CourseView()), destinationSecond: nil, funcSecond: nextQuestion, titleFirst: "Test", titleSecond: "Next")
+            DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
             
         }.navigationBarTitle("Practice")
     }
     
+    func prevQuestion(){
+        i -= 1;
+        if(i < 0) {i = model.count - 1}
+        
+        question = model[i].question
+        answer = model[i].answer
+    }
+    
     func nextQuestion(){
         i += 1;
-        if(i < model.count){
-            question = model[i].question
-            answer = model[i].answer
-        }
+        if(i > model.count - 1){ i = 0; }
+        
+        question = model[i].question
+        answer = model[i].answer
     }
 }
 
