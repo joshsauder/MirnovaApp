@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct PracticeView: View {
-    @State var question: String = ""
-    @State var answer: String = ""
+    @State var question: String
+    @State var answer: String
     @State var i: Int = 0
     
     let model: [CourseMaterial]
     
     init(model: [CourseMaterial]){
         self.model = model
-        question = model[0].question
-        answer = model[0].answer
+        _answer = State(initialValue: model[0].question)
+        _question = State(initialValue: model[0].answer)
     }
     
     var body: some View {
