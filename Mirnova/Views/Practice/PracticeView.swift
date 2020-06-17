@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PracticeView: View {
+    @State var show: Bool = false
     @State var i: Int = 0
     @ObservedObject var practiceModel: PracticeViewModel
     
@@ -26,15 +27,27 @@ struct PracticeView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Divider()
-
-                Text(practiceModel.answer)
-                    .font(Font.system(size: 40))
-                    .frame(minHeight: 0, maxHeight: .infinity)
+                VStack(alignment: .center, spacing: 30){
+                    Text("Tap To Show The Answer")
+                    .font(Font.system(size: 30))
+                    
+                    if show {
+                        Text(practiceModel.answer)
+                            .font(Font.system(size: 30))
+                    }else {
+                        Text("")
+                    }
+                    Spacer()
+                }.frame(minHeight: 0, maxHeight: .infinity)
+                .onTapGesture {
+                    self.show = true
+                }
             }
             .zIndex(1)
             DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
             
-        }.navigationBarTitle("Practice")
+        }
+         .navigationBarTitle("Practice")
     }
     
     func prevQuestion(){
@@ -44,6 +57,7 @@ struct PracticeView: View {
         let question = model[i].question
         let answer = model[i].answer
         let image = model[i].image[0]
+        show = false
         practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
     
@@ -54,6 +68,7 @@ struct PracticeView: View {
         let question = model[i].question
         let answer = model[i].answer
         let image = model[i].image[0]
+        show = false
         practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
 }
