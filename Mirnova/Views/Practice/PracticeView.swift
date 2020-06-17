@@ -22,12 +22,14 @@ struct PracticeView: View {
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                Text(practiceModel.question)
-                .frame(minHeight: 0, maxHeight: .infinity)
+                Image(uiImage: practiceModel.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 Divider()
 
                 Text(practiceModel.answer)
-                .frame(minHeight: 0, maxHeight: .infinity)
+                    .font(Font.system(size: 40))
+                    .frame(minHeight: 0, maxHeight: .infinity)
             }
             .zIndex(1)
             DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")

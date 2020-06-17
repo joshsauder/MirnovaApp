@@ -10,9 +10,9 @@ import SwiftUI
 import Combine
 
 class PracticeViewModel: ObservableObject {
-    var question: String
-    var answer: String
-    var image: UIImage = UIImage()
+    @Published var question: String
+    @Published var answer: String
+    @Published var image: UIImage = UIImage()
     
     init(question: String, answer: String, imageString: String){
         self.question = question
