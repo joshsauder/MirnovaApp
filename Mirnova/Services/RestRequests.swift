@@ -11,10 +11,10 @@ import Alamofire
 
 class RestRequests {
     
-    let endpoint = "http://localhost:8080"
+    let endpoint = "http://localhost:4000/api"
     
     public func getImage(image: String, completion: @escaping (UIImage?) -> ()){
-        AF.request("\(endpoint)/course/images?image=\(image)", method: .get).responseData{ response in
+        AF.request("\(endpoint)/course/image?image=\(image)", method: .get).validate(statusCode: 200...300).responseData{ response in
             switch response.result{
             case .success:
                 let image = UIImage(data: response.data!)

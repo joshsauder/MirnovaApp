@@ -9,26 +9,24 @@
 import SwiftUI
 
 struct PracticeView: View {
-    @State var question: String
-    @State var answer: String
     @State var i: Int = 0
+    @ObservedObject var practiceModel: PracticeViewModel
     
     let model: [CourseMaterial]
     
     init(model: [CourseMaterial]){
         self.model = model
-        _answer = State(initialValue: model[0].question)
-        _question = State(initialValue: model[0].answer)
+        practiceModel = PracticeViewModel(question: model[0].question, answer: model[0].answer, imageString: model[0].image[0])
     }
     
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                Text(question)
+                Text(practiceModel.question)
                 .frame(minHeight: 0, maxHeight: .infinity)
                 Divider()
 
-                Text(answer)
+                Text(practiceModel.answer)
                 .frame(minHeight: 0, maxHeight: .infinity)
             }
             .zIndex(1)
@@ -41,16 +39,20 @@ struct PracticeView: View {
         i -= 1;
         if(i < 0) {i = model.count - 1}
         
-        question = model[i].question
-        answer = model[i].answer
+        let question = model[i].question
+        let answer = model[i].answer
+        let image = model[i].image[0]
+        practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
     
     func nextQuestion(){
         i += 1;
         if(i > model.count - 1){ i = 0; }
         
-        question = model[i].question
-        answer = model[i].answer
+        let question = model[i].question
+        let answer = model[i].answer
+        let image = model[i].image[0]
+        practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
 }
 

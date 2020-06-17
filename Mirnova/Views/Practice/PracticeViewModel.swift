@@ -7,15 +7,28 @@
 //
 
 import SwiftUI
+import Combine
 
-struct PracticeViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class PracticeViewModel: ObservableObject {
+    var question: String
+    var answer: String
+    var image: UIImage = UIImage()
+    
+    init(question: String, answer: String, imageString: String){
+        self.question = question
+        self.answer = answer
+        self.fetchImage(image: "alphabet/A.jpg")
     }
-}
-
-struct PracticeViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        PracticeViewModel()
+    
+    private func fetchImage(image: String){
+        RestRequests().getImage(image: image){ fetchedImage in
+            self.image = fetchedImage ?? UIImage()
+        }
+    }
+    
+    func updateModel(question: String, answer: String, imageString: String){
+        self.question = question
+        self.answer = answer
+        self.fetchImage(image: "alphabet/B.jpg")
     }
 }
