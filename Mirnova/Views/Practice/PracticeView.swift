@@ -17,7 +17,7 @@ struct PracticeView: View {
     
     init(model: [CourseMaterial]){
         self.model = model
-        practiceModel = PracticeViewModel(question: model[0].question, answer: model[0].answer, imageString: model[0].image[0])
+        practiceModel = PracticeViewModel(question: model[0].question, answer: model[0].answer, imageString: model[0].image)
     }
     
     var body: some View {
@@ -56,7 +56,7 @@ struct PracticeView: View {
         
         let question = model[i].question
         let answer = model[i].answer
-        let image = model[i].image[0]
+        let image = model[i].image
         show = false
         practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
@@ -67,7 +67,7 @@ struct PracticeView: View {
         
         let question = model[i].question
         let answer = model[i].answer
-        let image = model[i].image[0]
+        let image = model[i].image
         show = false
         practiceModel.updateModel(question: question, answer: answer, imageString: image)
     }
@@ -75,7 +75,7 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = [CourseMaterial(id: UUID(), image: ["test"], question: "test", answer: "test")]
+        let model = [CourseMaterial(id: UUID(), image: "test", question: "test", answer: "test")]
         return PracticeView(model: model)
     }
 }

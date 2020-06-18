@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct CourseMaterial: Identifiable {
     
     var id: UUID
     
-    var image: [String]
+    var image: String
     var question: String
     var answer: String
 }

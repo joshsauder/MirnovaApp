@@ -38,7 +38,7 @@ class CourseMaterialViewModel: ObservableObject {
     
     private func buildCourseMaterial(question: CourseQuery.Data.Course.Question) -> CourseMaterial {
         return CourseMaterial(id: UUID(),
-                              image: question.images ?? [],
+                              image: question.images?[0] ?? "",
                               question: question.question,
                               answer: question.answer)
     }

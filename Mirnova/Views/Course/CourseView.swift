@@ -51,3 +51,12 @@ struct CourseView_Previews: PreviewProvider {
         CourseView()
     }
 }
+
+struct CourseCell_Previews: PreviewProvider {
+    static var previews: some View{
+        Group {
+        CourseCell(data: CourseData(id: UUID(), name: "test", correct: 1, questions: 1, completed: true, attempts: 1))
+        }
+        .previewLayout(.fixed(width: 300, height: 70))
+    }
+}
