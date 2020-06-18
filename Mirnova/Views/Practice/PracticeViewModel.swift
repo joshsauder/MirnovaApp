@@ -14,21 +14,16 @@ class PracticeViewModel: ObservableObject {
     @Published var answer: String
     @Published var image: UIImage = UIImage()
     
-    init(question: String, answer: String, imageString: String){
+    init(question: String, answer: String, image: UIImage){
         self.question = question
         self.answer = answer
-        self.fetchImage(image: "alphabet/A.jpg")
+        self.image = image
     }
+
     
-    private func fetchImage(image: String){
-        RestRequests().getImage(image: image){ fetchedImage in
-            self.image = fetchedImage ?? UIImage()
-        }
-    }
-    
-    func updateModel(question: String, answer: String, imageString: String){
+    func updateModel(question: String, answer: String, image: UIImage){
         self.question = question
         self.answer = answer
-        self.fetchImage(image: "alphabet/B.jpg")
+        self.image = image
     }
 }
