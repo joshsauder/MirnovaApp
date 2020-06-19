@@ -70,8 +70,4 @@ class CourseMaterialViewModel: ObservableObject {
                               question: question.question,
                               answer: question.answer)
     }
-    
-    func handleClick() {
-        print("test")
-    }
 }

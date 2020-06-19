@@ -29,6 +29,13 @@ struct CourseView: View {
 
 struct CourseCell: View {
     var data: CourseData
+    var iconInfo: [String: Any] = [:]
+    
+    init(data: CourseData) {
+        self.data = data
+        iconInfo["icon"] = data.completed ? "checkmark.cirle" : "xmark.circle"
+        iconInfo["color"] = data.completed ? Color.green : Color.red
+    }
     
     var body: some View {
         HStack{
@@ -39,8 +46,12 @@ struct CourseCell: View {
                 Text("\(data.questions) questions")
                     .font(.system(size: 15))
                 Spacer()
-                Text("\(data.correct)/\(data.questions)")
-                .font(.system(size: 15))
+                HStack {
+                    Image(systemName: iconInfo["icon"] as! String)
+                        .foregroundColor(iconInfo["color"] as? Color)
+                    Text("\(data.correct)/\(data.questions)")
+                    .font(.system(size: 15))
+                }
             }
         }
     }
