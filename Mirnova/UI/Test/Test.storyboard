@@ -19,8 +19,39 @@
                                 <rect key="frame" x="0.0" y="118" width="414" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-gs-d6A">
+                                <rect key="frame" x="83" y="390" width="247" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80g-OC-a7O">
+                                <rect key="frame" x="43" y="485" width="100" height="100"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgP-fF-Ak0">
+                                <rect key="frame" x="43" y="716" width="100" height="100"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37V-Rv-0Wi">
+                                <rect key="frame" x="264" y="485" width="100" height="100"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHe-SH-FFH">
+                                <rect key="frame" x="264" y="716" width="100" height="100"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="37V-Rv-0Wi" firstAttribute="height" secondItem="80g-OC-a7O" secondAttribute="height" id="DAm-NJ-FTf"/>
+                            <constraint firstItem="37V-Rv-0Wi" firstAttribute="width" secondItem="80g-OC-a7O" secondAttribute="width" id="OH1-yf-mEW"/>
+                            <constraint firstItem="IgP-fF-Ak0" firstAttribute="width" secondItem="80g-OC-a7O" secondAttribute="width" id="ceV-cF-7EX"/>
+                            <constraint firstItem="lHe-SH-FFH" firstAttribute="width" secondItem="80g-OC-a7O" secondAttribute="width" id="cgh-sJ-Qoa"/>
+                            <constraint firstItem="lHe-SH-FFH" firstAttribute="height" secondItem="80g-OC-a7O" secondAttribute="height" id="gOe-bd-SqW"/>
+                            <constraint firstItem="IgP-fF-Ak0" firstAttribute="height" secondItem="80g-OC-a7O" secondAttribute="height" id="ysV-Ht-95F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fki-VZ-Rev"/>
                     </view>
                 </viewController>
