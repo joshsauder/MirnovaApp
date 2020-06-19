@@ -13,18 +13,25 @@ import Apollo
 class CourseMaterialViewModel: ObservableObject {
 
     var name: String
-    var courseMaterial: [CourseMaterial] = []
-    var images: [UIImage] = []
+    @Published var courseMaterial: [CourseMaterial] = []
+    @Published var images: [UIImage] = []
     
     init(name: String) {
         self.name = name
-        fetchData(){
-            self.fetchImages(){ self.images = $0 }
+    }
+    
+    public func load(){
+        fetchData(){ material in
+            self.fetchImages(material: material){
+                self.images = $0
+                self.courseMaterial = material
+            }
         }
     }
     
     
-    private func fetchData(completion: @escaping () -> ()){
+    private func fetchData(completion: @escaping ([CourseMaterial]) -> ()){
+        print(name)
         Network.shared.apollo.fetch(query: CourseQuery(name: name)){ result in
             
             switch result {
@@ -32,23 +39,22 @@ class CourseMaterialViewModel: ObservableObject {
                     print(error)
             case .success(let result):
                 let data = result.data!
-                self.courseMaterial = data.course?.questions.map({ self.buildCourseMaterial(question: $0)}) ?? []
-                completion()
+                completion(data.course?.questions.map({ self.buildCourseMaterial(question: $0)}) ?? [])
             }
             
         }
         
     }
     
-    private func fetchImages(completion: @escaping ([UIImage]) -> ()){
+    private func fetchImages(material: [CourseMaterial], completion: @escaping ([UIImage]) -> ()){
         let req = RestRequests()
-        var images: [UIImage] = []
+        var images = [UIImage](repeating: UIImage(), count: material.count)
         let group = DispatchGroup()
-    
-        for (i, course) in courseMaterial.enumerated() {
+
+        for (i, course) in material.enumerated() {
             group.enter()
-            req.getImage(image: course.image){
-                images.insert($0 ?? UIImage(), at: i)
+            req.getImage(image: "\(self.name)/\(course.image)"){
+                images[i] = $0 ?? UIImage()
                 group.leave()
             }
         }
@@ -60,7 +66,7 @@ class CourseMaterialViewModel: ObservableObject {
     
     private func buildCourseMaterial(question: CourseQuery.Data.Course.Question) -> CourseMaterial {
         return CourseMaterial(id: UUID(),
-                              image: question.images?[0] ?? "",
+                              image: question.image,
                               question: question.question,
                               answer: question.answer)
     }

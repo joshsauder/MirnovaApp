@@ -210,7 +210,7 @@ public final class CourseQuery: GraphQLQuery {
           __typename
           question
           answer
-          images
+          image
         }
       }
     }
@@ -297,7 +297,7 @@ public final class CourseQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("question", type: .nonNull(.scalar(String.self))),
           GraphQLField("answer", type: .nonNull(.scalar(String.self))),
-          GraphQLField("images", type: .list(.nonNull(.scalar(String.self)))),
+          GraphQLField("image", type: .nonNull(.scalar(String.self))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -306,8 +306,8 @@ public final class CourseQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(question: String, answer: String, images: [String]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Questions", "question": question, "answer": answer, "images": images])
+        public init(question: String, answer: String, image: String) {
+          self.init(unsafeResultMap: ["__typename": "Questions", "question": question, "answer": answer, "image": image])
         }
 
         public var __typename: String {
@@ -337,12 +337,12 @@ public final class CourseQuery: GraphQLQuery {
           }
         }
 
-        public var images: [String]? {
+        public var image: String {
           get {
-            return resultMap["images"] as? [String]
+            return resultMap["image"]! as! String
           }
           set {
-            resultMap.updateValue(newValue, forKey: "images")
+            resultMap.updateValue(newValue, forKey: "image")
           }
         }
       }

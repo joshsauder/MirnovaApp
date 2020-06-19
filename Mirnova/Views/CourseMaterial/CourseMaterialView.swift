@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CourseMaterialView: View {
-    var courseMaterial: CourseMaterialViewModel
+    @ObservedObject var courseMaterial: CourseMaterialViewModel
     
     init(name: String) {
         self.courseMaterial = CourseMaterialViewModel(name: name)
@@ -17,16 +17,26 @@ struct CourseMaterialView: View {
     
     var body: some View {
         ZStack{
-            List(courseMaterial.courseMaterial){ material in
-                CourseMaterialListItem(data: material, image: UIImage(named: "A.jpg")!)
+            List{
+                ForEach(Array(courseMaterial.courseMaterial.enumerated()), id: \.1.id){(index, material) in
+                CourseMaterialListItem(data: material, image: self.courseMaterial.images[index])
+                }
             }.cornerRadius(10)
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
                 .zIndex(1)
             
-            DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)), destinationSecond: AnyView(PracticeView(model: courseMaterial.courseMaterial)), funcFirst: nil, funcSecond: nil, titleFirst: "Practice", titleSecond: "Test")
+            if courseMaterial.images.count > 0 {
+                DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial, images: courseMaterial.images)),
+                           destinationSecond: AnyView(PracticeView(model: courseMaterial.courseMaterial, images: courseMaterial.images)),
+                           funcFirst: nil,
+                           funcSecond: nil,
+                           titleFirst: "Practice",
+                           titleSecond: "Test")
+            }
             
         }
         .navigationBarTitle(Text("Course Material"))
+        .onAppear(perform: courseMaterial.load)
         
     }
 }
@@ -42,6 +52,7 @@ struct CourseMaterialListItem: View {
             Image(uiImage: image)
                 .resizable()
                 .frame(width: 70, height: 70)
+                .cornerRadius(35)
             Spacer()
             Text(data.answer)
         }
