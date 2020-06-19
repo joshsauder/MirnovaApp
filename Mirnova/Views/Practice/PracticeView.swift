@@ -31,16 +31,16 @@ struct PracticeView: View {
                 Divider()
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
-                    .font(Font.system(size: 30))
-                    
                     if show {
                         Text(practiceModel.answer)
-                            .font(Font.system(size: 30))
                     }else {
-                        Text("")
+                        Text("?")
                     }
                     Spacer()
-                }.frame(minHeight: 0, maxHeight: .infinity)
+                }
+                .frame(minHeight: 0, maxHeight: .infinity)
+                .font(Font.system(size: 30))
+                .contentShape(Rectangle())
                 .onTapGesture {
                     self.show = true
                 }
