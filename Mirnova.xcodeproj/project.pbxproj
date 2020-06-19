@@ -161,7 +161,7 @@
 			children = (
 				19235611249BEDEF0074ABF9 /* SupportingFiles */,
 				197EADF824721D9C0002919B /* Services */,
-				19737A73246DBBFC006A32D6 /* Views */,
+				19737A73246DBBFC006A32D6 /* UI */,
 				19737A70246DB6D4006A32D6 /* Models */,
 				19737A4C246CDE42006A32D6 /* AppDelegate.swift */,
 				19737A4E246CDE43006A32D6 /* SceneDelegate.swift */,
@@ -201,7 +201,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		19737A73246DBBFC006A32D6 /* Views */ = {
+		19737A73246DBBFC006A32D6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				19E342CD249D519E003C968E /* Test */,
@@ -211,7 +211,7 @@
 				19737A78246E1C11006A32D6 /* Course */,
 				19737A50246CDE43006A32D6 /* ContentView.swift */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		19737A78246E1C11006A32D6 /* Course */ = {
