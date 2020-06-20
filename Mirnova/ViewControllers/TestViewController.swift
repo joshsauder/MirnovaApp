@@ -13,6 +13,14 @@ import SwiftUI
 
 class TestViewController: UIViewController {
 
+    @IBOutlet weak var SignImage: UIImageView!
+    @IBOutlet weak var PromptLabel: UILabel!
+    
+    @IBOutlet weak var AButton: UIButton!
+    @IBOutlet weak var BButton: UIButton!
+    @IBOutlet weak var CButton: UIButton!
+    @IBOutlet weak var DButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
