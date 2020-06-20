@@ -19,15 +19,15 @@ struct CourseMaterialView: View {
         ZStack{
             List{
                 ForEach(Array(courseMaterial.courseMaterial.enumerated()), id: \.1.id){(index, material) in
-                CourseMaterialListItem(data: material, image: self.courseMaterial.images[index])
+                CourseMaterialListItem(data: material)
                 }
             }.cornerRadius(10)
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
                 .zIndex(1)
             
-            if courseMaterial.images.count > 0 {
-                DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial, images: courseMaterial.images)),
-                           destinationSecond: AnyView(PracticeView(model: courseMaterial.courseMaterial, images: courseMaterial.images)),
+            if courseMaterial.courseMaterial.count > 0 {
+                DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
+                           destinationSecond: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
                            funcFirst: nil,
                            funcSecond: nil,
                            titleFirst: "Practice",
@@ -45,11 +45,10 @@ struct CourseMaterialView: View {
 struct CourseMaterialListItem: View {
     
     var data: CourseMaterial
-    var image: UIImage
     
     var body: some View {
         HStack{
-            Image(uiImage: image)
+            Image(uiImage: data.image)
                 .resizable()
                 .frame(width: 70, height: 70)
                 .cornerRadius(35)
@@ -62,7 +61,7 @@ struct CourseMaterialListItem: View {
 
 struct CourseMaterialListItem_Previews: PreviewProvider {
     static var previews: some View {
-        CourseMaterialListItem(data: CourseMaterial(id: UUID(), image: "A.jpg", question: "test", answer: "test"), image: UIImage(named: "A.jpg")!)
+        CourseMaterialListItem(data: CourseMaterial(id: UUID(), imageString: "test", image: UIImage(named: "A.jpg")!, question: "test", answer: "test"))
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }

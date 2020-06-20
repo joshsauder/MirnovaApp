@@ -21,14 +21,36 @@ class TestViewController: UIViewController {
     @IBOutlet weak var CButton: UIButton!
     @IBOutlet weak var DButton: UIButton!
     
+    var courseMaterial: [CourseMaterial] = []
+    var totalCorrect: Int = 0
+    var totalAttempted: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        SignImage.image = courseMaterial[0].image
     }
+    
+    
+    func nextQuestion(){
+        totalAttempted += 1
+        
+        let currentItem = courseMaterial[totalAttempted]
+        
+        
+        
+        SignImage.image = currentItem.image
+    }
+    
 }
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
+    var courseMaterial: [CourseMaterial]
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
-        UIStoryboard(name: "Test", bundle: nil).instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        let storyboard = UIStoryboard(name: "Test", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
+        
+        vc.courseMaterial = courseMaterial
+        return vc
     }
 
     func updateUIViewController(_ uiViewController: TestViewController, context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) {

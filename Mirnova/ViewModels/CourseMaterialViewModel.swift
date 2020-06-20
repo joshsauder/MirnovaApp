@@ -14,7 +14,6 @@ class CourseMaterialViewModel: ObservableObject {
 
     var name: String
     @Published var courseMaterial: [CourseMaterial] = []
-    @Published var images: [UIImage] = []
     
     init(name: String) {
         self.name = name
@@ -22,15 +21,16 @@ class CourseMaterialViewModel: ObservableObject {
     
     public func load(){
         fetchData(){ material in
-            self.fetchImages(material: material){
-                self.images = $0
-                self.courseMaterial = material
+            self.fetchImages(material: material){ images in
+                self.courseMaterial = material.enumerated().map{(idx, item) in
+                    return self.buildCourseMaterial(question: item, image: images[idx])
+                }
             }
         }
     }
     
     
-    private func fetchData(completion: @escaping ([CourseMaterial]) -> ()){
+    private func fetchData(completion: @escaping ([CourseQuery.Data.Course.Question]) -> ()){
         print(name)
         Network.shared.apollo.fetch(query: CourseQuery(name: name)){ result in
             
@@ -39,14 +39,14 @@ class CourseMaterialViewModel: ObservableObject {
                     print(error)
             case .success(let result):
                 let data = result.data!
-                completion(data.course?.questions.map({ self.buildCourseMaterial(question: $0)}) ?? [])
+                completion(data.course?.questions ?? [])
             }
             
         }
         
     }
     
-    private func fetchImages(material: [CourseMaterial], completion: @escaping ([UIImage]) -> ()){
+    private func fetchImages(material: [CourseQuery.Data.Course.Question], completion: @escaping ([UIImage]) -> ()){
         let req = RestRequests()
         var images = [UIImage](repeating: UIImage(), count: material.count)
         let group = DispatchGroup()
@@ -64,9 +64,10 @@ class CourseMaterialViewModel: ObservableObject {
         }
     }
     
-    private func buildCourseMaterial(question: CourseQuery.Data.Course.Question) -> CourseMaterial {
+    private func buildCourseMaterial(question: CourseQuery.Data.Course.Question, image: UIImage?) -> CourseMaterial {
         return CourseMaterial(id: UUID(),
-                              image: question.image,
+                              imageString: question.image,
+                              image: image ?? UIImage(),
                               question: question.question,
                               answer: question.answer)
     }

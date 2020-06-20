@@ -13,7 +13,8 @@ struct CourseMaterial: Identifiable {
     
     var id: UUID
     
-    var image: String
+    var imageString: String
+    var image: UIImage
     var question: String
     var answer: String
 }
