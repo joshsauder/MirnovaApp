@@ -30,6 +30,7 @@
 		19E342CB249C353E003C968E /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CA249C353E003C968E /* schema.json */; };
 		19E342CF249D52E8003C968E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CE249D52E8003C968E /* Test.storyboard */; };
 		19E342D2249D5311003C968E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D1249D5311003C968E /* TestViewController.swift */; };
+		19E342D6249E6994003C968E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D5249E6994003C968E /* TestView.swift */; };
 		19ED93D32485F99000EE6E51 /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 19ED93D22485F99000EE6E51 /* schema.graphql */; };
 		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
 		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
@@ -73,6 +74,7 @@
 		19E342CA249C353E003C968E /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		19E342CE249D52E8003C968E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		19E342D1249D5311003C968E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		19E342D5249E6994003C968E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		19ED93D22485F99000EE6E51 /* schema.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
 		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,8 +182,8 @@
 		19737A73246DBBFC006A32D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				19E342D7249E6998003C968E /* Test */,
 				1921E15224707DF8001B7697 /* PracticeView.swift */,
-				19E342CE249D52E8003C968E /* Test.storyboard */,
 				1921E14F24707BAB001B7697 /* DualButton.swift */,
 				1921E148247054E3001B7697 /* CourseMaterialView.swift */,
 				19737A6E246CE415006A32D6 /* CourseView.swift */,
@@ -216,6 +218,15 @@
 				19E342D1249D5311003C968E /* TestViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		19E342D7249E6998003C968E /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				19E342CE249D52E8003C968E /* Test.storyboard */,
+				19E342D5249E6994003C968E /* TestView.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		276FBABB73ED2424AE58C858 /* Pods */ = {
@@ -437,6 +448,7 @@
 				19E342D2249D5311003C968E /* TestViewController.swift in Sources */,
 				19062DE5247385FC00C478E8 /* Network.swift in Sources */,
 				19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */,
+				19E342D6249E6994003C968E /* TestView.swift in Sources */,
 				1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */,
 				19235610249AA2BE0074ABF9 /* RestRequests.swift in Sources */,
 				1921E15324707DF8001B7697 /* PracticeView.swift in Sources */,
