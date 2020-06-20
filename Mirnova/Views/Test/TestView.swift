@@ -21,8 +21,16 @@ extension TestViewController {
     }
     
     private func setUpButtons(button: UIButton){
+        //set up button attributes
         button.layer.cornerRadius = 0.5 * button.bounds.width
         button.clipsToBounds = true
         button.backgroundColor = .green
+        
+        //add shadow
+        button.layer.masksToBounds = false
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 0.2, height: 1)
+        button.layer.shadowOpacity = 0.5
+        button.layer.cornerRadius = 0.5 * button.bounds.width
     }
 }
