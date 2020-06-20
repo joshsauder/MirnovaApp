@@ -11,7 +11,7 @@
 		1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E148247054E3001B7697 /* CourseMaterialView.swift */; };
 		1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14A24705581001B7697 /* CourseMaterial.swift */; };
 		1921E14D247056B4001B7697 /* CourseMaterialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */; };
-		1921E15024707BAB001B7697 /* SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14F24707BAB001B7697 /* SwiftUI.swift */; };
+		1921E15024707BAB001B7697 /* DualButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E14F24707BAB001B7697 /* DualButton.swift */; };
 		1921E15324707DF8001B7697 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E15224707DF8001B7697 /* PracticeView.swift */; };
 		1921E15524707E0A001B7697 /* PracticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921E15424707E0A001B7697 /* PracticeViewModel.swift */; };
 		19235610249AA2BE0074ABF9 /* RestRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923560F249AA2BE0074ABF9 /* RestRequests.swift */; };
@@ -50,7 +50,7 @@
 		1921E148247054E3001B7697 /* CourseMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialView.swift; sourceTree = "<group>"; };
 		1921E14A24705581001B7697 /* CourseMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterial.swift; sourceTree = "<group>"; };
 		1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseMaterialViewModel.swift; sourceTree = "<group>"; };
-		1921E14F24707BAB001B7697 /* SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI.swift; sourceTree = "<group>"; };
+		1921E14F24707BAB001B7697 /* DualButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualButton.swift; sourceTree = "<group>"; };
 		1921E15224707DF8001B7697 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		1921E15424707E0A001B7697 /* PracticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewModel.swift; sourceTree = "<group>"; };
 		1923560F249AA2BE0074ABF9 /* RestRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRequests.swift; sourceTree = "<group>"; };
@@ -102,32 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1921E147247054B3001B7697 /* CourseMaterial */ = {
-			isa = PBXGroup;
-			children = (
-				1921E148247054E3001B7697 /* CourseMaterialView.swift */,
-				1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */,
-			);
-			path = CourseMaterial;
-			sourceTree = "<group>";
-		};
-		1921E14E24707B35001B7697 /* SharedViews */ = {
-			isa = PBXGroup;
-			children = (
-				1921E14F24707BAB001B7697 /* SwiftUI.swift */,
-			);
-			path = SharedViews;
-			sourceTree = "<group>";
-		};
-		1921E15124707DBB001B7697 /* Practice */ = {
-			isa = PBXGroup;
-			children = (
-				1921E15224707DF8001B7697 /* PracticeView.swift */,
-				1921E15424707E0A001B7697 /* PracticeViewModel.swift */,
-			);
-			path = Practice;
-			sourceTree = "<group>";
-		};
 		19235611249BEDEF0074ABF9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,9 +133,11 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				19E342D4249DC0EB003C968E /* ViewControllers */,
+				19E342D3249DC081003C968E /* ViewModels */,
 				19235611249BEDEF0074ABF9 /* SupportingFiles */,
 				197EADF824721D9C0002919B /* Services */,
-				19737A73246DBBFC006A32D6 /* UI */,
+				19737A73246DBBFC006A32D6 /* Views */,
 				19737A70246DB6D4006A32D6 /* Models */,
 				19737A4C246CDE42006A32D6 /* AppDelegate.swift */,
 				19737A4E246CDE43006A32D6 /* SceneDelegate.swift */,
@@ -201,26 +177,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		19737A73246DBBFC006A32D6 /* UI */ = {
+		19737A73246DBBFC006A32D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19E342CD249D519E003C968E /* Test */,
-				1921E15124707DBB001B7697 /* Practice */,
-				1921E14E24707B35001B7697 /* SharedViews */,
-				1921E147247054B3001B7697 /* CourseMaterial */,
-				19737A78246E1C11006A32D6 /* Course */,
+				1921E15224707DF8001B7697 /* PracticeView.swift */,
+				19E342CE249D52E8003C968E /* Test.storyboard */,
+				1921E14F24707BAB001B7697 /* DualButton.swift */,
+				1921E148247054E3001B7697 /* CourseMaterialView.swift */,
+				19737A6E246CE415006A32D6 /* CourseView.swift */,
 				19737A50246CDE43006A32D6 /* ContentView.swift */,
 			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		19737A78246E1C11006A32D6 /* Course */ = {
-			isa = PBXGroup;
-			children = (
-				19737A75246DBE80006A32D6 /* CourseViewModel.swift */,
-				19737A6E246CE415006A32D6 /* CourseView.swift */,
-			);
-			path = Course;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		197EADF824721D9C0002919B /* Services */ = {
@@ -233,13 +200,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		19E342CD249D519E003C968E /* Test */ = {
+		19E342D3249DC081003C968E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1921E15424707E0A001B7697 /* PracticeViewModel.swift */,
+				1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */,
+				19737A75246DBE80006A32D6 /* CourseViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		19E342D4249DC0EB003C968E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				19E342D1249D5311003C968E /* TestViewController.swift */,
-				19E342CE249D52E8003C968E /* Test.storyboard */,
 			);
-			path = Test;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		276FBABB73ED2424AE58C858 /* Pods */ = {
@@ -456,7 +432,7 @@
 				197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */,
 				19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */,
 				1921E15524707E0A001B7697 /* PracticeViewModel.swift in Sources */,
-				1921E15024707BAB001B7697 /* SwiftUI.swift in Sources */,
+				1921E15024707BAB001B7697 /* DualButton.swift in Sources */,
 				19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */,
 				19E342D2249D5311003C968E /* TestViewController.swift in Sources */,
 				19062DE5247385FC00C478E8 /* Network.swift in Sources */,
