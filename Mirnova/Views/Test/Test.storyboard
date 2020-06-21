@@ -38,18 +38,30 @@
                                     <constraint firstAttribute="height" constant="100" id="lL6-Gk-0YB"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="TouchAButton:" destination="XEb-NV-ls7" eventType="touchUpInside" id="F8a-Pe-d1A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHe-SH-FFH">
                                 <rect key="frame" x="274" y="717" width="100" height="100"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="TouchDButton:" destination="XEb-NV-ls7" eventType="touchUpInside" id="i74-X1-57d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgP-fF-Ak0">
                                 <rect key="frame" x="40" y="717" width="100" height="100"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="TouchCButton:" destination="XEb-NV-ls7" eventType="touchUpInside" id="89N-iV-XLX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37V-Rv-0Wi">
                                 <rect key="frame" x="274" y="469" width="100" height="100"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="TouchBButton:" destination="XEb-NV-ls7" eventType="touchUpInside" id="Vqi-vo-p3c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

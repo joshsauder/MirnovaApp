@@ -43,6 +43,31 @@ class TestViewController: UIViewController {
         SignImage.image = currentItem.image
     }
     
+    @IBAction func TouchAButton(_ sender: Any) {
+        processAnswer(input: 0)
+    }
+    
+    
+    @IBAction func TouchBButton(_ sender: Any) {
+        processAnswer(input: 1)
+    }
+    
+    @IBAction func TouchCButton(_ sender: Any) {
+       processAnswer(input: 2)
+    }
+    
+    @IBAction func TouchDButton(_ sender: Any) {
+        processAnswer(input: 3)
+    }
+    
+    func processAnswer(input: Int){
+        if correctIdx == input {
+            totalCorrect += 1
+        }
+        totalAttempted += 1
+        setOptions(currentItem: courseMaterial[totalAttempted])
+    }
+    
     func setOptions(currentItem: CourseMaterial){
         let randomNums = generateRandomNumbers(numQuestions: courseMaterial.count)
         let firstIncorrect = courseMaterial[randomNums[0]]
@@ -93,8 +118,6 @@ class TestViewController: UIViewController {
         
         return Array(randomSet)
     }
-    
-    
 }
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
