@@ -25,6 +25,8 @@ extension TestViewController {
         button.layer.cornerRadius = 0.5 * button.bounds.width
         button.clipsToBounds = true
         button.backgroundColor = .green
+        button.titleLabel?.textColor = .white
+        button.titleLabel?.font.withSize(20)
         
         //add shadow
         button.layer.masksToBounds = false
