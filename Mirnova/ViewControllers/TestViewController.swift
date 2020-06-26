@@ -65,7 +65,9 @@ class TestViewController: UIViewController {
             totalCorrect += 1
         }
         totalAttempted += 1
-        setOptions(currentItem: courseMaterial[totalAttempted])
+        
+        //next question
+        setViewItems()
     }
     
     func setOptions(currentItem: CourseMaterial){
