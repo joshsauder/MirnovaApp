@@ -27,14 +27,18 @@ class TestViewController: UIViewController {
     
     var correctIdx: Int = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //style view
+        setupView()
         
         //randomize questions
         courseMaterial.shuffle()
         setViewItems()
     }
     
+
     func setViewItems(){
         let currentItem = courseMaterial[totalAttempted]
         
@@ -127,12 +131,11 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-        
+
         vc.courseMaterial = courseMaterial
         return vc
     }
 
     func updateUIViewController(_ uiViewController: TestViewController, context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) {
-
     }
 }

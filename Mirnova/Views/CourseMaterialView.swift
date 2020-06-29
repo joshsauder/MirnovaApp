@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CourseMaterialView: View {
     @ObservedObject var courseMaterial: CourseMaterialViewModel
+    @State private var isActive: Bool = false
     
     init(name: String) {
         self.courseMaterial = CourseMaterialViewModel(name: name)
@@ -27,7 +28,8 @@ struct CourseMaterialView: View {
             
             if courseMaterial.courseMaterial.count > 0 {
                 DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
-                           destinationSecond: AnyView(TestViewControllerRepresentation(courseMaterial: courseMaterial.courseMaterial)),
+                           destinationSecond: AnyView(TestViewControllerRepresentation(courseMaterial: courseMaterial.courseMaterial)
+                            .navigationBarTitle("Test", displayMode: .inline)),
                            funcFirst: nil,
                            funcSecond: nil,
                            titleFirst: "Practice",
