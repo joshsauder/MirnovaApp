@@ -37,9 +37,19 @@ struct CourseMaterialView: View {
             }
             
         }
-        .navigationBarTitle(Text("Course Material"))
+        //update nav bar title
+        .navigationBarTitle(Text(isActive ? "Course Material": "Stop Test"))
         .onAppear(perform: courseMaterial.load)
-        
+        .onAppear{
+            DispatchQueue.main.async {
+                self.isActive = true
+            }
+        }
+        .onDisappear {
+            DispatchQueue.main.async {
+                self.isActive = false
+            }
+        }
     }
 }
 
