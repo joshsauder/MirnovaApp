@@ -39,7 +39,6 @@ struct CourseMaterialView: View {
         }
         //update nav bar title
         .navigationBarTitle(Text(isActive ? "Course Material": "Stop Test"))
-        .onAppear(perform: courseMaterial.load)
         .onAppear{
             DispatchQueue.main.async {
                 self.isActive = true
@@ -50,6 +49,7 @@ struct CourseMaterialView: View {
                 self.isActive = false
             }
         }
+        .onAppear(perform: courseMaterial.load)
     }
 }
 
