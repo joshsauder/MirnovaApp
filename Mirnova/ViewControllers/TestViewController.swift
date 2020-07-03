@@ -27,9 +27,9 @@ class TestViewController: UIViewController {
     
     var correctIdx: Int = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //style view
         setupView()
         

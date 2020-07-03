@@ -27,6 +27,7 @@
 		19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A71246DB6F7006A32D6 /* CourseData.swift */; };
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
 		197EADFA24721DAA0002919B /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EADF924721DAA0002919B /* GraphQLRequests.swift */; };
+		1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BA24A99BDD0097C081 /* TestUIView.swift */; };
 		19E342CB249C353E003C968E /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CA249C353E003C968E /* schema.json */; };
 		19E342CF249D52E8003C968E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CE249D52E8003C968E /* Test.storyboard */; };
 		19E342D2249D5311003C968E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D1249D5311003C968E /* TestViewController.swift */; };
@@ -71,6 +72,7 @@
 		19737A71246DB6F7006A32D6 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		197EADF924721DAA0002919B /* GraphQLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
+		1988D2BA24A99BDD0097C081 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		19E342CA249C353E003C968E /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		19E342CE249D52E8003C968E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		19E342D1249D5311003C968E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				19E342CE249D52E8003C968E /* Test.storyboard */,
 				19E342D5249E6994003C968E /* TestView.swift */,
+				1988D2BA24A99BDD0097C081 /* TestUIView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */,
 				19235610249AA2BE0074ABF9 /* RestRequests.swift in Sources */,
 				1921E15324707DF8001B7697 /* PracticeView.swift in Sources */,
+				1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */,
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
 				19737A6F246CE415006A32D6 /* CourseView.swift in Sources */,

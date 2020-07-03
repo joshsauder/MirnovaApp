@@ -28,7 +28,7 @@ struct CourseMaterialView: View {
             
             if courseMaterial.courseMaterial.count > 0 {
                 DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
-                           destinationSecond: AnyView(TestViewControllerRepresentation(courseMaterial: courseMaterial.courseMaterial)
+                           destinationSecond: AnyView(TestUIView(courseMaterial: courseMaterial.courseMaterial)
                             .navigationBarTitle("Test", displayMode: .inline)),
                            funcFirst: nil,
                            funcSecond: nil,

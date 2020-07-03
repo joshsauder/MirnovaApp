@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct CourseView: View {
-    
     @ObservedObject var model = CourseViewModel(user: "test")
-    
     
     var body: some View {
         NavigationView {
