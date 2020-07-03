@@ -22,7 +22,7 @@ struct CourseMaterialView: View {
                 ForEach(Array(courseMaterial.courseMaterial.enumerated()), id: \.1.id){(index, material) in
                 CourseMaterialListItem(data: material)
                 }
-            }.cornerRadius(10)
+            }.cornerRadius(radius: 10, corners: [.topLeft, .topRight])
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
                 .zIndex(1)
             

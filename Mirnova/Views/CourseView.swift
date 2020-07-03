@@ -19,7 +19,7 @@ struct CourseView: View {
                 }
             }
             .navigationBarTitle(Text("Courses"))
-            .cornerRadius(10)
+            .cornerRadius(radius: 10, corners: [.topLeft, .topRight])
             .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
         }
     }
