@@ -128,11 +128,15 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
+    @Binding var questionNumber: Int
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
 
         vc.courseMaterial = courseMaterial
+        vc.totalAttempted = questionNumber
+        
         return vc
     }
 

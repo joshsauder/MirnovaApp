@@ -10,18 +10,19 @@ import SwiftUI
 
 struct TestUIView: View {
     var courseMaterial: [CourseMaterial]
+    @Binding var questionNumber: Int
     
-    init(courseMaterial: [CourseMaterial]) {
-        self.courseMaterial = courseMaterial
-    }
     
     var body: some View {
         TestViewControllerRepresentation(courseMaterial: courseMaterial)
+        .navigationBarTitle("Test", displayMode: .inline)
     }
 }
 
 struct TestUIView_Previews: PreviewProvider {
+    @State static var questionNumber: Int = 0
+    
     static var previews: some View {
-        TestUIView(courseMaterial: [CourseMaterial(id: UUID(), imageString: "", image: UIImage(), question: "", answer: "")])
+    TestUIView(courseMaterial: [CourseMaterial(id: UUID(), imageString: "", image: UIImage(), question: "", answer: "")], questionNumber: $questionNumber)
     }
 }
