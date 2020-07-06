@@ -23,7 +23,9 @@ struct CourseMaterialView: View {
                 CourseMaterialListItem(data: material)
                 }
             }.cornerRadius(radius: 10, corners: [.topLeft, .topRight])
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)).background(Color.green)
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+                .background(Color.green)
+                .edgesIgnoringSafeArea(.bottom)
                 .zIndex(1)
             
             if courseMaterial.courseMaterial.count > 0 {
