@@ -11,6 +11,10 @@ import Foundation
 import UIKit
 import SwiftUI
 
+protocol TestViewDelegate: AnyObject {
+    func updateAttempted(sender: TestViewController)
+}
+
 class TestViewController: UIViewController {
 
     @IBOutlet weak var SignImage: UIImageView!
@@ -21,11 +25,14 @@ class TestViewController: UIViewController {
     @IBOutlet weak var CButton: UIButton!
     @IBOutlet weak var DButton: UIButton!
     
+    weak var delegate: TestViewDelegate?
+    
     var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
     var totalAttempted: Int = 0
     
     var correctIdx: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +50,11 @@ class TestViewController: UIViewController {
         let currentItem = courseMaterial[totalAttempted]
         
         //set up options and set images
-        setOptions(currentItem: currentItem)
-        SignImage.image = currentItem.image
+        DispatchQueue.main.async {
+            self.delegate?.updateAttempted(sender: self)
+            self.setOptions(currentItem: currentItem)
+            self.SignImage.image = currentItem.image
+        }
     }
     
     @IBAction func TouchAButton(_ sender: Any) {
@@ -68,6 +78,7 @@ class TestViewController: UIViewController {
         if correctIdx == input {
             totalCorrect += 1
         }
+        
         totalAttempted += 1
         
         //next question
@@ -128,18 +139,34 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
-    @Binding var questionNumber: Int
+    @Binding var questionsAttempted: Int
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
-
+        
         vc.courseMaterial = courseMaterial
-        vc.totalAttempted = questionNumber
+        vc.delegate = context.coordinator
         
         return vc
     }
 
     func updateUIViewController(_ uiViewController: TestViewController, context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) {
+    }
+    
+    class Coordinator: NSObject, TestViewDelegate {
+        var parent: TestViewControllerRepresentation
+        
+        init(_ testViewController: TestViewControllerRepresentation){
+            parent = testViewController
+        }
+        
+        func updateAttempted(sender: TestViewController){
+            parent.questionsAttempted = sender.totalAttempted
+        }
     }
 }
