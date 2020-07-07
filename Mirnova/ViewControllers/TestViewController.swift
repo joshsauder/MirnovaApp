@@ -31,6 +31,8 @@ class TestViewController: UIViewController {
     var totalCorrect: Int = 0
     var totalAttempted: Int = 0
     
+    var userAnswers: [[String: String]] = []
+    
     var correctIdx: Int = 0
     
     
@@ -61,7 +63,6 @@ class TestViewController: UIViewController {
         processAnswer(input: 0)
     }
     
-    
     @IBAction func TouchBButton(_ sender: Any) {
         processAnswer(input: 1)
     }
@@ -75,6 +76,12 @@ class TestViewController: UIViewController {
     }
     
     func processAnswer(input: Int){
+        var answer: [String: String] = [:]
+        
+        answer["input"] = mapAnswer(answer: input)
+        answer["answer"] = mapAnswer(answer: correctIdx)
+        userAnswers.append(answer)
+        
         if correctIdx == input {
             totalCorrect += 1
         }
@@ -84,6 +91,20 @@ class TestViewController: UIViewController {
         //next question
         setViewItems()
     }
+    
+    private func mapAnswer(answer: Int) -> String {
+        switch (answer) {
+        case 0:
+            return "A"
+        case 1:
+            return "B"
+        case 2:
+            return "C"
+        default:
+            return "D"
+        }
+    }
+ 
     
     func setOptions(currentItem: CourseMaterial){
         let randomNums = generateRandomNumbers(numQuestions: courseMaterial.count)
