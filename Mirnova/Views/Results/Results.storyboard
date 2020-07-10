@@ -109,7 +109,7 @@
                                                         <rect key="frame" x="60" y="357" width="294" height="194.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="A2G-F5-FWG">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="A2G-F5-FWG" customClass="QuestionsTableViewCell" customModule="Mirnova" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="294" height="73"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A2G-F5-FWG" id="zuM-Wl-u8R">
@@ -153,6 +153,11 @@
                                                                         <constraint firstAttribute="bottom" secondItem="NsJ-nK-Fx8" secondAttribute="bottom" constant="5" id="wOK-6M-fLt"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="CorrectLabel" destination="qp3-zf-e27" id="kI1-du-p6o"/>
+                                                                    <outlet property="InputLabel" destination="5xd-Ey-QUx" id="5pw-MP-PEo"/>
+                                                                    <outlet property="SignImage" destination="NsJ-nK-Fx8" id="5v0-Mj-Ztv"/>
+                                                                </connections>
                                                             </tableViewCell>
                                                         </prototypes>
                                                     </tableView>

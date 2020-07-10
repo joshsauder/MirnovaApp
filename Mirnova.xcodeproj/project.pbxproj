@@ -33,6 +33,7 @@
 		19D7AF7924B41657000A6A38 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7AF7824B41657000A6A38 /* ResultsViewController.swift */; };
 		19D7AF7B24B416F3000A6A38 /* ResultsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7AF7A24B416F3000A6A38 /* ResultsUIView.swift */; };
 		19D7AF7D24B7F0A8000A6A38 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7AF7C24B7F0A8000A6A38 /* ResultView.swift */; };
+		19D7AF7F24B80FF4000A6A38 /* QuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7AF7E24B80FF4000A6A38 /* QuestionsTableViewCell.swift */; };
 		19E342CB249C353E003C968E /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CA249C353E003C968E /* schema.json */; };
 		19E342CF249D52E8003C968E /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E342CE249D52E8003C968E /* Test.storyboard */; };
 		19E342D2249D5311003C968E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D1249D5311003C968E /* TestViewController.swift */; };
@@ -83,6 +84,7 @@
 		19D7AF7824B41657000A6A38 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		19D7AF7A24B416F3000A6A38 /* ResultsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsUIView.swift; sourceTree = "<group>"; };
 		19D7AF7C24B7F0A8000A6A38 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		19D7AF7E24B80FF4000A6A38 /* QuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		19E342CA249C353E003C968E /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		19E342CE249D52E8003C968E /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		19E342D1249D5311003C968E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				19E342D1249D5311003C968E /* TestViewController.swift */,
 				19D7AF7824B41657000A6A38 /* ResultsViewController.swift */,
+				19D7AF7E24B80FF4000A6A38 /* QuestionsTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				19062DE5247385FC00C478E8 /* Network.swift in Sources */,
 				19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */,
 				19E342D6249E6994003C968E /* TestView.swift in Sources */,
+				19D7AF7F24B80FF4000A6A38 /* QuestionsTableViewCell.swift in Sources */,
 				1921E149247054E3001B7697 /* CourseMaterialView.swift in Sources */,
 				19235610249AA2BE0074ABF9 /* RestRequests.swift in Sources */,
 				19D7AF7B24B416F3000A6A38 /* ResultsUIView.swift in Sources */,
