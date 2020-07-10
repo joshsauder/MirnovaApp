@@ -22,7 +22,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var AttemptsLabel: UILabel!
     @IBOutlet weak var AverageScoreLabel: UILabel!
     
-    @IBOutlet weak var QuestionsStackView: UIStackView!
+    @IBOutlet weak var QuestionsStackView: UITableView!
     
     var userAnswers: [[String: String]] = []
     var totalCorrect: Int = 0
