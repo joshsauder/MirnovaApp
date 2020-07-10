@@ -23,6 +23,13 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var AverageScoreLabel: UILabel!
     
     @IBOutlet weak var QuestionsStackView: UIStackView!
+    
+    var userAnswers: [[String: String]] = []
+    var totalCorrect: Int = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 struct ResultViewRepresentable: UIViewControllerRepresentable {
