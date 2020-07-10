@@ -12,6 +12,17 @@ import SwiftUI
 
 class ResultViewController: UIViewController {
     
+    @IBOutlet weak var FinalScoreLabel: UILabel!
+    
+    @IBOutlet weak var ResultImage: UIImageView!
+    
+    @IBOutlet weak var PassLabel: UILabel!
+    @IBOutlet weak var CorrectLabel: UILabel!
+    @IBOutlet weak var IncorrectLabel: UILabel!
+    @IBOutlet weak var AttemptsLabel: UILabel!
+    @IBOutlet weak var AverageScoreLabel: UILabel!
+    
+    @IBOutlet weak var QuestionsStackView: UIStackView!
 }
 
 struct ResultViewRepresentable: UIViewControllerRepresentable {
