@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultViewController: UIViewController {
-    
+class ResultViewController: UIViewController, UITableViewDataSource {
+
     @IBOutlet weak var FinalScoreLabel: UILabel!
     
     @IBOutlet weak var ResultImage: UIImageView!
@@ -22,9 +22,10 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var AttemptsLabel: UILabel!
     @IBOutlet weak var AverageScoreLabel: UILabel!
     
-    @IBOutlet weak var QuestionsStackView: UITableView!
+    @IBOutlet weak var QuestionsTableView: UITableView!
     
     var userAnswers: [[String: String]] = []
+    var signImages: [UIImage] = []
     var totalCorrect: Int = 0
     var totalQuestions: Int = 0
     var attempts: Int = 0
@@ -33,11 +34,25 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        QuestionsTableView.dataSource = self
         
         self.setUpView(correct: totalCorrect, incorrect: totalQuestions, attempts: attempts, average: average, passed: passed)
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        userAnswers.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = QuestionsTableView.dequeueReusableCell(withIdentifier: "QuestionsTableViewCell") as! QuestionsTableViewCell
+        
+        let data = userAnswers[indexPath.row]
+        cell.SignImage.image = signImages[indexPath.row]
+        cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
+        cell.CorrectLabel.text = data["input"]
+        
+        return cell
+    }
 }
 
 struct ResultViewRepresentable: UIViewControllerRepresentable {

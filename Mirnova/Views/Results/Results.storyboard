@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -265,7 +265,7 @@
                         <outlet property="FinalScoreLabel" destination="8hK-GZ-Kvj" id="jON-ef-B3e"/>
                         <outlet property="IncorrectLabel" destination="tu3-CL-bWC" id="lQX-wQ-z27"/>
                         <outlet property="PassLabel" destination="Cl2-8E-70Z" id="y0D-mw-3Wa"/>
-                        <outlet property="QuestionsStackView" destination="Sdx-yD-Pfh" id="4Oc-Dt-Cp3"/>
+                        <outlet property="QuestionsTableView" destination="Sdx-yD-Pfh" id="e1A-Um-Off"/>
                         <outlet property="ResultImage" destination="f9p-jg-fOb" id="5Yn-Ei-KRk"/>
                     </connections>
                 </viewController>
