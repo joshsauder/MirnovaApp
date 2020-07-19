@@ -50,6 +50,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         cell.SignImage.image = signImages[indexPath.row]
         cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
         cell.CorrectLabel.text = data["input"]
+        cell.setLabels(correct: data["input"] == data["answer"])
         
         return cell
     }
