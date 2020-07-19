@@ -26,10 +26,18 @@ class ResultViewController: UIViewController {
     
     var userAnswers: [[String: String]] = []
     var totalCorrect: Int = 0
+    var totalQuestions: Int = 0
+    var attempts: Int = 0
+    var average: Int = 0
+    var passed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setUpView(correct: totalCorrect, incorrect: totalQuestions, attempts: attempts, average: average, passed: passed)
     }
+    
+    
 }
 
 struct ResultViewRepresentable: UIViewControllerRepresentable {
