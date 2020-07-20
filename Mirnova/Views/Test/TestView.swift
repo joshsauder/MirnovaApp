@@ -11,6 +11,9 @@ import UIKit
 
 extension TestViewController {
     
+    /**
+     Sets up the  view items
+     */
     func setupView() {
         PromptLabel.text = "Select One"
         
@@ -20,6 +23,11 @@ extension TestViewController {
         setUpButtons(button: DButton)
     }
     
+    /**
+     Sets up a given button
+     - parameters:
+        - button: The UIButton
+     */
     private func setUpButtons(button: UIButton){
         //set up button attributes
         button.layer.cornerRadius = 0.5 * button.bounds.width

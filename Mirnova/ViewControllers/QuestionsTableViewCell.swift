@@ -19,6 +19,11 @@ class QuestionsTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    /**
+    Sets up Question Views labels
+     - parameters:
+        - correct: Boolean that determines if question was answered correctly
+     */
     func setLabels(correct: Bool){
         if(correct){
             InputLabel.textColor = .green
