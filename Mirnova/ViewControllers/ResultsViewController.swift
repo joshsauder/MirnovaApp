@@ -27,7 +27,6 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     var userAnswers: [[String: String]] = []
     var signImages: [UIImage] = []
     var totalCorrect: Int = 0
-    var totalQuestions: Int = 0
     var attempts: Int = 0
     var average: Int = 0
     var passed: Bool = false
@@ -36,7 +35,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         QuestionsTableView.dataSource = self
         
-        self.setUpView(correct: totalCorrect, incorrect: totalQuestions, attempts: attempts, average: average, passed: passed)
+        self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,15 +55,30 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     }
 }
 
-struct ResultViewRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ResultViewRepresentable>) -> ResultViewController {
+struct ResultViewRepresentation: UIViewControllerRepresentable {
+    var userAnswers: [[String: String]]
+    var signImages: [UIImage]
+    var totalCorrect: Int
+    var passed: Bool
+    var attempts: Int
+    var average: Int
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ResultViewRepresentation>) -> ResultViewController {
+        
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Results") as! ResultViewController
+        
+        vc.userAnswers = userAnswers
+        vc.signImages = signImages
+        vc.totalCorrect = totalCorrect
+        vc.passed = passed
+        vc.attempts = attempts
+        vc.average = average
         
         return vc
     }
 
-    func updateUIViewController(_ uiViewController: ResultViewController, context: UIViewControllerRepresentableContext<ResultViewRepresentable>) {
+    func updateUIViewController(_ uiViewController: ResultViewController, context: UIViewControllerRepresentableContext<ResultViewRepresentation>) {
     }
     
     

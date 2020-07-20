@@ -23,7 +23,7 @@ class QuestionsTableViewCell: UITableViewCell {
         if(correct){
             InputLabel.textColor = .green
             CorrectLabel.textColor = .green
-        }else{
+        } else{
             let range = NSMakeRange(0, InputLabel.text!.count)
             let strikeThrough = NSMutableAttributedString(string: InputLabel.text!)
             strikeThrough.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single, range: range)
