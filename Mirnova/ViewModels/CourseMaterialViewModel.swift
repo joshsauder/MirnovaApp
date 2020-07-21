@@ -12,11 +12,11 @@ import Apollo
 
 class CourseMaterialViewModel: ObservableObject {
 
-    var name: String
+    var courseData: CourseData
     @Published var courseMaterial: [CourseMaterial] = []
     
-    init(name: String) {
-        self.name = name
+    init(courseData: CourseData) {
+        self.courseData = courseData
     }
     
     public func load(){
@@ -31,8 +31,7 @@ class CourseMaterialViewModel: ObservableObject {
     
     
     private func fetchData(completion: @escaping ([CourseQuery.Data.Course.Question]) -> ()){
-        print(name)
-        Network.shared.apollo.fetch(query: CourseQuery(name: name)){ result in
+        Network.shared.apollo.fetch(query: CourseQuery(name: courseData.name)){ result in
             
             switch result {
             case .failure(let error):
@@ -53,7 +52,7 @@ class CourseMaterialViewModel: ObservableObject {
 
         for (i, course) in material.enumerated() {
             group.enter()
-            req.getImage(image: "\(self.name)/\(course.image)"){
+            req.getImage(image: "\(self.courseData.name)/\(course.image)"){
                 images[i] = $0 ?? UIImage()
                 group.leave()
             }

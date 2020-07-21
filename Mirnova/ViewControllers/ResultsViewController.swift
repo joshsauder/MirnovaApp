@@ -25,7 +25,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var QuestionsTableView: UITableView!
     
     var userAnswers: [[String: String]] = []
-    var signImages: [UIImage] = []
+    var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
     var attempts: Int = 0
     var average: Int = 0
@@ -46,7 +46,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         let cell = QuestionsTableView.dequeueReusableCell(withIdentifier: "QuestionsTableViewCell") as! QuestionsTableViewCell
         
         let data = userAnswers[indexPath.row]
-        cell.SignImage.image = signImages[indexPath.row]
+        cell.SignImage.image = courseMaterial[indexPath.row].image
         cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
         cell.CorrectLabel.text = data["input"]
         cell.setLabels(correct: data["input"] == data["answer"])
@@ -57,7 +57,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
 
 struct ResultViewRepresentation: UIViewControllerRepresentable {
     var userAnswers: [[String: String]]
-    var signImages: [UIImage]
+    var courseMaterial: [CourseMaterial]
     var totalCorrect: Int
     var passed: Bool
     var attempts: Int
@@ -69,7 +69,7 @@ struct ResultViewRepresentation: UIViewControllerRepresentable {
         let vc = storyboard.instantiateViewController(withIdentifier: "Results") as! ResultViewController
         
         vc.userAnswers = userAnswers
-        vc.signImages = signImages
+        vc.courseMaterial = courseMaterial
         vc.totalCorrect = totalCorrect
         vc.passed = passed
         vc.attempts = attempts

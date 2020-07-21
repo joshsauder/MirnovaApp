@@ -31,6 +31,7 @@ class TestViewController: UIViewController {
     var totalCorrect: Int = 0
     var totalAttempted: Int = 0
     var correctIdx: Int = 0
+    var attempts: Int = 0
     
     var userAnswers: [[String: String]] = []
     
@@ -207,8 +208,11 @@ class TestViewController: UIViewController {
      Presents Results View
      */
     func presentResults(){
-        let storyboard = UIStoryboard(name: "Results", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ResultsViewController")
+        //consider adding int to keep track of number needed to pass
+        let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
+        //TODO: Add Average to backend
+        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: 0))
+        
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
@@ -216,6 +220,7 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
+    var attempts: Int
     @Binding var questionsAttempted: Int
     
     func makeCoordinator() -> Coordinator {
@@ -227,6 +232,7 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
         
         vc.courseMaterial = courseMaterial
+        vc.attempts = attempts
         vc.delegate = context.coordinator
         
         return vc

@@ -12,8 +12,8 @@ struct CourseMaterialView: View {
     @ObservedObject var courseMaterial: CourseMaterialViewModel
     @State private var isActive: Bool = false
     
-    init(name: String) {
-        self.courseMaterial = CourseMaterialViewModel(name: name)
+    init(courseData: CourseData) {
+        self.courseMaterial = CourseMaterialViewModel(courseData: courseData)
     }
     
     var body: some View {
@@ -30,7 +30,7 @@ struct CourseMaterialView: View {
             
             if courseMaterial.courseMaterial.count > 0 {
                 DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
-                           destinationSecond: AnyView(TestUIView(courseMaterial: courseMaterial.courseMaterial)),
+                           destinationSecond: AnyView(TestUIView(courseMaterial: courseMaterial.courseMaterial, attempts: courseMaterial.courseData.attempts)),
                            funcFirst: nil,
                            funcSecond: nil,
                            titleFirst: "Practice",

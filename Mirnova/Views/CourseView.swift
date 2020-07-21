@@ -14,7 +14,7 @@ struct CourseView: View {
     var body: some View {
         NavigationView {
             List(model.courses) { data in
-                NavigationLink(destination: CourseMaterialView(name: data.name)){
+                NavigationLink(destination: CourseMaterialView(courseData: data)){
                     CourseCell(data: data)
                 }
             }
