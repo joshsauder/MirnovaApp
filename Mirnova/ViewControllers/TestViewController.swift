@@ -50,6 +50,11 @@ class TestViewController: UIViewController {
      Sets up Test View items
      */
     func setViewItems(){
+        //if all questions were answered, present results
+        if(totalAttempted == courseMaterial.count){
+            self.presentResults()
+        }
+        
         let currentItem = courseMaterial[totalAttempted]
         
         //set up options and set images
@@ -117,7 +122,7 @@ class TestViewController: UIViewController {
         //next question
         setViewItems()
     }
-    
+     
     /**
      Maps answer to button
      - parameters:
@@ -196,6 +201,16 @@ class TestViewController: UIViewController {
         }
         
         return Array(randomSet)
+    }
+    
+    /**
+     Presents Results View
+     */
+    func presentResults(){
+        let storyboard = UIStoryboard(name: "Results", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ResultsViewController")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

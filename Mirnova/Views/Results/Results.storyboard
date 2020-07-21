@@ -10,7 +10,7 @@
         <!--Result View Controller-->
         <scene sceneID="hy0-fQ-huE">
             <objects>
-                <viewController id="Cl4-tj-6cR" customClass="ResultViewController" customModule="Mirnova" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cl4-tj-6cR" customClass="ResultViewController" customModule="Mirnova" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eCD-a7-xsc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="903"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
