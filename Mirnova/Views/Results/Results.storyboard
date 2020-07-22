@@ -39,7 +39,7 @@
                                                             <constraint firstAttribute="width" constant="162" id="fwZ-Gi-xsE"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Attempts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-Fx-s8q">
@@ -48,7 +48,7 @@
                                                             <constraint firstAttribute="width" constant="162" id="be5-Ni-Ziz"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-fb-UcI">
@@ -57,7 +57,7 @@
                                                             <constraint firstAttribute="width" constant="162" id="Pod-oG-WjB"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu3-CL-bWC">
@@ -102,7 +102,7 @@
                                                             <constraint firstAttribute="width" constant="162" id="7kX-Or-8KT"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-yD-Pfh">
@@ -264,6 +264,7 @@
                         <outlet property="CorrectLabel" destination="sIj-8J-PeF" id="Ydv-pk-tGg"/>
                         <outlet property="FinalScoreLabel" destination="8hK-GZ-Kvj" id="jON-ef-B3e"/>
                         <outlet property="IncorrectLabel" destination="tu3-CL-bWC" id="lQX-wQ-z27"/>
+                        <outlet property="InfoView" destination="nIr-fS-HvL" id="mop-m8-yE0"/>
                         <outlet property="PassLabel" destination="Cl2-8E-70Z" id="y0D-mw-3Wa"/>
                         <outlet property="QuestionsTableView" destination="Sdx-yD-Pfh" id="e1A-Um-Off"/>
                         <outlet property="ResultImage" destination="f9p-jg-fOb" id="5Yn-Ei-KRk"/>
