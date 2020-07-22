@@ -54,6 +54,7 @@ class TestViewController: UIViewController {
         //if all questions were answered, present results
         if(totalAttempted == courseMaterial.count){
             self.presentResults()
+            return
         }
         
         let currentItem = courseMaterial[totalAttempted]
