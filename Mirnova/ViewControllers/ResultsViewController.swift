@@ -65,8 +65,8 @@ struct ResultViewRepresentation: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ResultViewRepresentation>) -> ResultViewController {
         
-        let storyboard = UIStoryboard(name: "Test", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Results") as! ResultViewController
+        let storyboard = UIStoryboard(name: "Results", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultViewController
         
         vc.userAnswers = userAnswers
         vc.courseMaterial = courseMaterial

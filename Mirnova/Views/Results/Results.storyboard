@@ -109,7 +109,7 @@
                                                         <rect key="frame" x="60" y="357" width="294" height="194.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="A2G-F5-FWG" customClass="QuestionsTableViewCell" customModule="Mirnova" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionsTableViewCell" rowHeight="73" id="A2G-F5-FWG" customClass="QuestionsTableViewCell" customModule="Mirnova" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="294" height="73"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A2G-F5-FWG" id="zuM-Wl-u8R">
