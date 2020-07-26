@@ -16,4 +16,5 @@ struct CourseData: Identifiable {
     var questions: Int
     var completed: Bool
     var attempts: Int
+    var average: Double
 }

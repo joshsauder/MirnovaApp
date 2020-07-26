@@ -21,9 +21,21 @@ extension ResultViewController {
         - passed: Booleen determining if user passed
      */
     func setUpView(correct: Int, incorrect: Int, attempts: Int, average: Int, passed: Bool){
-        self.InfoView.backgroundColor = passed ? .green : .red
+        setInfoView(passed: passed)
         setLabels(correct: correct, incorrect: incorrect, attempts: attempts, average: average, passed: passed)
         setImage(passed: passed)
+    }
+    
+    /**
+     Sets up info view
+     - parameters:
+        - passed: Booleen determining if user passed
+     */
+    func setInfoView(passed: Bool){
+        self.InfoView.backgroundColor = passed ? .green : .red
+        self.InfoView.clipsToBounds = true
+        self.InfoView.layer.cornerRadius = 10
+        self.InfoView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     /**

@@ -211,7 +211,6 @@ class TestViewController: UIViewController {
     func presentResults(){
         //consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
-        //TODO: Add Average to backend
         let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: 0))
         
         vc.modalPresentationStyle = .fullScreen

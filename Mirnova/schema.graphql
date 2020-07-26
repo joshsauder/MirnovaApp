@@ -6,9 +6,9 @@ query CourseInfo($user:String!) {
   Completions(user: $user){
     course
     completed
-    questionsMissed
     points
     numberOfTries
+    average
   }
 }
 

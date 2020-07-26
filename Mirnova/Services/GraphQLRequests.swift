@@ -18,9 +18,9 @@ public final class CourseInfoQuery: GraphQLQuery {
         __typename
         course
         completed
-        questionsMissed
         points
         numberOfTries
+        average
       }
     }
     """
@@ -127,9 +127,9 @@ public final class CourseInfoQuery: GraphQLQuery {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("course", type: .nonNull(.scalar(String.self))),
         GraphQLField("completed", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("questionsMissed", type: .list(.nonNull(.scalar(String.self)))),
         GraphQLField("points", type: .nonNull(.scalar(Int.self))),
         GraphQLField("numberOfTries", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("average", type: .nonNull(.scalar(Double.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -138,8 +138,8 @@ public final class CourseInfoQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(course: String, completed: Bool, questionsMissed: [String]? = nil, points: Int, numberOfTries: Int) {
-        self.init(unsafeResultMap: ["__typename": "Completion", "course": course, "completed": completed, "questionsMissed": questionsMissed, "points": points, "numberOfTries": numberOfTries])
+      public init(course: String, completed: Bool, points: Int, numberOfTries: Int, average: Double) {
+        self.init(unsafeResultMap: ["__typename": "Completion", "course": course, "completed": completed, "points": points, "numberOfTries": numberOfTries, "average": average])
       }
 
       public var __typename: String {
@@ -169,15 +169,6 @@ public final class CourseInfoQuery: GraphQLQuery {
         }
       }
 
-      public var questionsMissed: [String]? {
-        get {
-          return resultMap["questionsMissed"] as? [String]
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "questionsMissed")
-        }
-      }
-
       public var points: Int {
         get {
           return resultMap["points"]! as! Int
@@ -193,6 +184,15 @@ public final class CourseInfoQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "numberOfTries")
+        }
+      }
+
+      public var average: Double {
+        get {
+          return resultMap["average"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "average")
         }
       }
     }

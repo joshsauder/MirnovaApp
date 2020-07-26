@@ -43,7 +43,7 @@ class CourseViewModel: ObservableObject {
                         completionItem = nil
                     }
                     
-                    return CourseData(id: UUID(uuidString: UUID().uuidString)!, name: course!.name, correct: completionItem?.points ?? 0, questions: course!.questionCount, completed: completionItem?.completed ?? false, attempts: completionItem?.numberOfTries ?? 0)
+                    return CourseData(id: UUID(uuidString: UUID().uuidString)!, name: course!.name, correct: completionItem?.points ?? 0, questions: course!.questionCount, completed: completionItem?.completed ?? false, attempts: completionItem?.numberOfTries ?? 0, average: completionItem?.average ?? Double(0))
                 })
             }
         }
