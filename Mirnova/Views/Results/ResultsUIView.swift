@@ -14,7 +14,7 @@ struct ResultsUIView: View {
     var totalCorrect: Int = 0
     var passed: Bool = false
     var attempts: Int = 0
-    var average: Int = 0
+    var average: Double = 0
     
     var body: some View {
         ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average)

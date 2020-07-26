@@ -30,7 +30,7 @@ struct CourseMaterialView: View {
             
             if courseMaterial.courseMaterial.count > 0 {
                 DualButton(destinationFirst: AnyView(PracticeView(model: courseMaterial.courseMaterial)),
-                           destinationSecond: AnyView(TestUIView(courseMaterial: courseMaterial.courseMaterial, attempts: courseMaterial.courseData.attempts)),
+                           destinationSecond: AnyView(TestUIView(courseMaterial: courseMaterial.courseMaterial, attempts: courseMaterial.courseData.attempts, average: courseMaterial.courseData.average)),
                            funcFirst: nil,
                            funcSecond: nil,
                            titleFirst: "Practice",

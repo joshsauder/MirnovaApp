@@ -29,7 +29,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
     var attempts: Int = 0
-    var average: Int = 0
+    var average: Double = 0
     var passed: Bool = false
     
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ struct ResultViewRepresentation: UIViewControllerRepresentable {
     var totalCorrect: Int
     var passed: Bool
     var attempts: Int
-    var average: Int
+    var average: Double
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ResultViewRepresentation>) -> ResultViewController {
         
