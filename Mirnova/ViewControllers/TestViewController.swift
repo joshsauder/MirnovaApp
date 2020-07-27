@@ -54,7 +54,9 @@ class TestViewController: UIViewController {
     func setViewItems(){
         //if all questions were answered, present results
         if(totalAttempted == courseMaterial.count){
-            self.presentResults()
+            let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
+            self.postResults(passed: passed)
+            self.presentResults(passed: passed)
             return
         }
         
@@ -207,9 +209,20 @@ class TestViewController: UIViewController {
     }
     
     /**
-     Presents Results View
+     Posts the users test results
+     - parameters:
+        - passed: Boolean deteriming if user passed
      */
-    func presentResults(){
+    func postResults(passed: Bool){
+        let (numTries, avg) = Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: "test", completed: passed, points: totalCorrect)))
+    }
+    
+    /**
+     Presents Results View
+     - parameters:
+        - passed: Boolean deteriming if user passed
+     */
+    func presentResults(passed: Bool){
         //consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
         let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average))

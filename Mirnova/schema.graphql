@@ -21,3 +21,10 @@ query Course($name:String!) {
         }
     }
 }
+
+mutation updateCompletion($completion: CompletionInput!){
+  updateCompletion(completion:$completion){
+    numberOfTries
+    average
+  }
+}

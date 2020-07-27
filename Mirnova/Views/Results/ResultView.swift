@@ -57,7 +57,7 @@ extension ResultViewController {
         self.IncorrectLabel.textColor = .white
         self.AttemptsLabel.text = "\(attempts)"
         self.AttemptsLabel.textColor = .white
-        self.AverageScoreLabel.text = "\(average)%"
+        self.AverageScoreLabel.text = String(format: "%.2f", average)
         self.AverageScoreLabel.textColor = .white
         
         self.PassLabel.text = passed ? "You Passed!" : "Try Again"

@@ -4,6 +4,55 @@
 import Apollo
 import Foundation
 
+public struct CompletionInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  /// - Parameters:
+  ///   - user
+  ///   - course
+  ///   - completed
+  ///   - points
+  public init(user: String, course: String, completed: Bool, points: Int) {
+    graphQLMap = ["user": user, "course": course, "completed": completed, "points": points]
+  }
+
+  public var user: String {
+    get {
+      return graphQLMap["user"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "user")
+    }
+  }
+
+  public var course: String {
+    get {
+      return graphQLMap["course"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "course")
+    }
+  }
+
+  public var completed: Bool {
+    get {
+      return graphQLMap["completed"] as! Bool
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "completed")
+    }
+  }
+
+  public var points: Int {
+    get {
+      return graphQLMap["points"] as! Int
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "points")
+    }
+  }
+}
+
 public final class CourseInfoQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
@@ -344,6 +393,106 @@ public final class CourseQuery: GraphQLQuery {
           set {
             resultMap.updateValue(newValue, forKey: "image")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class UpdateCompletionMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation updateCompletion($completion: CompletionInput!) {
+      updateCompletion(completion: $completion) {
+        __typename
+        numberOfTries
+        average
+      }
+    }
+    """
+
+  public let operationName: String = "updateCompletion"
+
+  public var completion: CompletionInput
+
+  public init(completion: CompletionInput) {
+    self.completion = completion
+  }
+
+  public var variables: GraphQLMap? {
+    return ["completion": completion]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("updateCompletion", arguments: ["completion": GraphQLVariable("completion")], type: .nonNull(.object(UpdateCompletion.selections))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(updateCompletion: UpdateCompletion) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "updateCompletion": updateCompletion.resultMap])
+    }
+
+    public var updateCompletion: UpdateCompletion {
+      get {
+        return UpdateCompletion(unsafeResultMap: resultMap["updateCompletion"]! as! ResultMap)
+      }
+      set {
+        resultMap.updateValue(newValue.resultMap, forKey: "updateCompletion")
+      }
+    }
+
+    public struct UpdateCompletion: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Completion"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("numberOfTries", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("average", type: .nonNull(.scalar(Double.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(numberOfTries: Int, average: Double) {
+        self.init(unsafeResultMap: ["__typename": "Completion", "numberOfTries": numberOfTries, "average": average])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var numberOfTries: Int {
+        get {
+          return resultMap["numberOfTries"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "numberOfTries")
+        }
+      }
+
+      public var average: Double {
+        get {
+          return resultMap["average"]! as! Double
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "average")
         }
       }
     }
