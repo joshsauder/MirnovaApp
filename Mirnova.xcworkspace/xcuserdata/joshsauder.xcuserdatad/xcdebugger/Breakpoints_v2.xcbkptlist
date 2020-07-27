@@ -285,8 +285,8 @@
             filePath = "Mirnova/ViewControllers/TestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "updateUIViewController(_:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -301,9 +301,9 @@
             filePath = "Mirnova/ViewControllers/TestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "presentResults(passed:)"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "presentResults(passed:numTries:average:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -317,9 +317,9 @@
             filePath = "Mirnova/ViewControllers/TestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
-            landmarkName = "presentResults(passed:)"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "presentResults(passed:numTries:average:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -333,9 +333,9 @@
             filePath = "Mirnova/ViewControllers/TestViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "presentResults(passed:)"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "presentResults(passed:numTries:average:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

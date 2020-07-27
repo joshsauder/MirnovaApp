@@ -31,8 +31,6 @@ class TestViewController: UIViewController {
     var totalCorrect: Int = 0
     var totalAttempted: Int = 0
     var correctIdx: Int = 0
-    var attempts: Int = 0
-    var average: Double = 0
     
     var userAnswers: [[String: String]] = []
     
@@ -55,18 +53,19 @@ class TestViewController: UIViewController {
         //if all questions were answered, present results
         if(totalAttempted == courseMaterial.count){
             let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
-            self.postResults(passed: passed)
-            self.presentResults(passed: passed)
-            return
-        }
-        
-        let currentItem = courseMaterial[totalAttempted]
-        
-        //set up options and set images
-        DispatchQueue.main.async {
-            self.delegate?.updateAttempted(sender: self)
-            self.setOptions(currentItem: currentItem)
-            self.SignImage.image = currentItem.image
+            self.postResults(passed: passed){ numTries, avg in
+                self.presentResults(passed: passed, numTries: numTries, average: avg)
+            }
+            
+        } else {
+            let currentItem = courseMaterial[totalAttempted]
+            
+            //set up options and set images
+            DispatchQueue.main.async {
+                self.delegate?.updateAttempted(sender: self)
+                self.setOptions(currentItem: currentItem)
+                self.SignImage.image = currentItem.image
+            }
         }
     }
     
@@ -212,20 +211,26 @@ class TestViewController: UIViewController {
      Posts the users test results
      - parameters:
         - passed: Boolean deteriming if user passed
+        - completion: On completion, return number of tries and average
      */
-    func postResults(passed: Bool){
-        let (numTries, avg) = Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: "test", completed: passed, points: totalCorrect)))
+    func postResults(passed: Bool, completion: @escaping (Int, Double) -> ()){
+        Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: "test", completed: passed, points: totalCorrect))) { result in
+            guard let data = try? result.get().data else { return }
+            completion(data.updateCompletion.numberOfTries, data.updateCompletion.average)
+        }
     }
     
     /**
      Presents Results View
      - parameters:
         - passed: Boolean deteriming if user passed
+        - numTries: The number of attempts the user has at the course
+        - average: Users average score
      */
-    func presentResults(passed: Bool){
+    func presentResults(passed: Bool, numTries: Int, average: Double){
         //consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
-        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average))
+        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average))
         
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
@@ -234,8 +239,6 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
-    var attempts: Int
-    var average: Double
     @Binding var questionsAttempted: Int
     
     func makeCoordinator() -> Coordinator {
@@ -247,8 +250,6 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
         
         vc.courseMaterial = courseMaterial
-        vc.attempts = attempts
-        vc.average = average
         vc.delegate = context.coordinator
         
         return vc
