@@ -74,5 +74,7 @@ extension ResultViewController {
         let color = passed ? UIColor.green : UIColor.red
         self.ResultImage.image = UIImage(systemName: image)
         self.ResultImage.tintColor = color
+        
+        self.ResultImage.backgroundColor = .clear
     }
 }

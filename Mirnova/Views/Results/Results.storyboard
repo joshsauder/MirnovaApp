@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,10 +22,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="903"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIr-fS-HvL">
-                                                <rect key="frame" x="0.0" y="351.5" width="414" height="551.5"/>
+                                                <rect key="frame" x="0.0" y="351.66666666666669" width="414" height="551.33333333333326"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIj-8J-PeF">
-                                                        <rect key="frame" x="264" y="170" width="90" height="20.5"/>
+                                                        <rect key="frame" x="264" y="169.99999999999994" width="90" height="20.333333333333343"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="AJt-qm-sR3"/>
                                                         </constraints>
@@ -34,7 +34,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Correct" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-jY-5DZ">
-                                                        <rect key="frame" x="60" y="170" width="162" height="20.5"/>
+                                                        <rect key="frame" x="60" y="169.99999999999994" width="162" height="20.333333333333343"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="fwZ-Gi-xsE"/>
                                                         </constraints>
@@ -43,7 +43,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Attempts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-Fx-s8q">
-                                                        <rect key="frame" x="60" y="241" width="162" height="20.5"/>
+                                                        <rect key="frame" x="60" y="240.99999999999994" width="162" height="20.333333333333314"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="be5-Ni-Ziz"/>
                                                         </constraints>
@@ -52,7 +52,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-fb-UcI">
-                                                        <rect key="frame" x="60" y="276.5" width="162" height="20.5"/>
+                                                        <rect key="frame" x="60" y="276.33333333333331" width="162" height="20.666666666666686"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="Pod-oG-WjB"/>
                                                         </constraints>
@@ -61,7 +61,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu3-CL-bWC">
-                                                        <rect key="frame" x="264" y="205.5" width="90" height="20.5"/>
+                                                        <rect key="frame" x="264" y="205.33333333333331" width="90" height="20.666666666666657"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="5Xb-Ec-yuW"/>
                                                         </constraints>
@@ -70,7 +70,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-8k-D9U">
-                                                        <rect key="frame" x="264" y="241" width="90" height="20.5"/>
+                                                        <rect key="frame" x="264" y="240.99999999999994" width="90" height="20.333333333333314"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="F2S-d5-MiZ"/>
                                                         </constraints>
@@ -79,7 +79,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-5A-d7d">
-                                                        <rect key="frame" x="264" y="276.5" width="90" height="20.5"/>
+                                                        <rect key="frame" x="264" y="276.33333333333331" width="90" height="20.666666666666686"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="IjT-i5-BiQ"/>
                                                         </constraints>
@@ -97,7 +97,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Incorrect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-Hm-wxo">
-                                                        <rect key="frame" x="60" y="205.5" width="162" height="20.5"/>
+                                                        <rect key="frame" x="60" y="205.33333333333331" width="162" height="20.666666666666657"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="7kX-Or-8KT"/>
                                                         </constraints>
@@ -106,7 +106,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-yD-Pfh">
-                                                        <rect key="frame" x="60" y="357" width="294" height="194.5"/>
+                                                        <rect key="frame" x="60" y="356.99999999999994" width="294" height="194.33333333333331"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionsTableViewCell" rowHeight="73" id="A2G-F5-FWG" customClass="QuestionsTableViewCell" customModule="Mirnova" customModuleProvider="target">
@@ -123,7 +123,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xd-Ey-QUx">
-                                                                            <rect key="frame" x="226" y="16" width="42" height="51"/>
+                                                                            <rect key="frame" x="227" y="16" width="42" height="51"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="42" id="xGw-pw-6Ii"/>
                                                                             </constraints>
@@ -132,7 +132,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp3-zf-e27">
-                                                                            <rect key="frame" x="174" y="16" width="42" height="51"/>
+                                                                            <rect key="frame" x="175" y="16" width="42" height="51"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="42" id="oRs-AV-p2J"/>
                                                                             </constraints>
@@ -194,7 +194,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-GZ-Kvj">
-                                                <rect key="frame" x="80" y="100" width="254" height="60"/>
+                                                <rect key="frame" x="80" y="111.66666666666669" width="254" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="cw6-I9-PfZ"/>
                                                 </constraints>
@@ -202,38 +202,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSl-tJ-oYg">
-                                                <rect key="frame" x="157" y="301.5" width="100" height="100"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9p-jg-fOb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="PBL-Ep-Fzb"/>
-                                                            <constraint firstAttribute="width" constant="100" id="Z7g-or-eP8"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9p-jg-fOb">
+                                                <rect key="frame" x="157" y="231.66666666666663" width="100" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="f9p-jg-fOb" secondAttribute="trailing" id="7UR-hx-208"/>
-                                                    <constraint firstAttribute="width" constant="100" id="KNS-tb-Eg3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="f9p-jg-fOb" secondAttribute="bottom" id="KSS-QJ-wrI"/>
-                                                    <constraint firstAttribute="height" constant="100" id="MkV-lM-nQE"/>
-                                                    <constraint firstItem="f9p-jg-fOb" firstAttribute="top" secondItem="mSl-tJ-oYg" secondAttribute="top" id="jHM-KJ-u4e"/>
-                                                    <constraint firstItem="f9p-jg-fOb" firstAttribute="leading" secondItem="mSl-tJ-oYg" secondAttribute="leading" id="uOT-nz-dWE"/>
+                                                    <constraint firstAttribute="height" constant="100" id="PBL-Ep-Fzb"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Z7g-or-eP8"/>
                                                 </constraints>
-                                            </view>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="nIr-fS-HvL" firstAttribute="leading" secondItem="QY0-Q1-Cxb" secondAttribute="leading" id="2aj-Nk-uGN"/>
+                                            <constraint firstItem="f9p-jg-fOb" firstAttribute="top" secondItem="8hK-GZ-Kvj" secondAttribute="bottom" constant="60" id="B19-tr-UMd"/>
+                                            <constraint firstItem="nIr-fS-HvL" firstAttribute="top" secondItem="f9p-jg-fOb" secondAttribute="bottom" constant="20" id="BEE-m9-H7I"/>
                                             <constraint firstAttribute="bottom" secondItem="nIr-fS-HvL" secondAttribute="bottom" id="Cve-EF-gCL"/>
-                                            <constraint firstItem="mSl-tJ-oYg" firstAttribute="top" secondItem="nIr-fS-HvL" secondAttribute="top" constant="-50" id="Kdw-1r-cJ3"/>
                                             <constraint firstItem="8hK-GZ-Kvj" firstAttribute="leading" secondItem="QY0-Q1-Cxb" secondAttribute="leading" constant="80" id="Lgh-7v-tVZ"/>
                                             <constraint firstItem="nIr-fS-HvL" firstAttribute="top" secondItem="QY0-Q1-Cxb" secondAttribute="centerY" constant="-100" id="NPc-h3-BDc"/>
                                             <constraint firstAttribute="trailing" secondItem="8hK-GZ-Kvj" secondAttribute="trailing" constant="80" id="Q8O-Vc-TLH"/>
-                                            <constraint firstItem="8hK-GZ-Kvj" firstAttribute="top" secondItem="QY0-Q1-Cxb" secondAttribute="top" constant="100" id="ZPc-Pw-URE"/>
-                                            <constraint firstItem="mSl-tJ-oYg" firstAttribute="centerX" secondItem="QY0-Q1-Cxb" secondAttribute="centerX" id="c8K-sO-9M5"/>
+                                            <constraint firstItem="f9p-jg-fOb" firstAttribute="centerX" secondItem="QY0-Q1-Cxb" secondAttribute="centerX" id="qgm-Ta-GvR"/>
                                             <constraint firstAttribute="trailing" secondItem="nIr-fS-HvL" secondAttribute="trailing" id="xIu-ZW-up8"/>
                                         </constraints>
                                     </view>
