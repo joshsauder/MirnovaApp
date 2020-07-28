@@ -254,6 +254,7 @@
                         <outlet property="PassLabel" destination="Cl2-8E-70Z" id="y0D-mw-3Wa"/>
                         <outlet property="QuestionsTableView" destination="Sdx-yD-Pfh" id="e1A-Um-Off"/>
                         <outlet property="ResultImage" destination="f9p-jg-fOb" id="5Yn-Ei-KRk"/>
+                        <outlet property="ScrollView" destination="CFY-vS-VH6" id="fA2-sv-maW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hih-dC-pCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

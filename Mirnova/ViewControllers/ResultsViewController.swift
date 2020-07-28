@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultViewController: UIViewController, UITableViewDataSource {
+class ResultViewController: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet weak var FinalScoreLabel: UILabel!
     
@@ -24,6 +24,7 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var AverageScoreLabel: UILabel!
     
     @IBOutlet weak var QuestionsTableView: UITableView!
+    @IBOutlet weak var ScrollView: UIScrollView!
     
     var userAnswers: [[String: String]] = []
     var courseMaterial: [CourseMaterial] = []
@@ -31,6 +32,8 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     var attempts: Int = 0
     var average: Double = 0
     var passed: Bool = false
+    
+    final var scrollViewContentHeight = 1200 as CGFloat
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,24 @@ class ResultViewController: UIViewController, UITableViewDataSource {
         cell.setLabels(correct: data["input"] == data["answer"])
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+        
+        if scrollView == self.ScrollView {
+            if yOffset >= scrollViewContentHeight - UIScreen.main.bounds.height {
+                ScrollView.isScrollEnabled = false
+                QuestionsTableView.isScrollEnabled = true
+            }
+        }
+        
+        if scrollView == self.QuestionsTableView {
+            if yOffset <= 0 {
+                ScrollView.isScrollEnabled = true
+                QuestionsTableView.isScrollEnabled = false
+            }
+        }
     }
 }
 
