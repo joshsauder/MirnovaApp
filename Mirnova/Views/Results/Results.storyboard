@@ -106,8 +106,11 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-yD-Pfh">
-                                                        <rect key="frame" x="60" y="356.99999999999994" width="294" height="194.33333333333331"/>
+                                                        <rect key="frame" x="60" y="356.99999999999994" width="294" height="194.00000000000006"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="194.33000000000001" id="B2P-d4-9iK"/>
+                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionsTableViewCell" rowHeight="73" id="A2G-F5-FWG" customClass="QuestionsTableViewCell" customModule="Mirnova" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="294" height="73"/>
@@ -173,7 +176,6 @@
                                                     <constraint firstItem="Cl2-8E-70Z" firstAttribute="leading" secondItem="nIr-fS-HvL" secondAttribute="leading" constant="60" id="J3a-c4-ZQP"/>
                                                     <constraint firstItem="Sdd-Fx-s8q" firstAttribute="leading" secondItem="nIr-fS-HvL" secondAttribute="leading" constant="60" id="N1t-2R-jXQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="sIj-8J-PeF" secondAttribute="trailing" constant="60" id="P1t-QK-mw9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Sdx-yD-Pfh" secondAttribute="bottom" id="PYu-2u-fPn"/>
                                                     <constraint firstItem="aK2-5A-d7d" firstAttribute="top" secondItem="t7F-8k-D9U" secondAttribute="bottom" constant="15" id="QCu-Z4-Ps9"/>
                                                     <constraint firstItem="sJq-fb-UcI" firstAttribute="leading" secondItem="nIr-fS-HvL" secondAttribute="leading" constant="60" id="QHs-ug-ISh"/>
                                                     <constraint firstAttribute="trailing" secondItem="Sdx-yD-Pfh" secondAttribute="trailing" constant="60" id="QQ9-1k-Rog"/>
@@ -255,6 +257,7 @@
                         <outlet property="QuestionsTableView" destination="Sdx-yD-Pfh" id="e1A-Um-Off"/>
                         <outlet property="ResultImage" destination="f9p-jg-fOb" id="5Yn-Ei-KRk"/>
                         <outlet property="ScrollView" destination="CFY-vS-VH6" id="fA2-sv-maW"/>
+                        <outlet property="tableViewHeight" destination="B2P-d4-9iK" id="JQc-9p-uoq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hih-dC-pCb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

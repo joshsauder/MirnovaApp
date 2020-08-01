@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultViewController: UIViewController, UITableViewDataSource, UIScrollViewDelegate {
+class ResultViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var FinalScoreLabel: UILabel!
     
@@ -33,22 +33,29 @@ class ResultViewController: UIViewController, UITableViewDataSource, UIScrollVie
     var average: Double = 0
     var passed: Bool = false
     
-    final var scrollViewContentHeight = 1200 as CGFloat
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         QuestionsTableView.dataSource = self
+        QuestionsTableView.isScrollEnabled = false
+        
+        print(QuestionsTableView.contentSize.height)
+        tableViewHeight.constant = QuestionsTableView.contentSize.height
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        userAnswers.count
+        return userAnswers.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = QuestionsTableView.dequeueReusableCell(withIdentifier: "QuestionsTableViewCell") as! QuestionsTableViewCell
-        
+        let cell = self.QuestionsTableView.dequeueReusableCell(withIdentifier: "QuestionsTableViewCell") as! QuestionsTableViewCell
+
+        print("hit")
         let data = userAnswers[indexPath.row]
         cell.SignImage.image = courseMaterial[indexPath.row].image
         cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
@@ -56,24 +63,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UIScrollVie
         cell.setLabels(correct: data["input"] == data["answer"])
         
         return cell
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let yOffset = scrollView.contentOffset.y
-        
-        if scrollView == self.ScrollView {
-            if yOffset >= scrollViewContentHeight - UIScreen.main.bounds.height {
-                ScrollView.isScrollEnabled = false
-                QuestionsTableView.isScrollEnabled = true
-            }
-        }
-        
-        if scrollView == self.QuestionsTableView {
-            if yOffset <= 0 {
-                ScrollView.isScrollEnabled = true
-                QuestionsTableView.isScrollEnabled = false
-            }
-        }
     }
 }
 
