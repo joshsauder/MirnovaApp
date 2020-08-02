@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultViewController: UIViewController, UITableViewDataSource {
+class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var FinalScoreLabel: UILabel!
     
@@ -37,12 +37,10 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         QuestionsTableView.dataSource = self
-        QuestionsTableView.isScrollEnabled = false
+        QuestionsTableView.delegate = self
         
-        print(QuestionsTableView.contentSize.height)
-        tableViewHeight.constant = QuestionsTableView.contentSize.height
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
@@ -53,14 +51,18 @@ class ResultViewController: UIViewController, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = self.QuestionsTableView.dequeueReusableCell(withIdentifier: "QuestionsTableViewCell") as! QuestionsTableViewCell
 
-        print("hit")
         let data = userAnswers[indexPath.row]
         cell.SignImage.image = courseMaterial[indexPath.row].image
         cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
         cell.CorrectLabel.text = data["input"]
         cell.setLabels(correct: data["input"] == data["answer"])
+                
+        if indexPath.row  == 0 {
+            tableViewHeight.constant = cell.frame.height * CGFloat(userAnswers.count)
+       }
         
         return cell
     }
