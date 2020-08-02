@@ -44,7 +44,12 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
-    
+}
+
+/**
+ UITableViewDelegate specific functions
+ */
+extension ResultViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userAnswers.count
     }
