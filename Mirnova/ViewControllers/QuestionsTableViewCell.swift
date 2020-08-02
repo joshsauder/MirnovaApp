@@ -29,13 +29,13 @@ class QuestionsTableViewCell: UITableViewCell {
             InputLabel.textColor = .green
             CorrectLabel.textColor = .green
         } else{
-            let range = NSMakeRange(0, InputLabel.text!.count)
-            let strikeThrough = NSMutableAttributedString(string: InputLabel.text!)
-            strikeThrough.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single, range: range)
-            strikeThrough.addAttribute(.strikethroughColor, value: UIColor.red, range: range)
-            strikeThrough.addAttribute(.foregroundColor, value: UIColor.red, range: range)
-            
-            InputLabel.attributedText = strikeThrough
+//            let range = NSMakeRange(0, InputLabel.text!.count)
+//            let strikeThrough = NSMutableAttributedString(string: InputLabel.text!)
+//            strikeThrough.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single, range: range)
+//            strikeThrough.addAttribute(.strikethroughColor, value: UIColor.red, range: range)
+//            strikeThrough.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+//
+//            InputLabel.attributedText = strikeThrough
             CorrectLabel.textColor = .red
         }
     }

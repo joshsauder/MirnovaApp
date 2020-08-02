@@ -49,6 +49,10 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         return userAnswers.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 73
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
