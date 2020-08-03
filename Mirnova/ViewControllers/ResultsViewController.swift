@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var FinalScoreLabel: UILabel!
     
@@ -41,13 +41,15 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         QuestionsTableView.dataSource = self
         QuestionsTableView.delegate = self
         
+        QuestionsTableView.isScrollEnabled = false
+        
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
 }
 
 /**
- UITableViewDelegate specific functions
+ UITableViewDelegate and UIScrollView  specific functions
  */
 extension ResultViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +72,22 @@ extension ResultViewController {
         cell.setLabels(correct: data["input"] == data["answer"])
                 
         if indexPath.row  == 0 {
+            let prevSize = tableViewHeight.constant
             tableViewHeight.constant = cell.frame.height * CGFloat(userAnswers.count)
+            ScrollView.contentSize.height = ScrollView.contentSize.height + (tableViewHeight.constant - prevSize)
        }
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.ScrollView {
+            self.QuestionsTableView.isScrollEnabled = (self.ScrollView.contentOffset.y >= 0)
+        }
+        
+        if scrollView == self.QuestionsTableView {
+            self.QuestionsTableView.isScrollEnabled = (self.QuestionsTableView.contentOffset.y > 0)
+        }
     }
 }
 
