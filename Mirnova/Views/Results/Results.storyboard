@@ -106,7 +106,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-yD-Pfh">
-                                                        <rect key="frame" x="60" y="277" width="294" height="274"/>
+                                                        <rect key="frame" x="60" y="276.99999999999994" width="294" height="274.00000000000006"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="274" id="B2P-d4-9iK"/>
@@ -221,6 +221,7 @@
                                             <constraint firstItem="8hK-GZ-Kvj" firstAttribute="leading" secondItem="QY0-Q1-Cxb" secondAttribute="leading" constant="80" id="Lgh-7v-tVZ"/>
                                             <constraint firstItem="nIr-fS-HvL" firstAttribute="top" secondItem="QY0-Q1-Cxb" secondAttribute="centerY" constant="-100" id="NPc-h3-BDc"/>
                                             <constraint firstAttribute="trailing" secondItem="8hK-GZ-Kvj" secondAttribute="trailing" constant="80" id="Q8O-Vc-TLH"/>
+                                            <constraint firstItem="nIr-fS-HvL" firstAttribute="width" secondItem="QY0-Q1-Cxb" secondAttribute="width" id="Zjs-RR-wu3"/>
                                             <constraint firstItem="f9p-jg-fOb" firstAttribute="centerX" secondItem="QY0-Q1-Cxb" secondAttribute="centerX" id="qgm-Ta-GvR"/>
                                             <constraint firstAttribute="trailing" secondItem="nIr-fS-HvL" secondAttribute="trailing" id="xIu-ZW-up8"/>
                                         </constraints>
@@ -228,11 +229,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="QY0-Q1-Cxb" firstAttribute="top" secondItem="CFY-vS-VH6" secondAttribute="top" id="23c-Nc-ld2"/>
-                                    <constraint firstAttribute="bottom" secondItem="QY0-Q1-Cxb" secondAttribute="bottom" id="51f-Zs-tX6"/>
-                                    <constraint firstItem="QY0-Q1-Cxb" firstAttribute="leading" secondItem="CFY-vS-VH6" secondAttribute="leading" id="G3I-9a-Qov"/>
+                                    <constraint firstAttribute="trailing" secondItem="QY0-Q1-Cxb" secondAttribute="trailing" id="Zd1-QE-JW2"/>
                                     <constraint firstItem="QY0-Q1-Cxb" firstAttribute="centerX" secondItem="CFY-vS-VH6" secondAttribute="centerX" id="ag1-x3-Xuj"/>
-                                    <constraint firstAttribute="trailing" secondItem="QY0-Q1-Cxb" secondAttribute="trailing" id="ihc-2q-JVQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="QY0-Q1-Cxb" secondAttribute="bottom" id="fqG-ZP-5EK"/>
+                                    <constraint firstItem="QY0-Q1-Cxb" firstAttribute="width" secondItem="CFY-vS-VH6" secondAttribute="width" id="hQu-EO-WE5"/>
                                     <constraint firstItem="QY0-Q1-Cxb" firstAttribute="centerY" secondItem="CFY-vS-VH6" secondAttribute="centerY" id="lY0-aG-LnA"/>
+                                    <constraint firstItem="QY0-Q1-Cxb" firstAttribute="height" secondItem="CFY-vS-VH6" secondAttribute="height" id="uSz-rf-GE8"/>
+                                    <constraint firstItem="QY0-Q1-Cxb" firstAttribute="leading" secondItem="CFY-vS-VH6" secondAttribute="leading" id="wzz-Qb-XnN"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
