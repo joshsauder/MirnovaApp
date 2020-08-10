@@ -43,9 +43,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         QuestionsTableView.isScrollEnabled = false
         ScrollView.contentInsetAdjustmentBehavior = .never
-        ScrollView.contentInset.top += 44
-        ScrollView.contentInset.bottom -= 44
-        
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
     }
@@ -78,7 +75,7 @@ extension ResultViewController {
             let prevSize = tableViewHeight.constant
             tableViewHeight.constant = cell.frame.height * CGFloat(userAnswers.count)
             ScrollView.contentSize.height = ScrollView.contentSize.height + (tableViewHeight.constant - prevSize)
-            InfoView.frame.size.height = InfoView.frame.size.height + (tableViewHeight.constant - prevSize) + 30
+            InfoView.frame.size.height = InfoView.frame.size.height + (tableViewHeight.constant - prevSize)
        }
         
         return cell
