@@ -13,18 +13,25 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            VStack{
+            VStack(){
                 Text("Mirnova")
                 .font(.title)
-                
-                Button("Sign in", action: signIn)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                VStack{
+                    Button("Apple Sign in", action: signIn)
                     .padding()
+                    Button("Google Sign in", action: signIn)
+                    .padding()
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .background(Color.green)
             }
             if !showLogin {
                 CourseView()
                     .transition(.slide)
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
     
     func signIn(){
