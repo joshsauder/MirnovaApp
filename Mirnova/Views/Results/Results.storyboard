@@ -252,6 +252,7 @@
                     <connections>
                         <outlet property="AttemptsLabel" destination="t7F-8k-D9U" id="H6s-ib-ljI"/>
                         <outlet property="AverageScoreLabel" destination="aK2-5A-d7d" id="oUe-QC-BFw"/>
+                        <outlet property="ContentView" destination="QY0-Q1-Cxb" id="jEI-Jp-gLQ"/>
                         <outlet property="CorrectLabel" destination="sIj-8J-PeF" id="Ydv-pk-tGg"/>
                         <outlet property="FinalScoreLabel" destination="8hK-GZ-Kvj" id="jON-ef-B3e"/>
                         <outlet property="IncorrectLabel" destination="tu3-CL-bWC" id="lQX-wQ-z27"/>

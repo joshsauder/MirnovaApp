@@ -25,6 +25,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var QuestionsTableView: UITableView!
     @IBOutlet weak var ScrollView: UIScrollView!
+    @IBOutlet weak var ContentView: UIView!
     
     var userAnswers: [[String: String]] = []
     var courseMaterial: [CourseMaterial] = []
@@ -68,13 +69,14 @@ extension ResultViewController {
         let data = userAnswers[indexPath.row]
         cell.SignImage.image = courseMaterial[indexPath.row].image
         cell.InputLabel.text = data["input"] == data["answer"] ? "" : data["input"]
-        cell.CorrectLabel.text = data["input"]
+        cell.CorrectLabel.text = data["answer"]
         cell.setLabels(correct: data["input"] == data["answer"])
                 
         if indexPath.row  == 0 {
             let prevSize = tableViewHeight.constant
             tableViewHeight.constant = cell.frame.height * CGFloat(userAnswers.count)
             ScrollView.contentSize.height = ScrollView.contentSize.height + (tableViewHeight.constant - prevSize)
+//            ContentView.frame.size.height = ContentView.frame.height + (tableViewHeight.constant - prevSize)
             InfoView.frame.size.height = InfoView.frame.size.height + (tableViewHeight.constant - prevSize)
        }
         

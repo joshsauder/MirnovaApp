@@ -18,9 +18,6 @@ struct ResultsUIView: View {
     
     var body: some View {
         ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all)
-
     }
 }
 
