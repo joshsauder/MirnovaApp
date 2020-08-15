@@ -29,7 +29,7 @@ struct ContentView: View {
                     .padding(.bottom, 110)
                     .zIndex(2)
                     VStack(spacing: 0) {
-                        Wave(graphWidth: 1, amplitude: 0.15)
+                        waves()
                         Rectangle()
                             .frame(width: UIScreen.main.bounds.width, height: 250)
                     }
@@ -49,6 +49,20 @@ struct ContentView: View {
     
     func signIn(){
         showLogin.toggle()
+    }
+}
+
+extension ContentView {
+    func waves() -> some View {
+        ZStack {
+            Wave(graphWidth: 1, amplitude: 0.20)
+                .foregroundColor(Color.green)
+                .zIndex(2)
+            Wave(graphWidth: 1, amplitude: 0.20)
+                .foregroundColor(Color.init(red: 0.82, green: 0.94, blue: 0.75))
+            .offset(x: 150, y: 0)
+            .zIndex(1)
+        }
     }
 }
 
