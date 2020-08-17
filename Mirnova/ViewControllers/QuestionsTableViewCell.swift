@@ -18,6 +18,7 @@ class QuestionsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+
     
     /**
     Sets up Question Views labels
@@ -36,7 +37,8 @@ class QuestionsTableViewCell: UITableViewCell {
 //            strikeThrough.addAttribute(.foregroundColor, value: UIColor.red, range: range)
 //
 //            InputLabel.attributedText = strikeThrough
-            CorrectLabel.textColor = .red
+            InputLabel.textColor = .red
+            CorrectLabel.textColor = .green
         }
     }
 }
