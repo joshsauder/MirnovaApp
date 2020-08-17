@@ -37,8 +37,7 @@ struct CourseMaterialView: View {
                            titleSecond: "Test")
             }
             
-        }
-        //update nav bar title
+        }        //update nav bar title
         .navigationBarTitle(Text(isActive ? "Course Material": "Stop Test"))
         .onAppear{
             DispatchQueue.main.async {
@@ -71,6 +70,11 @@ struct CourseMaterialListItem: View {
     }
 }
 
+struct CourseMaterialView_Preview: PreviewProvider {
+    static var previews: some View {
+        CourseMaterialView(courseData: CourseData(id: UUID(), name: "test", correct: 1, questions: 1, completed: true, attempts: 1, average: 1.0))
+    }
+}
 
 struct CourseMaterialListItem_Previews: PreviewProvider {
     static var previews: some View {
