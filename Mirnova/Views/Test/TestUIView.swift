@@ -15,9 +15,12 @@ struct TestUIView: View {
     
     
     var body: some View {
-        //add one to questions attempted since questions attempted is one behind current question count
-        TestViewControllerRepresentation(courseMaterial: courseMaterial, questionsAttempted: $questionsAttempted)
-            .navigationBarTitle("Test - \(questionsAttempted+1)/\(courseMaterial.count)", displayMode: .inline)
+        VStack {
+            ProgressBar(value: CGFloat(questionsAttempted / courseMaterial.count))
+                .frame(height: 60)
+            //add one to questions attempted since questions attempted is one behind current question count
+            TestViewControllerRepresentation(courseMaterial: courseMaterial, questionsAttempted: $questionsAttempted)
+        }
     }
 }
 
