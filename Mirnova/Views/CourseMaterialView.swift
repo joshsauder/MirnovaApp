@@ -64,8 +64,10 @@ struct CourseMaterialListItem: View {
                 .resizable()
                 .frame(width: 70, height: 70)
                 .cornerRadius(35)
+                .padding(.leading, 5)
             Spacer()
             Text(data.answer)
+                .padding(.trailing, 10)
         }
     }
 }
