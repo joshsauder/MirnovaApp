@@ -13,21 +13,19 @@ struct ProgressBar: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .trailing) {
-                Text("Progress: \(self.getPercentage(self.value))")
-                    .padding()
-                ZStack(alignment: .leading) {
-                    Rectangle()
-                        .opacity(0.1)
-                    Rectangle()
-                        .frame(minWidth: 0, idealWidth:self.getProgressBarWidth(geometry: geometry),
-                               maxWidth: self.getProgressBarWidth(geometry: geometry))
-                        .opacity(0.5)
-                        .background(Color.green)
-                        .animation(.default)
-                }
-                .frame(height:10)
-            }.frame(height:10)
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .opacity(0.1)
+                Rectangle()
+                    .frame(minWidth: 0, idealWidth:self.getProgressBarWidth(geometry: geometry),
+                           maxWidth: self.getProgressBarWidth(geometry: geometry))
+                    .opacity(0.5)
+                    .background(Color.green)
+                    .animation(.default)
+            }
+            .cornerRadius(10)
+            .frame(height:10)
+            .padding(.horizontal, 30)
         }
     }
     
