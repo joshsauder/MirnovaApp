@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    var value:CGFloat
+    @State var value: CGFloat
     
     var body: some View {
         GeometryReader { geometry in

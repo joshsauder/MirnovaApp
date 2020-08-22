@@ -17,10 +17,11 @@ struct TestUIView: View {
     var body: some View {
         VStack {
             ProgressBar(value: CGFloat(questionsAttempted / courseMaterial.count))
-                .frame(height: 60)
+                .frame(height: 10)
             //add one to questions attempted since questions attempted is one behind current question count
             TestViewControllerRepresentation(courseMaterial: courseMaterial, questionsAttempted: $questionsAttempted)
         }
+        .padding(.top, 20)
     }
 }
 
