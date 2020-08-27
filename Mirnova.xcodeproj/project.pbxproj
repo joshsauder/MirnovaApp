@@ -193,7 +193,6 @@
 			children = (
 				19737A71246DB6F7006A32D6 /* CourseData.swift */,
 				1921E14A24705581001B7697 /* CourseMaterial.swift */,
-				192D542324F0C2BD00EB07DC /* TestData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 		19E342D3249DC081003C968E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				192D542324F0C2BD00EB07DC /* TestData.swift */,
 				1921E15424707E0A001B7697 /* PracticeViewModel.swift */,
 				1921E14C247056B4001B7697 /* CourseMaterialViewModel.swift */,
 				19737A75246DBE80006A32D6 /* CourseViewModel.swift */,

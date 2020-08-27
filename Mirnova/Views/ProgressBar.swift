@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    @State var value: CGFloat
+    @Binding var completed: Int
+    @Binding var total: Int
     
     var body: some View {
         GeometryReader { geometry in
@@ -17,7 +18,7 @@ struct ProgressBar: View {
                 Rectangle()
                     .opacity(0.1)
                 Rectangle()
-                    .frame(minWidth: 0, idealWidth:self.getProgressBarWidth(geometry: geometry),
+                    .frame(minWidth: 0, idealWidth: self.getProgressBarWidth(geometry: geometry),
                            maxWidth: self.getProgressBarWidth(geometry: geometry))
                     .opacity(0.5)
                     .background(Color.green)
@@ -29,19 +30,17 @@ struct ProgressBar: View {
         }
     }
     
+    /**
+     Updates the progress bars width. Note, completed is needed in order for the progess bar to be updated each time a new question is completed.
+     - parameters:
+        - geometry: The shapes size and coordinate space
+        - completed: Number of questions completed
+     */
     func getProgressBarWidth(geometry:GeometryProxy) -> CGFloat {
+        //print(completed)
         let frame = geometry.frame(in: .global)
-        return frame.size.width * value
-    }
-    
-    func getPercentage(_ value:CGFloat) -> String {
-        let intValue = Int(ceil(value * 100))
-        return "\(intValue) %"
+        return frame.size.width * (CGFloat(completed) / CGFloat(total))
     }
 }
 
-struct ProgressBar_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressBar(value: 0.10)
-    }
-}
+

@@ -10,16 +10,22 @@ import SwiftUI
 
 struct TestUIView: View {
     var courseMaterial: [CourseMaterial]
-    @State var questionsAttempted: Int = 1
+    @State var correct: Int = 0
+    @State var completed: Int = 0
+    @State var total: Int
     
     
+    init(courseMaterial: [CourseMaterial]) {
+        self.courseMaterial = courseMaterial
+        _total = State(initialValue: courseMaterial.count)
+    }
     
     var body: some View {
         VStack {
-            ProgressBar(value: CGFloat(questionsAttempted / courseMaterial.count))
+            ProgressBar(completed: $completed, total: $total)
                 .frame(height: 10)
             //add one to questions attempted since questions attempted is one behind current question count
-            TestViewControllerRepresentation(courseMaterial: courseMaterial, questionsAttempted: $questionsAttempted)
+            TestViewControllerRepresentation(courseMaterial: courseMaterial, correct: $correct, completed: $completed)
         }
         .padding(.top, 20)
     }

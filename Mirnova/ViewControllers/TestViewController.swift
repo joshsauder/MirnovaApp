@@ -13,6 +13,7 @@ import SwiftUI
 
 protocol TestViewDelegate: AnyObject {
     func updateAttempted(sender: TestViewController)
+    func updateCorrect(sender: TestViewController)
 }
 
 class TestViewController: UIViewController {
@@ -24,8 +25,8 @@ class TestViewController: UIViewController {
     @IBOutlet weak var BButton: UIButton!
     @IBOutlet weak var CButton: UIButton!
     @IBOutlet weak var DButton: UIButton!
-    
-    weak var delegate: TestViewDelegate?
+        
+    var delegate: TestViewDelegate?
     
     var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
@@ -44,7 +45,6 @@ class TestViewController: UIViewController {
         courseMaterial.shuffle()
         setViewItems()
     }
-    
 
     /**
      Sets up Test View items
@@ -62,7 +62,6 @@ class TestViewController: UIViewController {
             
             //set up options and set images
             DispatchQueue.main.async {
-                self.delegate?.updateAttempted(sender: self)
                 self.setOptions(currentItem: currentItem)
                 self.SignImage.image = currentItem.image
             }
@@ -117,8 +116,12 @@ class TestViewController: UIViewController {
         answer["answer"] = mapAnswer(answer: correctIdx)
         userAnswers.append(answer)
         
-        if correctIdx == input {
-            totalCorrect += 1
+        DispatchQueue.main.async {
+            self.delegate?.updateAttempted(sender: self)
+            if self.correctIdx == input {
+                self.totalCorrect += 1
+                self.delegate?.updateCorrect(sender: self)
+            }
         }
         
         totalAttempted += 1
@@ -239,12 +242,13 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
-    @Binding var questionsAttempted: Int
+    @Binding var correct: Int
+    @Binding var completed: Int
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
@@ -260,18 +264,27 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, TestViewDelegate {
         var parent: TestViewControllerRepresentation
-        
-        init(_ testViewController: TestViewControllerRepresentation){
-            parent = testViewController
+
+        init(_ parent: TestViewControllerRepresentation){
+            self.parent = parent
         }
-        
+
         /**
          Updates the questions attempted in parent SwiftUI view
          - parameters:
             - sender: The UIKit view
          */
-        func updateAttempted(sender: TestViewController){
-            parent.questionsAttempted = sender.totalAttempted
+        @objc func updateAttempted(sender: TestViewController){
+            parent.completed += 1
+        }
+
+        /**
+        Updates the questions correct in parent SwiftUI view
+        - parameters:
+           - sender: The UIKit view
+        */
+        @objc func updateCorrect(sender: TestViewController){
+            parent.correct += 1
         }
     }
 }
