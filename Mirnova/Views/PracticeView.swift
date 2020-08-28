@@ -11,6 +11,7 @@ import SwiftUI
 struct PracticeView: View {
     @State var show: Bool = false
     @State var i: Int = 0
+    @State var total: Int
     @ObservedObject var practiceModel: PracticeViewModel
     
     let model: [CourseMaterial]
@@ -18,11 +19,15 @@ struct PracticeView: View {
     init(model: [CourseMaterial]){
         self.model = model
         practiceModel = PracticeViewModel(question: model[0].question, answer: model[0].answer, image: model[0].image)
+        _total = State(initialValue: model.count)
     }
     
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
+                ProgressBar(completed: $i, total: $total)
+                    .frame(height: 10)
+                    .padding(.vertical, 10)
                 Image(uiImage: practiceModel.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
