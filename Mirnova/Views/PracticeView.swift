@@ -31,7 +31,8 @@ struct PracticeView: View {
                 Image(uiImage: practiceModel.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                Divider()
+                .cornerRadius(10)
+                    .padding(.horizontal, 10)
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
                     if show {
@@ -42,11 +43,13 @@ struct PracticeView: View {
                     Spacer()
                 }
                 .frame(minHeight: 0, maxHeight: .infinity)
+                .padding(.top, 10)
                 .font(Font.system(size: 30))
                 .contentShape(Rectangle())
                 .onTapGesture {
                     self.show = true
                 }
+            
             }
             .zIndex(1)
             DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
@@ -80,7 +83,7 @@ struct PracticeView: View {
 
 struct PracticeView_Previews: PreviewProvider {
     static var previews: some View {
-        let model = [CourseMaterial(id: UUID(), imageString: "test", image: UIImage(), question: "test", answer: "test")]
+        let model = [CourseMaterial(id: UUID(), imageString: "test", image: UIImage(named: "A.jpg")!, question: "test", answer: "test")]
         return PracticeView(model: model)
     }
 }
