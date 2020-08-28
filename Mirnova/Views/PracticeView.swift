@@ -13,12 +13,15 @@ struct PracticeView: View {
     @State var i: Int = 0
     @State var total: Int
     @ObservedObject var practiceModel: PracticeViewModel
+    @ObservedObject var imageModel: SignImageViewModel
     
     let model: [CourseMaterial]
+
     
     init(model: [CourseMaterial]){
         self.model = model
         practiceModel = PracticeViewModel(question: model[0].question, answer: model[0].answer, image: model[0].image)
+        imageModel = SignImageViewModel(image: model[0].image)
         _total = State(initialValue: model.count)
     }
     
@@ -28,11 +31,7 @@ struct PracticeView: View {
                 ProgressBar(completed: $i, total: $total)
                     .frame(height: 10)
                     .padding(.vertical, 10)
-                Image(uiImage: practiceModel.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
-                    .padding(.horizontal, 10)
+                SignImageView(imageModel: imageModel)
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
                     if show {
@@ -67,6 +66,7 @@ struct PracticeView: View {
         let image = model[i].image
         show = false
         practiceModel.updateModel(question: question, answer: answer, image: image)
+        imageModel.updateImage(image: image)
     }
     
     func nextQuestion(){
@@ -78,6 +78,7 @@ struct PracticeView: View {
         let image = model[i].image
         show = false
         practiceModel.updateModel(question: question, answer: answer, image: image)
+        imageModel.updateImage(image: image)
     }
 }
 
