@@ -17,15 +17,23 @@ struct ProgressBar: View {
             ZStack(alignment: .leading) {
                 Rectangle()
                     .opacity(0.1)
+                    .frame(height: 10)
+                    .padding(.horizontal, 5)
                 Rectangle()
                     .frame(minWidth: 0, idealWidth: self.getProgressBarWidth(geometry: geometry),
-                           maxWidth: self.getProgressBarWidth(geometry: geometry))
+                           maxWidth: self.getProgressBarWidth(geometry: geometry),
+                           maxHeight: 10)
                     .opacity(0.5)
                     .background(Color.green)
                     .animation(.default)
+                    .padding(.horizontal, 5)
+                Circle()
+                    .fill(Color.green)
+                    .frame(minHeight: 0, idealHeight: 20, maxHeight: 20)
+                    .position(x: self.getProgressBarWidth(geometry: geometry) + 10, y: 10)
             }
             .cornerRadius(10)
-            .frame(height:10)
+            .frame(height:20)
             .padding(.horizontal, 30)
         }
     }
@@ -43,4 +51,10 @@ struct ProgressBar: View {
     }
 }
 
-
+struct ProgressBar_Previews: PreviewProvider {
+    @State static var completed = 1
+    @State static var total = 10
+    static var previews: some View {
+        ProgressBar(completed: $completed, total: $total)
+    }
+}
