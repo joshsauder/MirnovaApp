@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,13 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sp9-8l-k3c">
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sp9-8l-k3c">
                                 <rect key="frame" x="0.0" y="63.999999999999986" width="375" height="203.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Sp9-8l-k3c" secondAttribute="height" multiplier="46:25" id="TNX-cs-bmM"/>
                                     <constraint firstAttribute="width" secondItem="Sp9-8l-k3c" secondAttribute="height" multiplier="46:25" id="uj9-Sn-BH0"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="988-54-uTt">
                                 <rect key="frame" x="0.0" y="267.66666666666669" width="375" height="544.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -115,7 +115,7 @@
                         <outlet property="CButton" destination="IgP-fF-Ak0" id="bHr-uJ-6qv"/>
                         <outlet property="DButton" destination="lHe-SH-FFH" id="YWK-Dr-RCO"/>
                         <outlet property="PromptLabel" destination="wKZ-gs-d6A" id="ENL-K2-1xX"/>
-                        <outlet property="SignImage" destination="Sp9-8l-k3c" id="7pF-3e-cFK"/>
+                        <outlet property="SignImage" destination="Sp9-8l-k3c" id="D1w-13-cOn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNg-KO-5Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

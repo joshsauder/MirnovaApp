@@ -18,7 +18,7 @@ protocol TestViewDelegate: AnyObject {
 
 class TestViewController: UIViewController {
 
-    @IBOutlet weak var SignImage: UIImageView!
+    @IBOutlet weak var SignImage: UIView!
     @IBOutlet weak var PromptLabel: UILabel!
     
     @IBOutlet weak var AButton: UIButton!
@@ -27,6 +27,7 @@ class TestViewController: UIViewController {
     @IBOutlet weak var DButton: UIButton!
         
     var delegate: TestViewDelegate?
+    @ObservedObject var imageModel: SignImageViewModel = SignImageViewModel(image: UIImage())
     
     var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
@@ -40,6 +41,7 @@ class TestViewController: UIViewController {
         
         //style view
         setupView()
+        initImageView(imageModel: imageModel)
         
         //randomize questions
         courseMaterial.shuffle()
@@ -62,8 +64,8 @@ class TestViewController: UIViewController {
             
             //set up options and set images
             DispatchQueue.main.async {
+                self.imageModel.image = currentItem.image
                 self.setOptions(currentItem: currentItem)
-                self.SignImage.image = currentItem.image
             }
         }
     }
