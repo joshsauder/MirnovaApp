@@ -43,6 +43,11 @@ struct ProgressBar: View {
         .padding(.horizontal, 30)
     }
     
+    /**
+     Updates the circles width. This function is needed as the padding is different between the circle and the progress bar
+     - parameters:
+        - geometry: The shapes size and coordinate space
+     */
     func cicleLocation(geometry: GeometryProxy) -> CGFloat {
         let initWidth = getProgressBarWidth(geometry: geometry)
         return initWidth * ((geometry.size.width - 20) / geometry.size.width)
@@ -50,8 +55,8 @@ struct ProgressBar: View {
     /**
      Updates the progress bars width. Note, completed is needed in order for the progess bar to be updated each time a new question is completed.
      - parameters:
-     - geometry: The shapes size and coordinate space
-     - completed: Number of questions completed
+        - geometry: The shapes size and coordinate space
+        - completed: Number of questions completed
      */
     func getProgressBarWidth(geometry:GeometryProxy) -> CGFloat {
         
