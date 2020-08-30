@@ -31,10 +31,14 @@ struct ProgressBar: View {
                 }
                 .padding(.vertical, 5)
                 .padding(.horizontal, 10)
+                ZStack{
                 Circle()
-                    .fill(Color.green)
+                    .fill(Color.clear)
                     .frame(minHeight: 0, idealHeight: 20, maxHeight: 20)
-                    .position(x: self.cicleLocation(geometry: geometry) + 10 , y: 10)
+                    Text(self.setEmoji())
+                    .font(Font.system(size: 20))
+                }
+                .position(x: self.cicleLocation(geometry: geometry) + 10 , y: 10)
             }
             
         }
@@ -57,12 +61,35 @@ struct ProgressBar: View {
      - parameters:
         - geometry: The shapes size and coordinate space
         - completed: Number of questions completed
+     - returns: The with of the progress bar
      */
     func getProgressBarWidth(geometry:GeometryProxy) -> CGFloat {
         
         //print(completed)
         let frame = geometry.frame(in: .global)
         return frame.size.width * (CGFloat(completed) / CGFloat(total))
+    }
+    
+    /**
+     Sets the emoji based on the users progress
+     - returns: The applicable emoji
+        
+     */
+    func setEmoji() -> String {
+        let low = "☹️"
+        let gettingThere = "😬"
+        let close = "🙂"
+        let passed = "😁"
+        
+        if(CGFloat(completed) / CGFloat(total) < 0.25){
+            return low
+        } else if(CGFloat(completed) / CGFloat(total) >= 0.25 && CGFloat(completed) / CGFloat(total) < 0.50){
+            return gettingThere
+        } else if(CGFloat(completed) / CGFloat(total) >= 0.50 && CGFloat(completed) / CGFloat(total) < 0.75){
+            return close
+        } else {
+            return passed
+        }
     }
 }
 
