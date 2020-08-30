@@ -22,12 +22,22 @@ struct TestUIView: View {
     
     var body: some View {
         VStack {
-            ProgressBar(completed: $completed, total: $total)
-                .frame(height: 10)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Progess")
+                    Text("Grade")
+                }
+                VStack(alignment: .leading) {
+                ProgressBar(completed: $completed, total: $total)
+                    ProgressBar(completed: $correct, total: $total)
+                }
+            }
+            .frame(height: 25)
+            .padding(.horizontal, 20)
+            .padding(.top, 10)
             //add one to questions attempted since questions attempted is one behind current question count
             TestViewControllerRepresentation(courseMaterial: courseMaterial, correct: $correct, completed: $completed)
         }
-        .padding(.top, 20)
     }
 }
 

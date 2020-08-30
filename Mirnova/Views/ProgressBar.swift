@@ -30,7 +30,6 @@ struct ProgressBar: View {
                     }
                 }
                 .padding(.vertical, 5)
-                .padding(.horizontal, 10)
                 ZStack{
                 Circle()
                     .fill(Color.clear)
@@ -44,7 +43,6 @@ struct ProgressBar: View {
         }
         .cornerRadius(10)
         .frame(height:20)
-        .padding(.horizontal, 30)
     }
     
     /**

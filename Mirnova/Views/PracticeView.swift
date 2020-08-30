@@ -28,9 +28,12 @@ struct PracticeView: View {
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                ProgressBar(completed: $i, total: $total)
-                    .frame(height: 10)
-                    .padding(.vertical, 10)
+                HStack {
+                    Text("Progress")
+                    ProgressBar(completed: $i, total: $total)
+                }
+                .frame(height: 10)
+                .padding(.all, 10)
                 SignImageView(imageModel: imageModel)
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
@@ -54,7 +57,6 @@ struct PracticeView: View {
             DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
             
         }
-         .navigationBarTitle("Practice")
     }
     
     func prevQuestion(){
