@@ -32,8 +32,10 @@ struct PracticeView: View {
                     Text("Progress")
                     ProgressBar(completed: $i, total: $total)
                 }
-                .frame(height: 10)
-                .padding(.all, 10)
+                .frame(height: 15)
+                .padding(.horizontal, 20)
+                .padding(.top, 45)
+                .padding(.bottom, 10)
                 SignImageView(imageModel: imageModel)
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")

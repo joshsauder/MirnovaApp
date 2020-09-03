@@ -21,10 +21,11 @@ struct ProgressBar: View {
                             .opacity(0.1)
                             .frame(height: 10)
                         Rectangle()
+                            .opacity(0.5)
                             .frame(minWidth: 0, idealWidth: self.getProgressBarWidth(geometry: rectGeometry),
                                    maxWidth: self.getProgressBarWidth(geometry: rectGeometry),
                                    maxHeight: 10)
-                            .opacity(0.5)
+                            .opacity(0)
                             .background(Color.green)
                             .animation(.default)
                     }
@@ -92,7 +93,7 @@ struct ProgressBar: View {
 }
 
 struct ProgressBar_Previews: PreviewProvider {
-    @State static var completed = 10
+    @State static var completed = 4
     @State static var total = 10
     static var previews: some View {
         ProgressBar(completed: $completed, total: $total)

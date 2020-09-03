@@ -31,18 +31,19 @@ extension TestViewController {
      */
     private func setUpButtons(button: UIButton){
         //set up button attributes
-        button.layer.cornerRadius = 0.5 * button.bounds.width
+        button.layer.cornerRadius = 0.15 * button.bounds.width
         button.clipsToBounds = true
-        button.backgroundColor = .green
-        button.titleLabel?.textColor = .white
-        button.titleLabel?.font.withSize(20)
+        button.backgroundColor = .white
+        
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 4
         
         //add shadow
         button.layer.masksToBounds = false
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0.2, height: 1)
-        button.layer.shadowOpacity = 0.5
-        button.layer.cornerRadius = 0.5 * button.bounds.width
+        button.layer.shadowColor = UIColor.gray.cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 8)
+        button.layer.shadowOpacity = 1
+
     }
     
     /**

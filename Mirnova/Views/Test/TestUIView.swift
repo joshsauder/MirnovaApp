@@ -14,7 +14,6 @@ struct TestUIView: View {
     @State var completed: Int = 0
     @State var total: Int
     
-    
     init(courseMaterial: [CourseMaterial]) {
         self.courseMaterial = courseMaterial
         _total = State(initialValue: courseMaterial.count)
@@ -28,13 +27,14 @@ struct TestUIView: View {
                     Text("Grade")
                 }
                 VStack(alignment: .leading) {
-                ProgressBar(completed: $completed, total: $total)
+                    ProgressBar(completed: $completed, total: $total)
                     ProgressBar(completed: $correct, total: $total)
                 }
             }
-            .frame(height: 25)
+            .frame(height: 35)
             .padding(.horizontal, 20)
-            .padding(.top, 10)
+            .padding(.top, 45)
+            .padding(.bottom, 5)
             //add one to questions attempted since questions attempted is one behind current question count
             TestViewControllerRepresentation(courseMaterial: courseMaterial, correct: $correct, completed: $completed)
         }
