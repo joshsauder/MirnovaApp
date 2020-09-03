@@ -117,8 +117,13 @@ class TestViewController: UIViewController {
         answer["input"] = mapAnswer(answer: input)
         answer["answer"] = mapAnswer(answer: correctIdx)
         userAnswers.append(answer)
+    
         
         DispatchQueue.main.async {
+            //if correct answer given, will override the red and use green instead
+            self.colorButtons(index: input, color: .red)
+            self.colorButtons(index: self.correctIdx, color: .green)
+            
             self.delegate?.updateAttempted(sender: self)
             if self.correctIdx == input {
                 self.totalCorrect += 1
@@ -128,8 +133,10 @@ class TestViewController: UIViewController {
         
         totalAttempted += 1
         
-        //next question
-        setViewItems()
+        //after 3 seconds, show next question
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.setViewItems()
+        }
     }
      
     /**
@@ -192,6 +199,25 @@ class TestViewController: UIViewController {
             AButton.setTitle(firstIncorrect.answer, for: .normal)
             BButton.setTitle(secondIncorrect.answer, for: .normal)
             CButton.setTitle(thirdIncorrect.answer, for: .normal)
+        }
+    }
+    
+    /**
+     Colors the UIButton
+     - parameters:
+        - index: The index of the button to color
+        - color: Color the button needs to be colored
+     */
+    func colorButtons(index: Int, color: UIColor){
+        switch index {
+        case 0:
+            AButton.backgroundColor = color
+        case 1:
+            BButton.backgroundColor = color
+        case 2:
+            CButton.backgroundColor = color
+        default:
+            DButton.backgroundColor = color
         }
     }
     
