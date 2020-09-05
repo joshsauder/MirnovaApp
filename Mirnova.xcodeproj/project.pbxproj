@@ -43,6 +43,7 @@
 		19E342D2249D5311003C968E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D1249D5311003C968E /* TestViewController.swift */; };
 		19E342D6249E6994003C968E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E342D5249E6994003C968E /* TestView.swift */; };
 		19ED93D32485F99000EE6E51 /* schema.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 19ED93D22485F99000EE6E51 /* schema.graphql */; };
+		19F2CB2025034E7C00B2C730 /* ResultsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2CB1F25034E7C00B2C730 /* ResultsCircleView.swift */; };
 		6F3EE3A756D8E5104AA586CC /* Pods_MirnovaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */; };
 		F0A36127504A1C2110A29081 /* Pods_Mirnova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		19E342D1249D5311003C968E /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		19E342D5249E6994003C968E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		19ED93D22485F99000EE6E51 /* schema.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphql; sourceTree = "<group>"; };
+		19F2CB1F25034E7C00B2C730 /* ResultsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCircleView.swift; sourceTree = "<group>"; };
 		33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.debug.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.debug.xcconfig"; sourceTree = "<group>"; };
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				19D7AF7624B41648000A6A38 /* Results.storyboard */,
 				19D7AF7A24B416F3000A6A38 /* ResultsUIView.swift */,
 				19D7AF7C24B7F0A8000A6A38 /* ResultView.swift */,
+				19F2CB1F25034E7C00B2C730 /* ResultsCircleView.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				192D542424F0C2BD00EB07DC /* TestData.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
+				19F2CB2025034E7C00B2C730 /* ResultsCircleView.swift in Sources */,
 				19737A6F246CE415006A32D6 /* CourseView.swift in Sources */,
 				1977FF1524F8BCD7003485E1 /* SignImageView.swift in Sources */,
 				1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */,
