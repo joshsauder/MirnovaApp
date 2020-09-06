@@ -13,9 +13,8 @@ import SwiftUI
 class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var FinalScoreLabel: UILabel!
-    
-    @IBOutlet weak var ResultImage: UIImageView!
     @IBOutlet weak var InfoView: UIView!
+    @IBOutlet weak var ResultCircleView: UIView!
     
     @IBOutlet weak var PassLabel: UILabel!
     @IBOutlet weak var CorrectLabel: UILabel!

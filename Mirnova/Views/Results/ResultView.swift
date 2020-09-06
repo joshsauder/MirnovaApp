@@ -23,7 +23,6 @@ extension ResultViewController {
     func setUpView(correct: Int, incorrect: Int, attempts: Int, average: Double, passed: Bool){
         setInfoView(passed: passed)
         setLabels(correct: correct, incorrect: incorrect, attempts: attempts, average: average, passed: passed)
-        setImage(passed: passed)
     }
     
     /**
@@ -64,17 +63,5 @@ extension ResultViewController {
         self.PassLabel.textColor = .white
     }
     
-    /**
-    Sets up Result Image
-     - parameters:
-        - passed: Booleen determining if user passed
-     */
-    private func setImage(passed: Bool){
-        let image =  passed ? "checkmark.cirle" : "xmark.circle"
-        let color = passed ? UIColor.green : UIColor.red
-        self.ResultImage.image = UIImage(systemName: image)
-        self.ResultImage.tintColor = color
-        
-        self.ResultImage.backgroundColor = .clear
-    }
+
 }
