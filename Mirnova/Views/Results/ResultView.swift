@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension ResultViewController {
     
@@ -23,6 +24,7 @@ extension ResultViewController {
     func setUpView(correct: Int, incorrect: Int, attempts: Int, average: Double, passed: Bool){
         setInfoView(passed: passed)
         setLabels(correct: correct, incorrect: incorrect, attempts: attempts, average: average, passed: passed)
+        initCicleView()
     }
     
     /**
@@ -63,5 +65,17 @@ extension ResultViewController {
         self.PassLabel.textColor = .white
     }
     
+    /**
+     Adds the ResultsCircleView SwiftUI View to the ResultsCircleVeiw UIView
+     */
+    func initCicleView(){
+        let subView = UIHostingController(rootView: ResultsCircleView(correct: self.totalCorrect, total: self.userAnswers.count))
+        ResultCircleView.addSubview(subView.view)
+        subView.view.translatesAutoresizingMaskIntoConstraints = false
+        subView.view.topAnchor.constraint(equalTo:ResultCircleView.topAnchor).isActive = true
+        subView.view.bottomAnchor.constraint(equalTo:ResultCircleView.bottomAnchor).isActive = true
+        subView.view.leftAnchor.constraint(equalTo:ResultCircleView.leftAnchor).isActive = true
+        subView.view.rightAnchor.constraint(equalTo:ResultCircleView.rightAnchor).isActive = true
+    }
 
 }
