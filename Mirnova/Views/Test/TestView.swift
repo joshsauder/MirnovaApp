@@ -47,6 +47,35 @@ extension TestViewController {
     }
     
     /**
+     Colors the UIButton
+     - parameters:
+        - index: The index of the button to color
+        - color: Color the button needs to be colored
+     */
+    func colorButtons(index: Int, color: UIColor){
+        switch index {
+        case 0:
+            AButton.backgroundColor = color
+        case 1:
+            BButton.backgroundColor = color
+        case 2:
+            CButton.backgroundColor = color
+        default:
+            DButton.backgroundColor = color
+        }
+    }
+    
+    /**
+     Toggles whether the buttons are enabled
+     */
+    func toggleEnableButtons(){
+        self.AButton.isEnabled = !self.AButton.isEnabled
+        self.BButton.isEnabled = !self.BButton.isEnabled
+        self.CButton.isEnabled = !self.CButton.isEnabled
+        self.DButton.isEnabled = !self.DButton.isEnabled
+    }
+    
+    /**
      Adds the SignImageView SwiftUI View to the Sign Image UIView
      - parameters:
         - imageModel: The model container the currently displayed image
