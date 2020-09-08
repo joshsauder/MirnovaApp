@@ -13,7 +13,7 @@ struct ResultsCircleView: View {
     var total: Int
     var passed: Bool
 
-    var cicleBorderWidth = CGFloat(16)
+    var cicleBorderWidth = CGFloat(12)
     
     init(correct: Int, total: Int){
         self.correct = correct
@@ -33,7 +33,7 @@ struct ResultsCircleView: View {
                 .rotationEffect(.degrees(-90))
                 .animation(.easeInOut(duration: 0.2))
             Image(systemName: resultImage())
-                .font(.system(size: 200))
+                .font(.system(size: 100))
                 .foregroundColor(colorScheme())
         }
         .padding(cicleBorderWidth)
