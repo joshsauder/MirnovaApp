@@ -121,8 +121,8 @@ class TestViewController: UIViewController {
         
         DispatchQueue.main.async {
             //if correct answer given, will override the red and use green instead
-            self.colorButtons(index: input, color: .red)
-            self.colorButtons(index: self.correctIdx, color: .green)
+            self.colorButtons(index: input, color: Colors.RED)
+            self.colorButtons(index: self.correctIdx, color: Colors.GREEN)
             self.toggleEnableButtons()
             
             self.delegate?.updateAttempted(sender: self)
@@ -136,8 +136,8 @@ class TestViewController: UIViewController {
         
         //after 3 seconds, show next question
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.colorButtons(index: input, color: .white)
-            self.colorButtons(index: self.correctIdx, color: .white)
+            self.colorButtons(index: input, color: Colors.WHITE)
+            self.colorButtons(index: self.correctIdx, color: Colors.WHITE)
             self.toggleEnableButtons()
             
             self.setViewItems()

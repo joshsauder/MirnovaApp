@@ -27,8 +27,8 @@ class QuestionsTableViewCell: UITableViewCell {
      */
     func setLabels(correct: Bool){
         if(correct){
-            InputLabel.textColor = .green
-            CorrectLabel.textColor = .green
+            InputLabel.textColor = Colors.GREEN
+            CorrectLabel.textColor = Colors.GREEN
         } else{
 //            let range = NSMakeRange(0, InputLabel.text!.count)
 //            let strikeThrough = NSMutableAttributedString(string: InputLabel.text!)
@@ -37,8 +37,8 @@ class QuestionsTableViewCell: UITableViewCell {
 //            strikeThrough.addAttribute(.foregroundColor, value: UIColor.red, range: range)
 //
 //            InputLabel.attributedText = strikeThrough
-            InputLabel.textColor = .red
-            CorrectLabel.textColor = .green
+            InputLabel.textColor = Colors.RED
+            CorrectLabel.textColor = Colors.GREEN
         }
     }
 }

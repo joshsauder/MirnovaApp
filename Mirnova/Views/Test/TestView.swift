@@ -35,12 +35,12 @@ extension TestViewController {
         button.clipsToBounds = true
         button.backgroundColor = .white
         
-        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderColor = Colors.GRAY.cgColor
         button.layer.borderWidth = 4
         
         //add shadow
         button.layer.masksToBounds = false
-        button.layer.shadowColor = UIColor.gray.cgColor
+        button.layer.shadowColor = Colors.GRAY.cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 8)
         button.layer.shadowOpacity = 1
 

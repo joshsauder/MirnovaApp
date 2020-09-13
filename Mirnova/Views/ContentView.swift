@@ -34,7 +34,7 @@ struct ContentView: View {
                         Rectangle()
                             .frame(width: UIScreen.main.bounds.width, height: 250)
                     }
-                    .foregroundColor(Color(#colorLiteral(red: 0.1114514843, green: 0.6960176826, blue: 0, alpha: 1)))
+                    .foregroundColor(Colors.DARK_GREEN)
                     .zIndex(1)
                     
                 }
@@ -57,10 +57,10 @@ extension ContentView {
     func waves() -> some View {
         ZStack {
             Wave(graphWidth: 1, amplitude: 0.20)
-                .foregroundColor(Color(#colorLiteral(red: 0.1114514843, green: 0.6960176826, blue: 0, alpha: 1)))
+                .foregroundColor(Colors.DARK_GREEN)
                 .zIndex(2)
             Wave(graphWidth: 1, amplitude: 0.20)
-                .foregroundColor(Color(#colorLiteral(red: 0.3785110712, green: 0.8456706405, blue: 0.2228010893, alpha: 1)))
+                .foregroundColor(Colors.LIGHT_GREEN)
             .offset(x: 150, y: 0)
             .zIndex(1)
         }

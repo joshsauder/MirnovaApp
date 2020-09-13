@@ -18,6 +18,7 @@
 		19235613249BEDFE0074ABF9 /* A.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19235612249BEDFE0074ABF9 /* A.jpg */; };
 		192D542424F0C2BD00EB07DC /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D542324F0C2BD00EB07DC /* TestData.swift */; };
 		194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C0647250DFA75002AB3F1 /* MirnovaLogo.png */; };
+		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
 		19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4C246CDE42006A32D6 /* AppDelegate.swift */; };
 		19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4E246CDE43006A32D6 /* SceneDelegate.swift */; };
 		19737A51246CDE43006A32D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A50246CDE43006A32D6 /* ContentView.swift */; };
@@ -71,6 +72,7 @@
 		19235612249BEDFE0074ABF9 /* A.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = A.jpg; sourceTree = "<group>"; };
 		192D542324F0C2BD00EB07DC /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		194C0647250DFA75002AB3F1 /* MirnovaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MirnovaLogo.png; sourceTree = "<group>"; };
+		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		19737A49246CDE42006A32D6 /* Mirnova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirnova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19737A4C246CDE42006A32D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19737A4E246CDE43006A32D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		194C0649250DFB14002AB3F1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				194C064A250DFB26002AB3F1 /* Colors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		19737A40246CDE42006A32D6 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				194C0649250DFB14002AB3F1 /* Constants */,
 				19E342D4249DC0EB003C968E /* ViewControllers */,
 				19E342D3249DC081003C968E /* ViewModels */,
 				19235611249BEDEF0074ABF9 /* SupportingFiles */,
@@ -517,6 +528,7 @@
 				1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */,
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				192D542424F0C2BD00EB07DC /* TestData.swift in Sources */,
+				194C064B250DFB26002AB3F1 /* Colors.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
 				19F2CB2025034E7C00B2C730 /* ResultsCircleView.swift in Sources */,
 				19737A6F246CE415006A32D6 /* CourseView.swift in Sources */,

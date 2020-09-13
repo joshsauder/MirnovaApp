@@ -40,7 +40,7 @@ struct DualButton: View {
             }
         }.zIndex(2)
             .frame(width: 170, height: 40)
-            .background(Color.green)
+            .background(Colors.DARK_GREEN)
             .cornerRadius(20)
             //need to figure out safe area
             .position(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height - 170)

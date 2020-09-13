@@ -24,7 +24,7 @@ struct CourseMaterialView: View {
                 }
             }.cornerRadius(radius: 10, corners: [.topLeft, .topRight])
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
-                .background(Color.green)
+                .background(Colors.DARK_GREEN)
                 .edgesIgnoringSafeArea(.bottom)
                 .zIndex(1)
             
