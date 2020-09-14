@@ -55,11 +55,11 @@ struct ProgressBar: View {
         let initWidth = getProgressBarWidth(geometry: geometry)
         return initWidth * ((geometry.size.width - 20) / geometry.size.width)
     }
+    
     /**
      Updates the progress bars width. Note, completed is needed in order for the progess bar to be updated each time a new question is completed.
      - parameters:
         - geometry: The shapes size and coordinate space
-        - completed: Number of questions completed
      - returns: The with of the progress bar
      */
     func getProgressBarWidth(geometry:GeometryProxy) -> CGFloat {
