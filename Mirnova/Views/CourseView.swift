@@ -14,8 +14,11 @@ struct CourseView: View {
     var body: some View {
         NavigationView {
             List(model.courses) { data in
-                NavigationLink(destination: CourseMaterialView(courseData: data)){
+                ZStack{
                     CourseCell(data: data)
+                    NavigationLink(destination: CourseMaterialView(courseData: data)){
+                        EmptyView()
+                    }
                 }
             }
             .navigationBarTitle(Text("Courses"))
@@ -40,12 +43,13 @@ struct CourseCell: View {
         HStack{
             Image(uiImage: UIImage(named: "Alphabet")!)
                 .resizable()
-                .frame(width: 60, height: 60)
-                .padding(.horizontal, 10)
+                .frame(width: 70, height: 70)
+                .padding(.trailing, 10)
             
             VStack(alignment: .leading){
                 Text("\(data.name)")
-                    .font(.system(size: 25, weight: .bold))
+                    .font(.system(size: 30, weight: .bold))
+                    .padding(.bottom, 2)
                 Spacer()
                 HStack {
                     GeometryReader { geometry in
@@ -55,14 +59,16 @@ struct CourseCell: View {
                                 Rectangle()
                                     .foregroundColor(self.determineColors(data: self.data))
                                     .opacity(0.5)
+                                    .cornerRadius(radius: 5, corners: .allCorners)
                                 Rectangle()
                                     .foregroundColor(self.determineColors(data: self.data))
                                     .frame(minWidth: 0, idealWidth: self.getProgressBarWidth(geometry: geometry, completed: self.data.correct, total: self.data.questions),
                                            maxWidth: self.getProgressBarWidth(geometry: geometry, completed: self.data.correct, total: self.data.questions))
+                                    .cornerRadius(radius: 5, corners: .topLeft)
                             }
                             Text("\(self.data.correct)/\(self.data.questions)")
                                 .foregroundColor(.white)
-                                .font(.system(size: 20, weight: .bold))
+                                .font(.system(size: 18, weight: .bold))
                         }
                     }
                         
