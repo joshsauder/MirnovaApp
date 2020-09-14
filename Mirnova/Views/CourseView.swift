@@ -53,9 +53,10 @@ struct CourseCell: View {
                         ZStack {
                             ZStack(alignment: .leading) {
                                 Rectangle()
-                                    .foregroundColor(Colors.LIGHT_GREEN)
+                                    .foregroundColor(self.determineColors(data: self.data))
+                                    .opacity(0.5)
                                 Rectangle()
-                                    .foregroundColor(Colors.DARK_GREEN)
+                                    .foregroundColor(self.determineColors(data: self.data))
                                     .frame(minWidth: 0, idealWidth: self.getProgressBarWidth(geometry: geometry, completed: self.data.correct, total: self.data.questions),
                                            maxWidth: self.getProgressBarWidth(geometry: geometry, completed: self.data.correct, total: self.data.questions))
                             }
@@ -82,6 +83,21 @@ struct CourseCell: View {
         let frame = geometry.frame(in: .global)
         return frame.size.width * (CGFloat(completed) / CGFloat(total))
     }
+    
+    /**
+     Determines the color of the progress bar
+     - parameters:
+        - data: The courses data
+     - returns: The color of the progress bar
+     */
+    func determineColors(data: CourseData) -> Color {
+        if data.attempts == 0 { return Color(Colors.GRAY)
+        } else if(data.completed){
+            return Colors.DARK_GREEN
+        } else {
+            return Color(Colors.RED)
+        }
+    }
 }
 
 struct CourseView_Previews: PreviewProvider {
@@ -93,7 +109,7 @@ struct CourseView_Previews: PreviewProvider {
 struct CourseCell_Previews: PreviewProvider {
     static var previews: some View{
         Group {
-        CourseCell(data: CourseData(id: UUID(), name: "test", correct: 1, questions: 3, completed: true, attempts: 1, average: Double(0)))
+        CourseCell(data: CourseData(id: UUID(), name: "test", correct: 0, questions: 3, completed: false, attempts: 0, average: Double(0)))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
