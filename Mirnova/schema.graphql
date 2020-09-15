@@ -1,6 +1,7 @@
 query CourseInfo($user:String!) {
   Courses{
     name
+    image
     questionCount
   }
   Completions(user: $user){
@@ -19,6 +20,7 @@ query Course($name:String!) {
             answer
             image
         }
+        image
     }
 }
 

@@ -75,7 +75,7 @@ struct CourseMaterialListItem: View {
 
 struct CourseMaterialView_Preview: PreviewProvider {
     static var previews: some View {
-        CourseMaterialView(courseData: CourseData(id: UUID(), name: "test", correct: 1, questions: 1, completed: true, attempts: 1, average: 1.0))
+        CourseMaterialView(courseData: CourseData(id: UUID(), name: "test", correct: 1, image: UIImage(), questions: 1, completed: true, attempts: 1, average: 1.0))
     }
 }
 

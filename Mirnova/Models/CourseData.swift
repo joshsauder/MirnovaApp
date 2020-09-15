@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct CourseData: Identifiable {
     var id = UUID()
     var name: String
     
     var correct: Int
+    var image: UIImage
     var questions: Int
     var completed: Bool
     var attempts: Int

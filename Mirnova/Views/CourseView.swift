@@ -41,7 +41,7 @@ struct CourseCell: View {
     
     var body: some View {
         HStack{
-            Image(uiImage: UIImage(named: "Alphabet")!)
+            Image(uiImage: data.image)
                 .resizable()
                 .frame(width: 70, height: 70)
                 .padding(.trailing, 10)
@@ -115,7 +115,7 @@ struct CourseView_Previews: PreviewProvider {
 struct CourseCell_Previews: PreviewProvider {
     static var previews: some View{
         Group {
-        CourseCell(data: CourseData(id: UUID(), name: "test", correct: 0, questions: 3, completed: false, attempts: 0, average: Double(0)))
+            CourseCell(data: CourseData(id: UUID(), name: "test", correct: 0, image: UIImage(named: "Alphabet")!, questions: 3, completed: false, attempts: 0, average: Double(0)))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

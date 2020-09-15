@@ -61,6 +61,7 @@ public final class CourseInfoQuery: GraphQLQuery {
       Courses {
         __typename
         name
+        image
         questionCount
       }
       Completions(user: $user) {
@@ -128,6 +129,7 @@ public final class CourseInfoQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
+        GraphQLField("image", type: .nonNull(.scalar(String.self))),
         GraphQLField("questionCount", type: .nonNull(.scalar(Int.self))),
       ]
 
@@ -137,8 +139,8 @@ public final class CourseInfoQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(name: String, questionCount: Int) {
-        self.init(unsafeResultMap: ["__typename": "Course", "name": name, "questionCount": questionCount])
+      public init(name: String, image: String, questionCount: Int) {
+        self.init(unsafeResultMap: ["__typename": "Course", "name": name, "image": image, "questionCount": questionCount])
       }
 
       public var __typename: String {
@@ -156,6 +158,15 @@ public final class CourseInfoQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var image: String {
+        get {
+          return resultMap["image"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "image")
         }
       }
 
@@ -261,6 +272,7 @@ public final class CourseQuery: GraphQLQuery {
           answer
           image
         }
+        image
       }
     }
     """
@@ -309,6 +321,7 @@ public final class CourseQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("questions", type: .nonNull(.list(.nonNull(.object(Question.selections))))),
+        GraphQLField("image", type: .nonNull(.scalar(String.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -317,8 +330,8 @@ public final class CourseQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(questions: [Question]) {
-        self.init(unsafeResultMap: ["__typename": "Course", "questions": questions.map { (value: Question) -> ResultMap in value.resultMap }])
+      public init(questions: [Question], image: String) {
+        self.init(unsafeResultMap: ["__typename": "Course", "questions": questions.map { (value: Question) -> ResultMap in value.resultMap }, "image": image])
       }
 
       public var __typename: String {
@@ -336,6 +349,15 @@ public final class CourseQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.map { (value: Question) -> ResultMap in value.resultMap }, forKey: "questions")
+        }
+      }
+
+      public var image: String {
+        get {
+          return resultMap["image"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "image")
         }
       }
 
