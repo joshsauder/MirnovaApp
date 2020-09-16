@@ -29,6 +29,7 @@ class TestViewController: UIViewController {
     var delegate: TestViewDelegate?
     @ObservedObject var imageModel: SignImageViewModel = SignImageViewModel(image: UIImage())
     
+    var course: String = ""
     var courseMaterial: [CourseMaterial] = []
     var totalCorrect: Int = 0
     var totalAttempted: Int = 0
@@ -135,7 +136,7 @@ class TestViewController: UIViewController {
         totalAttempted += 1
         
         //after 3 seconds, show next question
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.colorButtons(index: input, color: Colors.WHITE)
             self.colorButtons(index: self.correctIdx, color: Colors.WHITE)
             self.toggleEnableButtons()
@@ -231,7 +232,7 @@ class TestViewController: UIViewController {
         - completion: On completion, return number of tries and average
      */
     func postResults(passed: Bool, completion: @escaping (Int, Double) -> ()){
-        Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: "test", completed: passed, points: totalCorrect))) { result in
+        Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: course, completed: passed, points: totalCorrect))) { result in
             guard let data = try? result.get().data else { return }
             completion(data.updateCompletion.numberOfTries, data.updateCompletion.average)
         }
@@ -256,6 +257,7 @@ class TestViewController: UIViewController {
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     var courseMaterial: [CourseMaterial]
+    var course: String
     @Binding var correct: Int
     @Binding var completed: Int
     
@@ -267,6 +269,7 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
         let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
         
+        vc.course = course
         vc.courseMaterial = courseMaterial
         vc.delegate = context.coordinator
         
