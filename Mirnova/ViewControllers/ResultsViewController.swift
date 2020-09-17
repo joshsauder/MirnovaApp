@@ -32,6 +32,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var attempts: Int = 0
     var average: Double = 0
     var passed: Bool = false
+    var callback: (() -> Void)?
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
@@ -45,6 +46,10 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         ScrollView.contentInsetAdjustmentBehavior = .never
         
         self.setUpView(correct: totalCorrect, incorrect: userAnswers.count, attempts: attempts, average: average, passed: passed)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.callback?()
     }
 }
 
@@ -100,6 +105,8 @@ struct ResultViewRepresentation: UIViewControllerRepresentable {
     var passed: Bool
     var attempts: Int
     var average: Double
+    var callback: (() -> Void)?
+    
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ResultViewRepresentation>) -> ResultViewController {
         
@@ -112,6 +119,7 @@ struct ResultViewRepresentation: UIViewControllerRepresentable {
         vc.passed = passed
         vc.attempts = attempts
         vc.average = average
+        vc.callback = callback
         
         return vc
     }

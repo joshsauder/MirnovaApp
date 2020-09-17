@@ -15,14 +15,17 @@ struct ResultsUIView: View {
     var passed: Bool = false
     var attempts: Int = 0
     var average: Double = 0
+    var callback: (() -> Void)
     
     var body: some View {
-        ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average)
+        ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average, callback: callback)
     }
 }
 
 struct ResultsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsUIView()
+        ResultsUIView(callback: {
+            print("test")
+        })
     }
 }

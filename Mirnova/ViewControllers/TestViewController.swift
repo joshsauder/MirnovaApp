@@ -136,7 +136,7 @@ class TestViewController: UIViewController {
         totalAttempted += 1
         
         //after 3 seconds, show next question
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.colorButtons(index: input, color: Colors.WHITE)
             self.colorButtons(index: self.correctIdx, color: Colors.WHITE)
             self.toggleEnableButtons()
@@ -246,13 +246,18 @@ class TestViewController: UIViewController {
         - average: Users average score
      */
     func presentResults(passed: Bool, numTries: Int, average: Double){
+        let initalVC = UIHostingController(rootView: CourseView(model: CourseViewModel(user: "test")))
+        initalVC.modalPresentationStyle = .fullScreen
         //consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
-        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average))
+        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average, callback: {
+            self.present(initalVC, animated: true, completion: nil)
+        }))
         
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .popover
         self.present(vc, animated: true, completion: nil)
     }
+    
 }
 
 struct TestViewControllerRepresentation: UIViewControllerRepresentable {
