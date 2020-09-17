@@ -239,7 +239,7 @@ class TestViewController: UIViewController {
     }
     
     /**
-     Presents Results View
+     Presents Results View and CourseView when the Results View is dismissed
      - parameters:
         - passed: Boolean deteriming if user passed
         - numTries: The number of attempts the user has at the course
