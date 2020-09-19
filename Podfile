@@ -4,6 +4,7 @@ target 'Mirnova' do
 
   pod 'Alamofire', '~> 5.2'
   pod 'Apollo'
+  pod 'SwiftEntryKit', '1.2.6'
 
   target 'MirnovaTests' do
     inherit! :search_paths
