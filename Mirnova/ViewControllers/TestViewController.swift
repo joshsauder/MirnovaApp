@@ -247,7 +247,7 @@ class TestViewController: UIViewController {
      */
     func presentResults(passed: Bool, numTries: Int, average: Double){
         let initalVC = UIHostingController(rootView: CourseView(model: CourseViewModel(user: "test")))
-        initalVC.modalPresentationStyle = .fullScreen
+        initalVC.modalPresentationStyle = .pageSheet
         //consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
         let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average, callback: {

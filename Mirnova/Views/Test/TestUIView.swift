@@ -40,6 +40,7 @@ struct TestUIView: View {
             //add one to questions attempted since questions attempted is one behind current question count
             TestViewControllerRepresentation(courseMaterial: courseMaterial, course: course, correct: $correct, completed: $completed)
         }
+        .navigationBarHidden(true)
     }
 }
 

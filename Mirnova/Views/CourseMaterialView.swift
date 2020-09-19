@@ -38,8 +38,7 @@ struct CourseMaterialView: View {
             }
             
         }        //update nav bar title
-        .navigationBarTitle(Text(isActive ? "Course Material": ""))
-        .navigationBarHidden(!isActive)
+        .navigationBarTitle(Text("Course Material"))
         .onAppear{
             DispatchQueue.main.async {
                 self.isActive = true

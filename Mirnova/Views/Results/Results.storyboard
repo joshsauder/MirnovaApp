@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,10 +22,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="903"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIr-fS-HvL">
-                                                <rect key="frame" x="0.0" y="351.66666666666669" width="414" height="551.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="351.5" width="414" height="551.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIj-8J-PeF">
-                                                        <rect key="frame" x="264" y="90" width="90" height="20.333333333333329"/>
+                                                        <rect key="frame" x="264" y="90" width="90" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="AJt-qm-sR3"/>
                                                         </constraints>
@@ -34,7 +34,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Correct" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-jY-5DZ">
-                                                        <rect key="frame" x="60" y="90" width="162" height="20.333333333333329"/>
+                                                        <rect key="frame" x="60" y="90" width="162" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="fwZ-Gi-xsE"/>
                                                         </constraints>
@@ -43,7 +43,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Attempts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-Fx-s8q">
-                                                        <rect key="frame" x="60" y="160.99999999999994" width="162" height="20.333333333333343"/>
+                                                        <rect key="frame" x="60" y="161" width="162" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="be5-Ni-Ziz"/>
                                                         </constraints>
@@ -52,7 +52,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-fb-UcI">
-                                                        <rect key="frame" x="60" y="196.33333333333331" width="162" height="20.666666666666657"/>
+                                                        <rect key="frame" x="60" y="196.5" width="162" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="Pod-oG-WjB"/>
                                                         </constraints>
@@ -61,7 +61,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu3-CL-bWC">
-                                                        <rect key="frame" x="264" y="125.33333333333333" width="90" height="20.666666666666671"/>
+                                                        <rect key="frame" x="264" y="125.5" width="90" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="5Xb-Ec-yuW"/>
                                                         </constraints>
@@ -70,7 +70,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7F-8k-D9U">
-                                                        <rect key="frame" x="264" y="160.99999999999994" width="90" height="20.333333333333343"/>
+                                                        <rect key="frame" x="264" y="161" width="90" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="F2S-d5-MiZ"/>
                                                         </constraints>
@@ -79,7 +79,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-5A-d7d">
-                                                        <rect key="frame" x="264" y="196.33333333333331" width="90" height="20.666666666666657"/>
+                                                        <rect key="frame" x="264" y="196.5" width="90" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="90" id="IjT-i5-BiQ"/>
                                                         </constraints>
@@ -97,7 +97,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Incorrect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-Hm-wxo">
-                                                        <rect key="frame" x="60" y="125.33333333333333" width="162" height="20.666666666666671"/>
+                                                        <rect key="frame" x="60" y="125.5" width="162" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="162" id="7kX-Or-8KT"/>
                                                         </constraints>
@@ -106,7 +106,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sdx-yD-Pfh">
-                                                        <rect key="frame" x="60" y="276.99999999999994" width="294" height="274.00000000000006"/>
+                                                        <rect key="frame" x="60" y="277" width="294" height="274"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="274" id="B2P-d4-9iK"/>
@@ -196,7 +196,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-GZ-Kvj">
-                                                <rect key="frame" x="80" y="68.666666666666671" width="254" height="60.000000000000014"/>
+                                                <rect key="frame" x="80" y="69" width="254" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="cw6-I9-PfZ"/>
                                                 </constraints>
@@ -205,7 +205,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erI-hl-rcC">
-                                                <rect key="frame" x="119.66666666666669" y="156.66666666666666" width="175" height="174.99999999999997"/>
+                                                <rect key="frame" x="119.5" y="156.5" width="175" height="175"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="erI-hl-rcC" secondAttribute="height" multiplier="1:1" id="Pmv-46-ID4"/>
