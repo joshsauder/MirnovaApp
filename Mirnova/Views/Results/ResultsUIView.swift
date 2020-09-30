@@ -18,7 +18,14 @@ struct ResultsUIView: View {
     var callback: (() -> Void)
     
     var body: some View {
-        ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average, callback: callback)
+        NavigationView {
+            ZStack {
+                ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average, callback: callback)
+                    .zIndex(1)
+                SingleButton(destinationFirst: AnyView(CourseView(model: CourseViewModel(user: "test"))), titleFirst: "Main Menu")
+            }
+            .navigationBarHidden(true)
+        }
     }
 }
 

@@ -27,6 +27,7 @@ struct CourseView: View {
             .background(Colors.DARK_GREEN)
             .edgesIgnoringSafeArea(.bottom)
         }
+        .navigationBarHidden(true)
     }
 }
 
