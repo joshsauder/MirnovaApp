@@ -16,7 +16,6 @@ extension TestViewController {
      Sets up the  view items
      */
     func setupView() {
-        PromptLabel.text = "Select One"
         
         setUpButtons(button: AButton)
         setUpButtons(button: BButton)

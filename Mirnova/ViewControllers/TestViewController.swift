@@ -19,7 +19,6 @@ protocol TestViewDelegate: AnyObject {
 class TestViewController: UIViewController {
 
     @IBOutlet weak var SignImage: UIView!
-    @IBOutlet weak var PromptLabel: UILabel!
     
     @IBOutlet weak var AButton: UIButton!
     @IBOutlet weak var BButton: UIButton!
