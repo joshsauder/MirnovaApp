@@ -30,18 +30,20 @@ extension TestViewController {
      */
     private func setUpButtons(button: UIButton){
         //set up button attributes
-        button.layer.cornerRadius = 0.15 * button.bounds.width
+        button.layer.cornerRadius = 0.05 * button.bounds.width
         button.clipsToBounds = true
         button.backgroundColor = .white
         
-        button.layer.borderColor = Colors.GRAY.cgColor
-        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
+        button.layer.borderWidth = 3
+        
+        button.setTitleColor(Colors.GREEN, for: .normal)
         
         //add shadow
         button.layer.masksToBounds = false
         button.layer.shadowColor = Colors.GRAY.cgColor
-        button.layer.shadowOffset = CGSize(width: 0, height: 8)
-        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = CGSize(width: 0, height: 1)
+        button.layer.shadowOpacity = 0.2
 
     }
     
@@ -50,17 +52,26 @@ extension TestViewController {
      - parameters:
         - index: The index of the button to color
         - color: Color the button needs to be colored
+        - textColor: Color of the label inside the button
      */
-    func colorButtons(index: Int, color: UIColor){
+    func colorButtons(index: Int, color: UIColor, background: UIColor, textColor: UIColor){
         switch index {
         case 0:
-            AButton.backgroundColor = color
+            AButton.backgroundColor = background
+            AButton.layer.borderColor = color.withAlphaComponent(0.4).cgColor
+            AButton.setTitleColor(textColor, for: .normal)
         case 1:
-            BButton.backgroundColor = color
+            BButton.backgroundColor = background
+            BButton.layer.borderColor = color.withAlphaComponent(0.4).cgColor
+            BButton.setTitleColor(textColor, for: .normal)
         case 2:
-            CButton.backgroundColor = color
+            CButton.backgroundColor = background
+            CButton.layer.borderColor = color.withAlphaComponent(0.4).cgColor
+            CButton.setTitleColor(textColor, for: .normal)
         default:
-            DButton.backgroundColor = color
+            DButton.backgroundColor = background
+            DButton.layer.borderColor = color.withAlphaComponent(0.4).cgColor
+            DButton.setTitleColor(textColor, for: .normal)
         }
     }
     
@@ -87,5 +98,12 @@ extension TestViewController {
         subView.view.bottomAnchor.constraint(equalTo:SignImage.bottomAnchor).isActive = true
         subView.view.leftAnchor.constraint(equalTo:SignImage.leftAnchor).isActive = true
         subView.view.rightAnchor.constraint(equalTo:SignImage.rightAnchor).isActive = true
+    }
+}
+
+
+struct TestView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
