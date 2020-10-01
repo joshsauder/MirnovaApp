@@ -118,11 +118,17 @@ class TestViewController: UIViewController {
         answer["answer"] = mapAnswer(answer: correctIdx)
         userAnswers.append(answer)
     
+        let green: UIColor
+        if #available(iOS 14.0, *) {
+            green = UIColor(Colors.DARK_GREEN)
+        } else {
+            green = Colors.GREEN
+        }
         
         DispatchQueue.main.async {
             //if correct answer given, will override the red and use green instead
             self.colorButtons(index: input, color: Colors.RED, background: Colors.RED, textColor: Colors.WHITE)
-            self.colorButtons(index: self.correctIdx, color: Colors.GREEN, background: Colors.GREEN, textColor: Colors.WHITE)
+            self.colorButtons(index: self.correctIdx, color: green, background: green, textColor: Colors.WHITE)
             self.toggleEnableButtons()
             
             self.delegate?.updateAttempted(sender: self)
@@ -136,8 +142,8 @@ class TestViewController: UIViewController {
         
         //after 3 seconds, show next question
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.colorButtons(index: input, color: UIColor.lightGray, background: Colors.WHITE, textColor: Colors.GREEN)
-            self.colorButtons(index: self.correctIdx, color: UIColor.lightGray, background: Colors.WHITE, textColor: Colors.GREEN)
+            self.colorButtons(index: input, color: UIColor.lightGray, background: Colors.WHITE, textColor: green)
+            self.colorButtons(index: self.correctIdx, color: UIColor.lightGray, background: Colors.WHITE, textColor: green)
             self.toggleEnableButtons()
             
             self.setViewItems()

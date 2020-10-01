@@ -37,7 +37,12 @@ extension TestViewController {
         button.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
         button.layer.borderWidth = 3
         
-        button.setTitleColor(Colors.GREEN, for: .normal)
+        if #available(iOS 14.0, *) {
+            button.setTitleColor(UIColor(Colors.DARK_GREEN), for: .normal)
+        } else {
+            button.setTitleColor(Colors.GREEN, for: .normal)
+        }
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         
         //add shadow
         button.layer.masksToBounds = false

@@ -26,7 +26,7 @@ struct ProgressBar: View {
                                    maxWidth: self.getProgressBarWidth(geometry: rectGeometry),
                                    maxHeight: 10)
                             .opacity(0)
-                            .background(Color.green)
+                            .background(Colors.DARK_GREEN)
                             .animation(.default)
                     }
                 }
