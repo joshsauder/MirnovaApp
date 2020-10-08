@@ -9,8 +9,22 @@
 import SwiftUI
 
 struct NavContainerView: View {
+    let screenWidth = UIScreen.main.bounds.size.width
+
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            Rectangle()
+                .frame(width: screenWidth, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .foregroundColor(Colors.DARK_GREEN)
+                .zIndex(2)
+
+            Wave(graphWidth: 1, amplitude: 0.25)
+                .foregroundColor(Colors.DARK_GREEN)
+                .zIndex(2)
+                .rotationEffect(.degrees(180))
+        }
+        .frame(width: screenWidth, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 
