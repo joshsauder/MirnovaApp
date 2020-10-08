@@ -26,6 +26,7 @@ struct TestUIView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Progress")
+                    Spacer()
                     Text("Grade")
                 }
                 VStack(alignment: .leading) {
