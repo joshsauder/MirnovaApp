@@ -255,8 +255,9 @@ class TestViewController: UIViewController {
         initalVC.modalPresentationStyle = .fullScreen
 //        consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
-        let vc = UIHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average, callback: {
+        let vc = EMHostingController(rootView: ResultsUIView(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: numTries, average: average, callback: {
             self.present(initalVC, animated: true, completion: nil)
+            
         }))
         
         vc.modalPresentationStyle = .fullScreen

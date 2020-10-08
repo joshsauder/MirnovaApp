@@ -12,6 +12,8 @@ struct ResultsCircleView: View {
     var correct: Int
     var total: Int
     var passed: Bool
+    
+    @State var progress: CGFloat = 0.0
 
     var cicleBorderWidth = CGFloat(12)
     
@@ -27,25 +29,37 @@ struct ResultsCircleView: View {
                 .stroke(colorScheme(), lineWidth: cicleBorderWidth)
                 .opacity(0.3)
             Circle()
-                .trim(from: 0, to: finalScore())
+                .trim(from: 0, to: progress)
                 .stroke(style: StrokeStyle(lineWidth: cicleBorderWidth, lineCap: .round, lineJoin: .round))
                 .foregroundColor(colorScheme())
                 .rotationEffect(.degrees(-90))
-                .animation(.easeInOut(duration: 0.2))
+                .animation(Animation.linear(duration: 1).delay(1))
             Image(systemName: resultImage())
                 .font(.system(size: 100))
                 .foregroundColor(colorScheme())
+                .animation(.spring())
         }
         .padding(cicleBorderWidth)
+        .onAppear{
+            finalScore()
+        }
         
     }
     
     /**
-     Calculates the users final score
-     - returns: The users final score
+     Calculates the users final score with animation
      */
-    func finalScore() -> CGFloat {
-        return CGFloat(correct) / CGFloat(total)
+    func finalScore() {
+        _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                    withAnimation() {
+                        if self.progress + 0.2 >= CGFloat(correct) / CGFloat(total) {
+                            self.progress = CGFloat(correct) / CGFloat(total)
+                            timer.invalidate()
+                        }
+    
+                        self.progress += 0.2
+                    }
+                }
     }
     
     /**
