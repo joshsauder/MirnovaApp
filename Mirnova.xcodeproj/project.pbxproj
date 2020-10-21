@@ -37,7 +37,6 @@
 		1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BA24A99BDD0097C081 /* TestUIView.swift */; };
 		1988D2BE24AEC8DA0097C081 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BD24AEC8D90097C081 /* CornerRadius.swift */; };
 		1999D54D252D77B900E07D0C /* EMHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999D54C252D77B900E07D0C /* EMHostingController.swift */; };
-		1999D551252ED3B600E07D0C /* NavContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999D550252ED3B600E07D0C /* NavContainerView.swift */; };
 		19BCB22924ECEB3C0058A22C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB22824ECEB3C0058A22C /* ProgressBar.swift */; };
 		19D7AF7724B41648000A6A38 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D7AF7624B41648000A6A38 /* Results.storyboard */; };
 		19D7AF7924B41657000A6A38 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7AF7824B41657000A6A38 /* ResultsViewController.swift */; };
@@ -99,7 +98,6 @@
 		1988D2BA24A99BDD0097C081 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		1988D2BD24AEC8D90097C081 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		1999D54C252D77B900E07D0C /* EMHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMHostingController.swift; sourceTree = "<group>"; };
-		1999D550252ED3B600E07D0C /* NavContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavContainerView.swift; sourceTree = "<group>"; };
 		19BCB22824ECEB3C0058A22C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		19D7AF7624B41648000A6A38 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
 		19D7AF7824B41657000A6A38 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 				1921E14F24707BAB001B7697 /* DualButton.swift */,
 				19BCB22824ECEB3C0058A22C /* ProgressBar.swift */,
 				1977FF1424F8BCD7003485E1 /* SignImageView.swift */,
-				1999D550252ED3B600E07D0C /* NavContainerView.swift */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 				1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */,
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				192D542424F0C2BD00EB07DC /* TestData.swift in Sources */,
-				1999D551252ED3B600E07D0C /* NavContainerView.swift in Sources */,
 				194C064F25107FC3002AB3F1 /* GraphQLRequests.swift in Sources */,
 				194C064B250DFB26002AB3F1 /* Colors.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
