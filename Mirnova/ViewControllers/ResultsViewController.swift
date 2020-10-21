@@ -16,7 +16,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var InfoView: UIView!
     @IBOutlet weak var ResultCircleView: UIView!
     
-    @IBOutlet weak var PassLabel: UILabel!
     @IBOutlet weak var CorrectLabel: UILabel!
     @IBOutlet weak var IncorrectLabel: UILabel!
     @IBOutlet weak var AttemptsLabel: UILabel!

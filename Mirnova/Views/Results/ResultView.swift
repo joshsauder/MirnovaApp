@@ -49,7 +49,7 @@ extension ResultViewController {
         - passed: Booleen determining if user passed
      */
     private func setLabels(correct: Int, incorrect: Int, attempts: Int, average: Double, passed: Bool){
-        self.FinalScoreLabel.text = "Final Score \n\(correct)/\(correct+incorrect)"
+        self.FinalScoreLabel.text = passed ? "You Passed!" : "Try Again"
         self.FinalScoreLabel.textColor = passed ? .green : .red
         
         self.CorrectLabel.text = "\(correct)"
@@ -60,9 +60,6 @@ extension ResultViewController {
         self.AttemptsLabel.textColor = .white
         self.AverageScoreLabel.text = String(format: "%.2f", average)
         self.AverageScoreLabel.textColor = .white
-        
-        self.PassLabel.text = passed ? "You Passed!" : "Try Again"
-        self.PassLabel.textColor = .white
     }
     
     /**
