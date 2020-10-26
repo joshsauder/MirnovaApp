@@ -345,6 +345,7 @@
 				19737A46246CDE42006A32D6 /* Frameworks */,
 				19737A47246CDE42006A32D6 /* Resources */,
 				C2A0BF0CE2C0C9E1A79C0B17 /* [CP] Embed Pods Frameworks */,
+				6F32D445BC5564817C01541B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,6 +458,23 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Services/GraphQLRequests.swift\n";
+		};
+		6F32D445BC5564817C01541B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		AFCAC6FCE7F96FA361A563F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

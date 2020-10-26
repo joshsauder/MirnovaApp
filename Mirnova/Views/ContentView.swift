@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct ContentView: View {
     @State var showLogin = true
@@ -22,10 +23,11 @@ struct ContentView: View {
                 ZStack {
                     VStack{
                         Spacer()
+                        Spacer()
                         Button("Apple Sign in", action: signIn)
                         .padding()
-                        Button("Google Sign in", action: signIn)
-                        .padding()
+                        Google()
+                        .padding(.horizontal, 25)
                     }
                     .padding(.bottom, 110)
                     .zIndex(2)
@@ -97,9 +99,28 @@ struct Wave: Shape {
     }
 }
 
+struct Google : UIViewRepresentable {
+    
+
+    func makeUIView(context: UIViewRepresentableContext<Google>) -> GIDSignInButton {
+        
+        let button = GIDSignInButton()
+        button.colorScheme = .light
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        return button
+    }
+    
+    func updateUIView(_ uiView: GIDSignInButton, context: UIViewRepresentableContext<Google>) {
+        
+    }
+}
+ 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
     
 }
+
+
