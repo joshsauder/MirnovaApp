@@ -17,6 +17,7 @@
 		19235610249AA2BE0074ABF9 /* RestRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923560F249AA2BE0074ABF9 /* RestRequests.swift */; };
 		19235613249BEDFE0074ABF9 /* A.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19235612249BEDFE0074ABF9 /* A.jpg */; };
 		192D542424F0C2BD00EB07DC /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D542324F0C2BD00EB07DC /* TestData.swift */; };
+		193035A625468CBD00222539 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193035A525468CB500222539 /* Pacifico-Regular.ttf */; };
 		19307A4B25242E120025476C /* SingleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19307A4A25242E120025476C /* SingleButton.swift */; };
 		194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C0647250DFA75002AB3F1 /* MirnovaLogo.png */; };
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
@@ -74,6 +75,7 @@
 		1923560F249AA2BE0074ABF9 /* RestRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRequests.swift; sourceTree = "<group>"; };
 		19235612249BEDFE0074ABF9 /* A.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = A.jpg; sourceTree = "<group>"; };
 		192D542324F0C2BD00EB07DC /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		193035A525468CB500222539 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		19307A4A25242E120025476C /* SingleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButton.swift; sourceTree = "<group>"; };
 		194C0647250DFA75002AB3F1 /* MirnovaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MirnovaLogo.png; sourceTree = "<group>"; };
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		19235611249BEDEF0074ABF9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				193035A525468CB500222539 /* Pacifico-Regular.ttf */,
 				19235612249BEDFE0074ABF9 /* A.jpg */,
 				194C064C250F18BB002AB3F1 /* Alphabet.png */,
 				194C0647250DFA75002AB3F1 /* MirnovaLogo.png */,
@@ -428,6 +431,7 @@
 				19E342CB249C353E003C968E /* schema.json in Resources */,
 				19E342CF249D52E8003C968E /* Test.storyboard in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,
+				193035A625468CBD00222539 /* Pacifico-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
