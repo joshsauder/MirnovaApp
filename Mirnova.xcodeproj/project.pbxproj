@@ -18,6 +18,7 @@
 		19235613249BEDFE0074ABF9 /* A.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19235612249BEDFE0074ABF9 /* A.jpg */; };
 		192D542424F0C2BD00EB07DC /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D542324F0C2BD00EB07DC /* TestData.swift */; };
 		193035A625468CBD00222539 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193035A525468CB500222539 /* Pacifico-Regular.ttf */; };
+		193035AA2547C47800222539 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193035A92547C47800222539 /* ImageCache.swift */; };
 		19307A4B25242E120025476C /* SingleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19307A4A25242E120025476C /* SingleButton.swift */; };
 		194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C0647250DFA75002AB3F1 /* MirnovaLogo.png */; };
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
@@ -76,6 +77,7 @@
 		19235612249BEDFE0074ABF9 /* A.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = A.jpg; sourceTree = "<group>"; };
 		192D542324F0C2BD00EB07DC /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		193035A525468CB500222539 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		193035A92547C47800222539 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		19307A4A25242E120025476C /* SingleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButton.swift; sourceTree = "<group>"; };
 		194C0647250DFA75002AB3F1 /* MirnovaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MirnovaLogo.png; sourceTree = "<group>"; };
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				194C064E25107FC3002AB3F1 /* GraphQLRequests.swift */,
 				19062DE4247385FC00C478E8 /* Network.swift */,
 				1923560F249AA2BE0074ABF9 /* RestRequests.swift */,
+				193035A92547C47800222539 /* ImageCache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			files = (
 				19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */,
 				1977FF1724F8C4DC003485E1 /* SignImageViewModel.swift in Sources */,
+				193035AA2547C47800222539 /* ImageCache.swift in Sources */,
 				1921E15524707E0A001B7697 /* PracticeViewModel.swift in Sources */,
 				19D7AF7924B41657000A6A38 /* ResultsViewController.swift in Sources */,
 				1921E15024707BAB001B7697 /* DualButton.swift in Sources */,
