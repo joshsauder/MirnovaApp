@@ -23,21 +23,29 @@ struct TestUIView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Progress")
-                    Spacer()
-                    Text("Grade")
+            ProgressBarContainer {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Progress")
+                            .foregroundColor(.white)
+                        Spacer()
+                        Text("Grade")
+                            .foregroundColor(.white)
+
+                    }
+                    .frame(height: 40)
+                    VStack(alignment: .leading) {
+                        ProgressBar(completed: $completed, total: $total)
+                        ProgressBar(completed: $correct, total: $total)
+                    }
                 }
-                VStack(alignment: .leading) {
-                    ProgressBar(completed: $completed, total: $total)
-                    ProgressBar(completed: $correct, total: $total)
-                }
+                .padding(.horizontal, 10)
             }
-            .frame(height: 35)
-            .padding(.horizontal, 20)
-            .padding(.top, 45)
-            .padding(.bottom, 5)
+            .cornerRadius(8)
+            .frame(height: 80)
+            .padding(.horizontal, 10)
+            .padding(.top, 10)
+            .padding(.bottom, 20)
             //add one to questions attempted since questions attempted is one behind current question count
             TestViewControllerRepresentation(courseMaterial: courseMaterial, course: course, correct: $correct, completed: $completed)
         }

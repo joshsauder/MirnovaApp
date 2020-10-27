@@ -18,7 +18,8 @@ struct ProgressBar: View {
                 ZStack(alignment: .leading) {
                     GeometryReader { rectGeometry in
                         Rectangle()
-                            .opacity(0.1)
+                            .foregroundColor(.white)
+                            .opacity(0.4)
                             .frame(height: 10)
                         Rectangle()
                             .opacity(0.5)
@@ -26,7 +27,7 @@ struct ProgressBar: View {
                                    maxWidth: self.getProgressBarWidth(geometry: rectGeometry),
                                    maxHeight: 10)
                             .opacity(0)
-                            .background(Colors.DARK_GREEN)
+                            .background(Color.white)
                             .animation(.default)
                     }
                 }
@@ -92,10 +93,30 @@ struct ProgressBar: View {
     }
 }
 
+struct ProgressBarContainer<Content: View>: View {
+    var content: Content
+    
+    init(@ViewBuilder builder: () -> Content){
+        self.content = builder()
+    }
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .zIndex(1)
+                .foregroundColor(Colors.DARK_GREEN)
+            content
+                .zIndex(2)
+        }
+    }
+}
+
 struct ProgressBar_Previews: PreviewProvider {
     @State static var completed = 4
     @State static var total = 10
     static var previews: some View {
-        ProgressBar(completed: $completed, total: $total)
+        ProgressBarContainer {
+            ProgressBar(completed: $completed, total: $total)
+        }
     }
 }

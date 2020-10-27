@@ -23,11 +23,11 @@ struct ContentView: View {
                 ZStack {
                     VStack{
                         Spacer()
-                        Spacer()
                         Button("Apple Sign in", action: signIn)
                         .padding()
                         Google()
-                        .padding(.horizontal, 25)
+                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding(.horizontal, 30)
                     }
                     .padding(.bottom, 110)
                     .zIndex(2)

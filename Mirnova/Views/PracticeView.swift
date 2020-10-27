@@ -28,14 +28,19 @@ struct PracticeView: View {
     var body: some View {
          ZStack{
             VStack(alignment: .center) {
-                HStack {
-                    Text("Progress")
-                    ProgressBar(completed: $i, total: $total)
+                ProgressBarContainer {
+                    HStack {
+                        Text("Progress")
+                            .foregroundColor(.white)
+                        ProgressBar(completed: $i, total: $total)
+                    }
+                    .padding(.horizontal, 10)
                 }
-                .frame(height: 15)
-                .padding(.horizontal, 20)
-                .padding(.top, 45)
-                .padding(.bottom, 10)
+                .cornerRadius(8)
+                .frame(height: 60)
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
+                .padding(.bottom, 20)
                 SignImageView(imageModel: imageModel)
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
