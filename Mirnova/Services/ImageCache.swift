@@ -12,17 +12,24 @@ import UIKit
 struct ImageCache {
     
     /**
-    Deletes an image in the cache
-     
-     - parameters:
-        - name: The name of the image
+    Deletes all images in the cache
      */
-    static func delete(imageNamed name: String) {
-        guard let imagePath = ImageCache.path(for: name) else {
-            return
+    static func deleteAll() {
+        guard let imagePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return;
         }
         
-        try? FileManager.default.removeItem(at: imagePath)
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: imagePath,
+                                                                       includingPropertiesForKeys: nil,
+                                                                       options: .skipsHiddenFiles)
+            for fileURL in fileURLs {
+                if fileURL.pathExtension == "png" {
+                    try FileManager.default.removeItem(at: fileURL)
+                }
+            }
+        } catch  { print(error) }
+        
     }
     
     /**

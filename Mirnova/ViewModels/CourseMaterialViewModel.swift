@@ -49,13 +49,33 @@ class CourseMaterialViewModel: ObservableObject {
         let req = RestRequests()
         var images = [UIImage](repeating: UIImage(), count: material.count)
         let group = DispatchGroup()
+        
+        var removedAllImages = false
+        
+        if ImageCache.retrieve(imageNamed: material[0].image) == nil {
+            ImageCache.deleteAll()
+            removedAllImages = true
+        }
 
         for (i, course) in material.enumerated() {
             group.enter()
-            req.getImage(image: "\(self.courseData.name)/\(course.image)"){
-                images[i] = $0 ?? UIImage()
-                group.leave()
+            var image: UIImage? = nil
+            if !removedAllImages {
+                image = ImageCache.retrieve(imageNamed: course.image)
             }
+            
+            if image == nil {
+                req.getImage(image: "\(self.courseData.name)/\(course.image)"){
+                    images[i] = $0 ?? UIImage()
+                    
+                    do {
+                        try ImageCache.store(image: $0 ?? UIImage(), name: course.image)
+                    } catch{ print(error) }
+                }
+            } else {
+                images[i] = image!
+            }
+            group.leave()
         }
         
         group.notify(queue: .main){
