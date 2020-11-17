@@ -104,6 +104,23 @@ extension TestViewController {
         subView.view.leftAnchor.constraint(equalTo:SignImage.leftAnchor).isActive = true
         subView.view.rightAnchor.constraint(equalTo:SignImage.rightAnchor).isActive = true
     }
+    
+    /**
+     Eases a button in and out.
+     - parameters:
+        - view: The view to animate
+     */
+    func easeViewInOut(view: UIView){
+        UIView.animate(withDuration: 0.6,
+            animations: {
+                view.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+            },
+            completion: { _ in
+                UIView.animate(withDuration: 0.6) {
+                    view.transform = CGAffineTransform.identity
+                }
+            })
+    }
 }
 
 

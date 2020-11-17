@@ -64,6 +64,12 @@ class TestViewController: UIViewController {
             
             //set up options and set images
             DispatchQueue.main.async {
+                self.easeViewInOut(view: self.AButton)
+                self.easeViewInOut(view: self.BButton)
+                self.easeViewInOut(view: self.CButton)
+                self.easeViewInOut(view: self.DButton)
+                self.easeViewInOut(view: self.SignImage)
+                
                 self.imageModel.image = currentItem.image
                 self.setOptions(currentItem: currentItem)
             }
@@ -167,7 +173,6 @@ class TestViewController: UIViewController {
             return "D"
         }
     }
- 
     
     /**
      Sets up the buttons to next question
