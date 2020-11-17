@@ -30,7 +30,7 @@ extension TestViewController {
      */
     private func setUpButtons(button: UIButton){
         //set up button attributes
-        button.layer.cornerRadius = 0.05 * button.bounds.width
+        button.layer.cornerRadius = 0.03 * button.bounds.width
         button.clipsToBounds = true
         button.backgroundColor = .white
         
