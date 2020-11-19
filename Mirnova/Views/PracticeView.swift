@@ -27,7 +27,6 @@ struct PracticeView: View {
     }
     
     var body: some View {
-         ZStack{
             VStack(alignment: .center) {
                 ProgressBarContainer {
                     HStack {
@@ -50,28 +49,37 @@ struct PracticeView: View {
                     SignImageView(imageModel: imageModel)
                         .hidden()
                 }
-                VStack(alignment: .center, spacing: 30){
-                    Text("Tap To Show The Answer")
-                    if show {
-                        Text(practiceModel.answer)
-                    }else {
-                        Text("?")
+                
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(Colors.DARK_GREEN)
+                        .cornerRadius(8)
+                    VStack(alignment: .center, spacing: 30){
+                        if show {
+                            Text(practiceModel.answer)
+                                .foregroundColor(.white)
+                        }else {
+                            Text("Tap To Show The Answer")
+                                .foregroundColor(.white)
+                            Text("?")
+                                .foregroundColor(.white)
+                        }
                     }
-                    Spacer()
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                    .padding(.top, 10)
+                    .font(Font.system(size: 30))
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.show.toggle()
+                    }
+                
                 }
-                .frame(minHeight: 0, maxHeight: .infinity)
-                .padding(.top, 10)
-                .font(Font.system(size: 30))
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    self.show = true
-                }
-            
+                .padding(.top, 20)
+                .padding(.horizontal, 10)
+                
+                BottomButton(backFunc: prevQuestion, nextFunc: nextQuestion)
             }
-            .zIndex(1)
-            DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
-            
-        }
+//            DualButton(destinationFirst: nil, destinationSecond: nil, funcFirst: prevQuestion, funcSecond: nextQuestion, titleFirst: "Previous", titleSecond: "Next")
     }
     
     func prevQuestion(){
@@ -109,5 +117,35 @@ struct PracticeView_Previews: PreviewProvider {
     static var previews: some View {
         let model = [CourseMaterial(id: UUID(), imageString: "test", image: UIImage(named: "A.jpg")!, question: "test", answer: "test")]
         return PracticeView(model: model)
+    }
+}
+
+struct BottomButton: View {
+    var backFunc: (() -> ())
+    var nextFunc: (() -> ())
+    
+    var body: some View {
+        ZStack{
+            Rectangle()
+                .foregroundColor(Colors.DARK_GREEN)
+                .cornerRadius(8)
+            HStack {
+                Button(action: self.backFunc, label: {
+                    Text("Previous")
+                    .foregroundColor(.white)
+                        .font(.system(size: 20))
+                }).frame(width: 90, height: 60)
+                Spacer()
+                Button(action: self.nextFunc, label: {
+                    Text("Next")
+                    .foregroundColor(.white)
+                        .font(.system(size: 20))
+                }).frame(width: 90, height: 60)
+            }
+            .padding(.horizontal, 10)
+        }
+        .frame(height: 70)
+        .padding(.horizontal, 10)
+        .padding(.top, 20)
     }
 }
