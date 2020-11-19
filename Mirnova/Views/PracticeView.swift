@@ -12,6 +12,7 @@ struct PracticeView: View {
     @State var show: Bool = false
     @State var i: Int = 0
     @State var total: Int
+    @State var change: Bool = true
     @ObservedObject var practiceModel: PracticeViewModel
     @ObservedObject var imageModel: SignImageViewModel
     
@@ -41,7 +42,14 @@ struct PracticeView: View {
                 .padding(.horizontal, 10)
                 .padding(.top, 10)
                 .padding(.bottom, 20)
-                SignImageView(imageModel: imageModel)
+                if change {
+                    SignImageView(imageModel: imageModel)
+                        .transition(AnyTransition.slide)
+                        .animation(.default)
+                }else {
+                    SignImageView(imageModel: imageModel)
+                        .hidden()
+                }
                 VStack(alignment: .center, spacing: 30){
                     Text("Tap To Show The Answer")
                     if show {
@@ -67,6 +75,7 @@ struct PracticeView: View {
     }
     
     func prevQuestion(){
+        self.change.toggle()
         i -= 1;
         if(i < 0) {i = model.count - 1}
         
@@ -76,9 +85,11 @@ struct PracticeView: View {
         show = false
         practiceModel.updateModel(question: question, answer: answer, image: image)
         imageModel.updateImage(image: image)
+        self.change.toggle()
     }
     
     func nextQuestion(){
+        self.change.toggle()
         i += 1;
         if(i > model.count - 1){ i = 0; }
         
@@ -88,6 +99,9 @@ struct PracticeView: View {
         show = false
         practiceModel.updateModel(question: question, answer: answer, image: image)
         imageModel.updateImage(image: image)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.change.toggle()
+        }
     }
 }
 
