@@ -38,6 +38,7 @@
 		1977FF1724F8C4DC003485E1 /* SignImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977FF1624F8C4DC003485E1 /* SignImageViewModel.swift */; };
 		1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BA24A99BDD0097C081 /* TestUIView.swift */; };
 		1988D2BE24AEC8DA0097C081 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BD24AEC8D90097C081 /* CornerRadius.swift */; };
+		1995383C2572122300F3760B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995383B2572122300F3760B /* APIKeys.swift */; };
 		1999D54D252D77B900E07D0C /* EMHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999D54C252D77B900E07D0C /* EMHostingController.swift */; };
 		19BCB22924ECEB3C0058A22C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB22824ECEB3C0058A22C /* ProgressBar.swift */; };
 		19D7AF7724B41648000A6A38 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D7AF7624B41648000A6A38 /* Results.storyboard */; };
@@ -102,6 +103,7 @@
 		1988D2BA24A99BDD0097C081 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		1988D2BD24AEC8D90097C081 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		199538382572031C00F3760B /* Mirnova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirnova.entitlements; sourceTree = "<group>"; };
+		1995383B2572122300F3760B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1999D54C252D77B900E07D0C /* EMHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMHostingController.swift; sourceTree = "<group>"; };
 		19BCB22824ECEB3C0058A22C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		19D7AF7624B41648000A6A38 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				194C064A250DFB26002AB3F1 /* Colors.swift */,
+				1995383B2572122300F3760B /* APIKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1995383C2572122300F3760B /* APIKeys.swift in Sources */,
 				19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */,
 				1977FF1724F8C4DC003485E1 /* SignImageViewModel.swift in Sources */,
 				193035AA2547C47800222539 /* ImageCache.swift in Sources */,
@@ -668,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -722,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

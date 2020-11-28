@@ -10,7 +10,6 @@ import SwiftUI
 import AuthenticationServices
 import GoogleSignIn
 
-@available(iOS 14.0, *)
 struct ContentView: View {
     @State var showLogin = true
     
@@ -32,9 +31,12 @@ struct ContentView: View {
                                               onCompletion: { (result) in
                                                 signIn(result: result)
                                               }
-                                            ).padding()
+                                            )
+                        .signInWithAppleButtonStyle(.black)
+                        .frame(height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal, 30)
                         Google()
-                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal, 30)
                     }
                     .padding(.bottom, 110)
@@ -81,7 +83,6 @@ struct ContentView: View {
     }
 }
 
-@available(iOS 14.0, *)
 extension ContentView {
     func waves() -> some View {
         ZStack {
@@ -133,12 +134,33 @@ struct Google : UIViewRepresentable {
         
         let button = GIDSignInButton()
         button.colorScheme = .light
-        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        GIDSignIn.sharedInstance()?.clientID = APIKeys.GOOGLE_KEYS
+            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
         return button
     }
     
     func updateUIView(_ uiView: GIDSignInButton, context: UIViewRepresentableContext<Google>) {
         
+    }
+}
+
+class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
+
+    @Published var signedIn: Bool = false
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+    
+        // If the previous `error` is null, then the sign-in was succesful
+        print("Successful sign-in!")
+        signedIn = true
     }
 }
  
