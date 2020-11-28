@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 import GoogleSignIn
 
+@available(iOS 14.0, *)
 struct ContentView: View {
     @State var showLogin = true
     
@@ -23,8 +25,14 @@ struct ContentView: View {
                 ZStack {
                     VStack{
                         Spacer()
-                        Button("Apple Sign in", action: signIn)
-                        .padding()
+                        SignInWithAppleButton(.signIn,
+                                              onRequest: { (request) in  //2
+                                                  request.requestedScopes = [.fullName, .email]
+                                               },
+                                              onCompletion: { (result) in
+                                                signIn(result: result)
+                                              }
+                                            ).padding()
                         Google()
                             .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding(.horizontal, 30)
@@ -50,11 +58,30 @@ struct ContentView: View {
         }
     }
     
-    func signIn(){
-        showLogin.toggle()
+    func signIn(result: Result<ASAuthorization, Error>){
+        switch result {
+            case .success(let authorization):
+                //Handle autorization
+                if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                    let userId = appleIDCredential.user
+                    let identityToken = appleIDCredential.identityToken
+                    let authCode = appleIDCredential.authorizationCode
+                    let email = appleIDCredential.email
+                    let givenName = appleIDCredential.fullName?.givenName
+                    let familyName = appleIDCredential.fullName?.familyName
+                    let state = appleIDCredential.state
+                    
+                    showLogin.toggle()
+                }
+                break
+            case .failure(let error):
+                //Handle error
+                break
+            }
     }
 }
 
+@available(iOS 14.0, *)
 extension ContentView {
     func waves() -> some View {
         ZStack {
@@ -116,6 +143,7 @@ struct Google : UIViewRepresentable {
 }
  
 
+@available(iOS 14.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

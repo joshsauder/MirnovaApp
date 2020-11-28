@@ -101,6 +101,7 @@
 		1977FF1624F8C4DC003485E1 /* SignImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignImageViewModel.swift; sourceTree = "<group>"; };
 		1988D2BA24A99BDD0097C081 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		1988D2BD24AEC8D90097C081 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		199538382572031C00F3760B /* Mirnova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirnova.entitlements; sourceTree = "<group>"; };
 		1999D54C252D77B900E07D0C /* EMHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMHostingController.swift; sourceTree = "<group>"; };
 		19BCB22824ECEB3C0058A22C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		19D7AF7624B41648000A6A38 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				199538382572031C00F3760B /* Mirnova.entitlements */,
 				194C0649250DFB14002AB3F1 /* Constants */,
 				19E342D4249DC0EB003C968E /* ViewControllers */,
 				19E342D3249DC081003C968E /* ViewModels */,
@@ -735,6 +737,7 @@
 			baseConfigurationReference = 33D16A43FE8024C478B225B9 /* Pods-Mirnova.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mirnova/Mirnova.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirnova/Preview Content\"";
 				DEVELOPMENT_TEAM = 5SDXLU4YE3;
@@ -756,6 +759,7 @@
 			baseConfigurationReference = DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mirnova/Mirnova.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirnova/Preview Content\"";
 				DEVELOPMENT_TEAM = 5SDXLU4YE3;
