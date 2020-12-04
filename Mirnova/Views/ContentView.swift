@@ -65,13 +65,14 @@ struct ContentView: View {
             case .success(let authorization):
                 //Handle autorization
                 if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-                    let userId = appleIDCredential.user
-                    let identityToken = appleIDCredential.identityToken
-                    let authCode = appleIDCredential.authorizationCode
                     let email = appleIDCredential.email
                     let givenName = appleIDCredential.fullName?.givenName
                     let familyName = appleIDCredential.fullName?.familyName
-                    let state = appleIDCredential.state
+                    
+                    Network.shared.apollo.perform(mutation: NewUserMutation(user:InputUser(
+                            email: email ?? "",
+                            name: "\(givenName) \(familyName )")
+                    ))
                     
                     showLogin.toggle()
                 }
@@ -157,10 +158,15 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
             }
             return
         }
+        
+        Network.shared.apollo.perform(mutation: NewUserMutation(user:InputUser(
+                email: user.profile.email,
+                name: user.profile.name)
+        ))
+        
+        signedIn = true
     
         // If the previous `error` is null, then the sign-in was succesful
-        print("Successful sign-in!")
-        signedIn = true
     }
 }
  
