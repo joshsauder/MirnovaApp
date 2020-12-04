@@ -11,7 +11,8 @@ import AuthenticationServices
 import GoogleSignIn
 
 struct ContentView: View {
-    @State var showLogin = true
+    @State var appleLogin = true
+    @EnvironmentObject var googleDelegate: GoogleDelegate
     
     var body: some View {
         ZStack {
@@ -53,7 +54,7 @@ struct ContentView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
             .edgesIgnoringSafeArea(.all)
-            if !showLogin {
+            if !appleLogin || googleDelegate.signedIn {
                 CourseView()
                     .transition(.slide)
             }
@@ -71,10 +72,10 @@ struct ContentView: View {
                     
                     Network.shared.apollo.perform(mutation: NewUserMutation(user:InputUser(
                             email: email ?? "",
-                            name: "\(givenName) \(familyName )")
+                            name: "\(givenName) \(familyName)")
                     ))
                     
-                    showLogin.toggle()
+                    appleLogin.toggle()
                 }
                 break
             case .failure(let error):
@@ -165,8 +166,6 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         ))
         
         signedIn = true
-    
-        // If the previous `error` is null, then the sign-in was succesful
     }
 }
  
