@@ -13,6 +13,7 @@ import GoogleSignIn
 struct ContentView: View {
     @State var appleLogin = true
     @EnvironmentObject var googleDelegate: GoogleDelegate
+    @State var user = ""
     
     var body: some View {
         ZStack {
@@ -55,7 +56,7 @@ struct ContentView: View {
             }
             .edgesIgnoringSafeArea(.all)
             if !appleLogin || googleDelegate.signedIn {
-                CourseView()
+                CourseView(user: user)
                     .transition(.slide)
             }
         }
@@ -73,9 +74,12 @@ struct ContentView: View {
                     Network.shared.apollo.perform(mutation: NewUserMutation(user:InputUser(
                             email: email ?? "",
                             name: "\(givenName) \(familyName)")
-                    ))
-                    
-                    appleLogin.toggle()
+                    )) { result in
+                        guard let data = try? result.get().data else { return }
+                        user = data.createUser?.id ?? ""
+                        
+                        appleLogin.toggle()
+                    }
                 }
                 break
             case .failure(let error):
@@ -149,6 +153,7 @@ struct Google : UIViewRepresentable {
 class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
 
     @Published var signedIn: Bool = false
+    @Published var userId: String = ""
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
@@ -163,14 +168,16 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         Network.shared.apollo.perform(mutation: NewUserMutation(user:InputUser(
                 email: user.profile.email,
                 name: user.profile.name)
-        ))
-        
-        signedIn = true
+        )) {result in
+            guard let data = try? result.get().data else { return }
+            self.userId = data.createUser?.id ?? ""
+            
+            self.signedIn = true
+        }
     }
 }
  
 
-@available(iOS 14.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

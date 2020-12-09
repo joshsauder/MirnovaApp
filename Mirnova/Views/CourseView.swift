@@ -11,6 +11,10 @@ import SwiftUI
 struct CourseView: View {
     @ObservedObject var model = CourseViewModel(user: "test")
     
+    init(user: String){
+        self.model = CourseViewModel(user: user)
+    }
+    
     var body: some View {
         NavigationView {
             List(model.courses) { data in
@@ -109,7 +113,7 @@ struct CourseCell: View {
 
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseView()
+        CourseView(user: "test")
     }
 }
 
