@@ -27,7 +27,7 @@ struct ContentView: View {
                     VStack{
                         Spacer()
                         SignInWithAppleButton(.signIn,
-                                              onRequest: { (request) in  //2
+                                              onRequest: { (request) in
                                                   request.requestedScopes = [.fullName, .email]
                                                },
                                               onCompletion: { (result) in
@@ -83,6 +83,7 @@ struct ContentView: View {
                 }
                 break
             case .failure(let error):
+                print(error)
                 //Handle error
                 break
             }

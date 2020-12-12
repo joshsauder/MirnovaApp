@@ -18,7 +18,6 @@ class CourseViewModel: ObservableObject {
     init(user: String) {
         self.user = user
         fetchData()
-        print("test")
     }
     
     private func fetchData(){

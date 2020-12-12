@@ -16,13 +16,14 @@ struct ResultsUIView: View {
     var attempts: Int = 0
     var average: Double = 0
     var callback: (() -> Void)
+    var user: String = TextCache.getUserId()
     
     var body: some View {
         NavigationView {
             ZStack {
                 ResultViewRepresentation(userAnswers: userAnswers, courseMaterial: courseMaterial, totalCorrect: totalCorrect, passed: passed, attempts: attempts, average: average, callback: callback)
                     .zIndex(1)
-                SingleButton(destinationFirst: AnyView(CourseView(user: CourseViewModel(user: "test"))), titleFirst: "Main Menu")
+                SingleButton(destinationFirst: AnyView(CourseView(user: user)), titleFirst: "Main Menu")
             }
             .navigationBarHidden(true)
         }
@@ -31,7 +32,7 @@ struct ResultsUIView: View {
 
 struct ResultsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsUIView(callback: {
+        ResultsUIView(callback:{
             print("test")
         })
     }

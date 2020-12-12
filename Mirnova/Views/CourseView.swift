@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CourseView: View {
-    @ObservedObject var model = CourseViewModel(user: "test")
+    @ObservedObject var model: CourseViewModel
     
     init(user: String){
         self.model = CourseViewModel(user: user)
