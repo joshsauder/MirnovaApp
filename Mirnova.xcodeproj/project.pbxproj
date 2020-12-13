@@ -24,6 +24,8 @@
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
 		194C064D250F18BB002AB3F1 /* Alphabet.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C064C250F18BB002AB3F1 /* Alphabet.png */; };
 		194C064F25107FC3002AB3F1 /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064E25107FC3002AB3F1 /* GraphQLRequests.swift */; };
+		194D9AA225856F380085A3DD /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 194D9AA025856F380085A3DD /* amplifyconfiguration.json */; };
+		194D9AA325856F380085A3DD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 194D9AA125856F380085A3DD /* awsconfiguration.json */; };
 		196E469725809AA100649998 /* TextCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196E469625809AA100649998 /* TextCache.swift */; };
 		19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4C246CDE42006A32D6 /* AppDelegate.swift */; };
 		19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4E246CDE43006A32D6 /* SceneDelegate.swift */; };
@@ -85,6 +87,8 @@
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		194C064C250F18BB002AB3F1 /* Alphabet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alphabet.png; sourceTree = "<group>"; };
 		194C064E25107FC3002AB3F1 /* GraphQLRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
+		194D9AA025856F380085A3DD /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		194D9AA125856F380085A3DD /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		196E469625809AA100649998 /* TextCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCache.swift; sourceTree = "<group>"; };
 		19737A49246CDE42006A32D6 /* Mirnova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirnova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19737A4C246CDE42006A32D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.release.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.release.xcconfig"; sourceTree = "<group>"; };
 		C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.debug.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.release.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.release.xcconfig"; sourceTree = "<group>"; };
+		BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */ = {isa = PBXFileReference; name = "amplifytools.xcconfig"; path = "amplifytools.xcconfig"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.xcconfig; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +175,7 @@
 		19737A40246CDE42006A32D6 = {
 			isa = PBXGroup;
 			children = (
+				06881911054D4C778E60D96C /* AmplifyConfig */,
 				19737A4B246CDE42006A32D6 /* Mirnova */,
 				19737A62246CDE45006A32D6 /* MirnovaTests */,
 				19737A4A246CDE42006A32D6 /* Products */,
@@ -190,6 +196,8 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
+				194D9AA025856F380085A3DD /* amplifyconfiguration.json */,
+				194D9AA125856F380085A3DD /* awsconfiguration.json */,
 				199538382572031C00F3760B /* Mirnova.entitlements */,
 				194C0649250DFB14002AB3F1 /* Constants */,
 				19E342D4249DC0EB003C968E /* ViewControllers */,
@@ -346,6 +354,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		06881911054D4C778E60D96C /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */,
+			);
+			name = AmplifyConfig;
+			path = .;
+			sourceTree = "<group>";
+		};
+		1F32324DDD9044268134599B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = undefined;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,11 +459,13 @@
 			files = (
 				194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */,
 				194C064D250F18BB002AB3F1 /* Alphabet.png in Resources */,
+				194D9AA325856F380085A3DD /* awsconfiguration.json in Resources */,
 				19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */,
 				19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */,
 				19235613249BEDFE0074ABF9 /* A.jpg in Resources */,
 				19D7AF7724B41648000A6A38 /* Results.storyboard in Resources */,
 				19ED93D32485F99000EE6E51 /* schema.graphql in Resources */,
+				194D9AA225856F380085A3DD /* amplifyconfiguration.json in Resources */,
 				19E342CB249C353E003C968E /* schema.json in Resources */,
 				19E342CF249D52E8003C968E /* Test.storyboard in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,

@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleSignIn
+import Amplify
+import AmplifyPlugins
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let googleDelegate = GoogleDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Google Sign In
         GIDSignIn.sharedInstance().clientID = APIKeys.GOOGLE_KEYS
         GIDSignIn.sharedInstance().delegate = googleDelegate
+        
+        //AWS S3
+        do {
+            Amplify.Logging.logLevel = .verbose
+            try Amplify.add(plugin: AWSCognitoAuthPlugin())
+            try Amplify.add(plugin: AWSS3StoragePlugin())
+            try Amplify.configure()
+            print("Amplify configured with storage plugin")
+        } catch {
+            print("Failed to initialize Amplify with \(error)")
+        }
+
         return true
     }
 

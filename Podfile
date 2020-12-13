@@ -5,7 +5,9 @@ target 'Mirnova' do
   pod 'Alamofire', '~> 5.2'
   pod 'Apollo'
   pod 'GoogleSignIn'
-  
+  pod 'Amplify'
+  pod 'AmplifyPlugins/AWSS3StoragePlugin'
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 
   target 'MirnovaTests' do
     inherit! :search_paths

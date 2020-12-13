@@ -8,22 +8,21 @@
 
 import Foundation
 import Alamofire
+import Amplify
 
 class RestRequests {
-    
-    let endpoint = "http://localhost:4000/api"
-    
+        
     public func getImage(image: String, completion: @escaping (UIImage?) -> ()){
-        AF.request("\(endpoint)/course/image?image=\(image)", method: .get).validate(statusCode: 200...300).responseData{ response in
-            switch response.result{
-            case .success:
-                let image = UIImage(data: response.data!)
-                completion(image ?? nil)
-            case .failure(let error):
-                print(error)
-                completion(nil)
+        Amplify.Storage.downloadData(key: image,
+            resultListener: { event in
+                switch(event){
+                case let .success(data):
+                    completion(UIImage(data: data))
+                case let .failure(storageError):
+                    print("Failed: \(storageError.errorDescription). \(storageError.underlyingError)")
             }
-        }
-    }
 
+        })
+    }
+    
 }
