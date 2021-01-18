@@ -558,7 +558,7 @@ public final class NewUserMutation: GraphQLMutation {
       createUser(user: $user) {
         __typename
         name
-        id
+        ID
       }
     }
     """
@@ -607,7 +607,7 @@ public final class NewUserMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("name", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("ID", type: .nonNull(.scalar(GraphQLID.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -617,7 +617,7 @@ public final class NewUserMutation: GraphQLMutation {
       }
 
       public init(name: String, id: GraphQLID) {
-        self.init(unsafeResultMap: ["__typename": "User", "name": name, "id": id])
+        self.init(unsafeResultMap: ["__typename": "User", "name": name, "ID": id])
       }
 
       public var __typename: String {
@@ -640,10 +640,10 @@ public final class NewUserMutation: GraphQLMutation {
 
       public var id: GraphQLID {
         get {
-          return resultMap["id"]! as! GraphQLID
+          return resultMap["ID"]! as! GraphQLID
         }
         set {
-          resultMap.updateValue(newValue, forKey: "id")
+          resultMap.updateValue(newValue, forKey: "ID")
         }
       }
     }

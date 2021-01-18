@@ -127,9 +127,9 @@
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.release.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.debug.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.release.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.release.xcconfig"; sourceTree = "<group>"; };
-		BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */ = {isa = PBXFileReference; name = "amplifytools.xcconfig"; path = "amplifytools.xcconfig"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.xcconfig; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06881911054D4C778E60D96C /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */,
+			);
+			name = AmplifyConfig;
+			path = .;
+			sourceTree = "<group>";
+		};
 		19235611249BEDEF0074ABF9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,23 +361,6 @@
 				34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		06881911054D4C778E60D96C /* AmplifyConfig */ = {
-			isa = PBXGroup;
-			children = (
-				BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */,
-			);
-			name = AmplifyConfig;
-			path = .;
-			sourceTree = "<group>";
-		};
-		1F32324DDD9044268134599B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = undefined;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

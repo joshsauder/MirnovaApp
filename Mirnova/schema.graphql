@@ -34,6 +34,6 @@ mutation updateCompletion($completion: CompletionInput!){
 mutation newUser($user: InputUser!){
     createUser(user: $user){
         name
-        id
+        ID
     }
 }
