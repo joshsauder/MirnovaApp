@@ -111,12 +111,12 @@ extension TestViewController {
         - view: The view to animate
      */
     func easeViewInOut(view: UIView){
-        UIView.animate(withDuration: 0.6,
+        UIView.animate(withDuration: 0.5,
             animations: {
-                view.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+                view.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
             },
             completion: { _ in
-                UIView.animate(withDuration: 0.6) {
+                UIView.animate(withDuration: 0.5) {
                     view.transform = CGAffineTransform.identity
                 }
             })

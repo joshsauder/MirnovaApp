@@ -34,6 +34,8 @@ class TestViewController: UIViewController {
     var totalAttempted: Int = 0
     var correctIdx: Int = 0
     
+    var user = TextCache.getUserId()
+    
     var userAnswers: [[String: String]] = []
     
     override func viewDidLoad() {
@@ -242,7 +244,7 @@ class TestViewController: UIViewController {
         - completion: On completion, return number of tries and average
      */
     func postResults(passed: Bool, completion: @escaping (Int, Double) -> ()){
-        Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: "test", course: course, completed: passed, points: totalCorrect))) { result in
+        Network.shared.apollo.perform(mutation: UpdateCompletionMutation(completion: CompletionInput(user: user, course: course, completed: passed, points: totalCorrect))) { result in
             guard let data = try? result.get().data else { return }
             completion(data.updateCompletion.numberOfTries, data.updateCompletion.average)
         }
@@ -256,7 +258,7 @@ class TestViewController: UIViewController {
         - average: Users average score
      */
     func presentResults(passed: Bool, numTries: Int, average: Double){
-        let initalVC = UIHostingController(rootView: CourseView(user: "test"))
+        let initalVC = UIHostingController(rootView: CourseView(user: user))
         initalVC.modalPresentationStyle = .fullScreen
 //        consider adding int to keep track of number needed to pass
         let passed:Bool = Double(totalCorrect)/Double(courseMaterial.count) > 0.75
@@ -283,7 +285,7 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
-        let storyboard = UIStoryboard(name: "Test", bundle: nil)
+        let storyboard = UIStoryboard(name: TextCache.getUserId(), bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
         
         vc.course = course

@@ -77,7 +77,6 @@ struct ContentView: View {
                     )) { result in
                         guard let data = try? result.get().data else { return }
                         user = data.createUser?.id ?? ""
-                        
                         appleLogin.toggle()
                     }
                 }

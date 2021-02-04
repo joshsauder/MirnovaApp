@@ -32,8 +32,6 @@ struct ResultsUIView: View {
 
 struct ResultsUIView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsUIView(callback:{
-            print("test")
-        })
+        ResultsUIView()
     }
 }

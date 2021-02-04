@@ -17,6 +17,7 @@ class CourseViewModel: ObservableObject {
     
     init(user: String) {
         self.user = user
+        TextCache.setUserId(user: user)
         fetchData()
     }
     
