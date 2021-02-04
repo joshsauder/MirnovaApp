@@ -66,10 +66,10 @@ class TestViewController: UIViewController {
             
             //set up options and set images
             DispatchQueue.main.async {
-                self.easeViewInOut(view: self.AButton)
-                self.easeViewInOut(view: self.BButton)
-                self.easeViewInOut(view: self.CButton)
-                self.easeViewInOut(view: self.DButton)
+                self.leftToRight(view: self.AButton)
+                self.leftToRight(view: self.BButton)
+                self.leftToRight(view: self.CButton)
+                self.leftToRight(view: self.DButton)
                 self.easeViewInOut(view: self.SignImage)
                 
                 self.imageModel.image = currentItem.image
@@ -285,7 +285,7 @@ struct TestViewControllerRepresentation: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<TestViewControllerRepresentation>) -> TestViewController {
-        let storyboard = UIStoryboard(name: TextCache.getUserId(), bundle: nil)
+        let storyboard = UIStoryboard(name: "Test", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestViewController") as! TestViewController
         
         vc.course = course

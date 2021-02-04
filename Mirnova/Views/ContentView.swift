@@ -55,8 +55,12 @@ struct ContentView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
             .edgesIgnoringSafeArea(.all)
-            if !appleLogin || googleDelegate.signedIn {
+            if !appleLogin {
                 CourseView(user: user)
+                    .transition(.slide)
+            }
+            if( googleDelegate.signedIn) {
+                CourseView(user: googleDelegate.userId)
                     .transition(.slide)
             }
         }
@@ -171,7 +175,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         )) {result in
             guard let data = try? result.get().data else { return }
             self.userId = data.createUser?.id ?? ""
-            
+            print(data.createUser?.id)
             self.signedIn = true
         }
     }
