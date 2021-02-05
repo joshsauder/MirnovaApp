@@ -175,7 +175,6 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         )) {result in
             guard let data = try? result.get().data else { return }
             self.userId = data.createUser?.id ?? ""
-            print(data.createUser?.id)
             self.signedIn = true
         }
     }

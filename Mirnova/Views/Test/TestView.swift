@@ -125,7 +125,7 @@ extension TestViewController {
     func leftToRight(view: UIView){
         UIView.animate(withDuration: 0.5,
             animations: {
-                view.transform = CGAffineTransform(translationX: 0, y: 300)
+                view.transform = CGAffineTransform(translationX: 400, y: 0)
             },
             completion: { _ in
                 UIView.animate(withDuration: 0.5) {

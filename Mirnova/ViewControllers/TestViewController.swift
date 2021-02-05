@@ -66,11 +66,11 @@ class TestViewController: UIViewController {
             
             //set up options and set images
             DispatchQueue.main.async {
+                self.easeViewInOut(view: self.SignImage)
                 self.leftToRight(view: self.AButton)
                 self.leftToRight(view: self.BButton)
                 self.leftToRight(view: self.CButton)
                 self.leftToRight(view: self.DButton)
-                self.easeViewInOut(view: self.SignImage)
                 
                 self.imageModel.image = currentItem.image
                 self.setOptions(currentItem: currentItem)
