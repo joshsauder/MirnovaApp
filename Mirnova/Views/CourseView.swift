@@ -13,6 +13,9 @@ struct CourseView: View {
     
     init(user: String){
         self.model = CourseViewModel(user: user)
+        IAPManager.shared.getProducts { (result) in
+            print(result)
+        }
     }
     
     var body: some View {

@@ -28,15 +28,7 @@ class IAPManager: NSObject {
     }
     
     fileprivate func getProductIDs() -> [String]? {
-        guard let url = Bundle.main.url(forResource: "IAP_ProductIDs", withExtension: "plist") else { return nil }
-        do {
-            let data = try Data(contentsOf: url)
-            let productIDs = try PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) as? [String] ?? []
-            return productIDs
-        } catch {
-            print(error.localizedDescription)
-            return nil
-        }
+        return ["basic"]
     }
     
     func getPriceFormatted(for product: SKProduct) -> String? {
