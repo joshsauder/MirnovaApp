@@ -9,6 +9,7 @@
 import SwiftUI
 import AuthenticationServices
 import GoogleSignIn
+import SwiftyStoreKit
 
 struct ContentView: View {
     @State var appleLogin = true

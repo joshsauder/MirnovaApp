@@ -8,6 +8,7 @@ target 'Mirnova' do
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSS3StoragePlugin'
   pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
+  pod 'SwiftyStoreKit'
 
   target 'MirnovaTests' do
     inherit! :search_paths

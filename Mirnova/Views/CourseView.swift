@@ -10,12 +10,10 @@ import SwiftUI
 
 struct CourseView: View {
     @ObservedObject var model: CourseViewModel
+    @State var paidCourses = []
     
     init(user: String){
         self.model = CourseViewModel(user: user)
-        IAPManager.shared.getProducts { (result) in
-            print(result)
-        }
     }
     
     var body: some View {
@@ -55,9 +53,15 @@ struct CourseCell: View {
                 .padding(.trailing, 10)
             
             VStack(alignment: .leading){
-                Text("\(data.name)")
-                    .font(.system(size: 30, weight: .bold))
-                    .padding(.bottom, 2)
+                HStack {
+                    Text("\(data.name)")
+                        .font(.system(size: 30, weight: .bold))
+                        .padding(.bottom, 2)
+                    Spacer()
+                    Image(systemName: "dollarsign.circle")
+                        .padding(.trailing, 5)
+                        .foregroundColor(Colors.DARK_GREEN)
+                }
                 Spacer()
                 HStack {
                     GeometryReader { geometry in

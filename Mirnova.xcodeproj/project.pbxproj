@@ -20,6 +20,7 @@
 		193035A625468CBD00222539 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193035A525468CB500222539 /* Pacifico-Regular.ttf */; };
 		193035AA2547C47800222539 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193035A92547C47800222539 /* ImageCache.swift */; };
 		19307A4B25242E120025476C /* SingleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19307A4A25242E120025476C /* SingleButton.swift */; };
+		194AC59126104B8900E7EA09 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AC59026104B8900E7EA09 /* StoreKit.swift */; };
 		194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C0647250DFA75002AB3F1 /* MirnovaLogo.png */; };
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
 		194C064D250F18BB002AB3F1 /* Alphabet.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C064C250F18BB002AB3F1 /* Alphabet.png */; };
@@ -43,7 +44,6 @@
 		1988D2BE24AEC8DA0097C081 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BD24AEC8D90097C081 /* CornerRadius.swift */; };
 		1995383C2572122300F3760B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995383B2572122300F3760B /* APIKeys.swift */; };
 		1999D54D252D77B900E07D0C /* EMHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999D54C252D77B900E07D0C /* EMHostingController.swift */; };
-		19ABA87125D793FA0021387E /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABA87025D793FA0021387E /* IAPManager.swift */; };
 		19B186722605BCB00001C25F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 19B186712605BCB00001C25F /* Configuration.storekit */; };
 		19BCB22924ECEB3C0058A22C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB22824ECEB3C0058A22C /* ProgressBar.swift */; };
 		19D7AF7724B41648000A6A38 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D7AF7624B41648000A6A38 /* Results.storyboard */; };
@@ -85,6 +85,7 @@
 		193035A525468CB500222539 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		193035A92547C47800222539 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		19307A4A25242E120025476C /* SingleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButton.swift; sourceTree = "<group>"; };
+		194AC59026104B8900E7EA09 /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
 		194C0647250DFA75002AB3F1 /* MirnovaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MirnovaLogo.png; sourceTree = "<group>"; };
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		194C064C250F18BB002AB3F1 /* Alphabet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alphabet.png; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		199538382572031C00F3760B /* Mirnova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirnova.entitlements; sourceTree = "<group>"; };
 		1995383B2572122300F3760B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1999D54C252D77B900E07D0C /* EMHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMHostingController.swift; sourceTree = "<group>"; };
-		19ABA87025D793FA0021387E /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		19B186712605BCB00001C25F /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		19BCB22824ECEB3C0058A22C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		19D7AF7624B41648000A6A38 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
@@ -181,6 +181,7 @@
 			children = (
 				194C064A250DFB26002AB3F1 /* Colors.swift */,
 				1995383B2572122300F3760B /* APIKeys.swift */,
+				194AC59026104B8900E7EA09 /* StoreKit.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -281,7 +282,6 @@
 				1923560F249AA2BE0074ABF9 /* RestRequests.swift */,
 				193035A92547C47800222539 /* ImageCache.swift */,
 				196E469625809AA100649998 /* TextCache.swift */,
-				19ABA87025D793FA0021387E /* IAPManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -606,10 +606,10 @@
 				1999D54D252D77B900E07D0C /* EMHostingController.swift in Sources */,
 				1921E15324707DF8001B7697 /* PracticeView.swift in Sources */,
 				1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */,
-				19ABA87125D793FA0021387E /* IAPManager.swift in Sources */,
 				19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */,
 				192D542424F0C2BD00EB07DC /* TestData.swift in Sources */,
 				194C064F25107FC3002AB3F1 /* GraphQLRequests.swift in Sources */,
+				194AC59126104B8900E7EA09 /* StoreKit.swift in Sources */,
 				194C064B250DFB26002AB3F1 /* Colors.swift in Sources */,
 				19737A51246CDE43006A32D6 /* ContentView.swift in Sources */,
 				19F2CB2025034E7C00B2C730 /* ResultsCircleView.swift in Sources */,
