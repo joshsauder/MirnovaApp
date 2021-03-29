@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CourseView: View {
     @ObservedObject var model: CourseViewModel
-    @State var paidCourses = []
+    @State var paidCourses: [String] = []
     
     init(user: String){
         self.model = CourseViewModel(user: user)
@@ -20,7 +20,7 @@ struct CourseView: View {
         NavigationView {
             List(model.courses) { data in
                 ZStack{
-                    CourseCell(data: data)
+                    CourseCell(data: data, paid: paidCourses.contains(data.name))
                     NavigationLink(destination: CourseMaterialView(courseData: data)){
                         EmptyView()
                     }
@@ -39,10 +39,12 @@ struct CourseView: View {
 struct CourseCell: View {
     var data: CourseData
     var color: Color
+    var paid: Bool
     
-    init(data: CourseData) {
+    init(data: CourseData, paid: Bool) {
         self.data = data
         self.color = data.completed ? Color.green : Color.red
+        self.paid = paid
     }
     
     var body: some View {
@@ -58,9 +60,11 @@ struct CourseCell: View {
                         .font(.system(size: 30, weight: .bold))
                         .padding(.bottom, 2)
                     Spacer()
-                    Image(systemName: "dollarsign.circle")
-                        .padding(.trailing, 5)
-                        .foregroundColor(Colors.DARK_GREEN)
+                    if !self.paid {
+                        Image(systemName: "dollarsign.circle")
+                            .padding(.trailing, 5)
+                            .foregroundColor(Colors.DARK_GREEN)
+                    }
                 }
                 Spacer()
                 HStack {
@@ -127,7 +131,7 @@ struct CourseView_Previews: PreviewProvider {
 struct CourseCell_Previews: PreviewProvider {
     static var previews: some View{
         Group {
-            CourseCell(data: CourseData(id: UUID(), name: "test", correct: 0, image: UIImage(named: "Alphabet")!, questions: 3, completed: false, attempts: 0, average: Double(0)))
+            CourseCell(data: CourseData(id: UUID(), name: "test", correct: 0, image: UIImage(named: "Alphabet")!, questions: 3, completed: false, attempts: 0, average: Double(0)), paid: false)
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
