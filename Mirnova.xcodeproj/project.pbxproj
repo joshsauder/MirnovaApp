@@ -20,6 +20,7 @@
 		193035A625468CBD00222539 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193035A525468CB500222539 /* Pacifico-Regular.ttf */; };
 		193035AA2547C47800222539 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193035A92547C47800222539 /* ImageCache.swift */; };
 		19307A4B25242E120025476C /* SingleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19307A4A25242E120025476C /* SingleButton.swift */; };
+		193DBD13267F056800C1316F /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DBD12267F056800C1316F /* PaymentService.swift */; };
 		194AC59126104B8900E7EA09 /* StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194AC59026104B8900E7EA09 /* StoreKit.swift */; };
 		194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C0647250DFA75002AB3F1 /* MirnovaLogo.png */; };
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
@@ -85,6 +86,7 @@
 		193035A525468CB500222539 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		193035A92547C47800222539 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		19307A4A25242E120025476C /* SingleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButton.swift; sourceTree = "<group>"; };
+		193DBD12267F056800C1316F /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		194AC59026104B8900E7EA09 /* StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKit.swift; sourceTree = "<group>"; };
 		194C0647250DFA75002AB3F1 /* MirnovaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MirnovaLogo.png; sourceTree = "<group>"; };
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				1923560F249AA2BE0074ABF9 /* RestRequests.swift */,
 				193035A92547C47800222539 /* ImageCache.swift */,
 				196E469625809AA100649998 /* TextCache.swift */,
+				193DBD12267F056800C1316F /* PaymentService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				1921E14B24705581001B7697 /* CourseMaterial.swift in Sources */,
 				1921E14D247056B4001B7697 /* CourseMaterialViewModel.swift in Sources */,
 				19BCB22924ECEB3C0058A22C /* ProgressBar.swift in Sources */,
+				193DBD13267F056800C1316F /* PaymentService.swift in Sources */,
 				1988D2BE24AEC8DA0097C081 /* CornerRadius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
