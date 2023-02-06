@@ -15,19 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Get the googleDelegate from AppDelegate
-            let googleDelegate = (UIApplication.shared.delegate as! AppDelegate).googleDelegate
-            
-            // Add googleDelegate as an environment object
-            let contentView = ContentView()
-                .environmentObject(googleDelegate)
-
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 window.rootViewController = UIHostingController(rootView: contentView)
-                
-                // Set presentingViewControll to rootViewController
-                GIDSignIn.sharedInstance().presentingViewController = window.rootViewController
                 
                 self.window = window
                 window.makeKeyAndVisible()

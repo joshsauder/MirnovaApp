@@ -140,12 +140,13 @@ struct Wave: Shape {
 
 struct Google : UIViewRepresentable {
     
-
+    guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+    
     func makeUIView(context: UIViewRepresentableContext<Google>) -> GIDSignInButton {
         
         let button = GIDSignInButton()
         button.colorScheme = .light
-        GIDSignIn.sharedInstance()?.clientID = APIKeys.GOOGLE_KEYS
+        GIDSignIn.sharedInstance()?.clientID = clientID
             GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
         return button
     }

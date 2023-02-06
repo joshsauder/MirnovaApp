@@ -5,9 +5,15 @@ target 'Mirnova' do
   pod 'Alamofire', '~> 5.2'
   pod 'Apollo'
   pod 'GoogleSignIn'
-  pod 'Amplify'
-  pod 'AmplifyPlugins/AWSS3StoragePlugin'
-  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
+  
+  # Add the Firebase pod for Google Analytics
+  pod 'FirebaseAnalytics'
+
+  # Add the pods for any other Firebase products you want to use in your app
+  # For example, to use Firebase Authentication and Cloud Firestore
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+
   pod 'SwiftyStoreKit'
 
   target 'MirnovaTests' do

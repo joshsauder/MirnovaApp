@@ -26,8 +26,6 @@
 		194C064B250DFB26002AB3F1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064A250DFB26002AB3F1 /* Colors.swift */; };
 		194C064D250F18BB002AB3F1 /* Alphabet.png in Resources */ = {isa = PBXBuildFile; fileRef = 194C064C250F18BB002AB3F1 /* Alphabet.png */; };
 		194C064F25107FC3002AB3F1 /* GraphQLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C064E25107FC3002AB3F1 /* GraphQLRequests.swift */; };
-		194D9AA225856F380085A3DD /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 194D9AA025856F380085A3DD /* amplifyconfiguration.json */; };
-		194D9AA325856F380085A3DD /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 194D9AA125856F380085A3DD /* awsconfiguration.json */; };
 		196E469725809AA100649998 /* TextCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196E469625809AA100649998 /* TextCache.swift */; };
 		19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4C246CDE42006A32D6 /* AppDelegate.swift */; };
 		19737A4F246CDE43006A32D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A4E246CDE43006A32D6 /* SceneDelegate.swift */; };
@@ -41,9 +39,10 @@
 		19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19737A75246DBE80006A32D6 /* CourseViewModel.swift */; };
 		1977FF1524F8BCD7003485E1 /* SignImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977FF1424F8BCD7003485E1 /* SignImageView.swift */; };
 		1977FF1724F8C4DC003485E1 /* SignImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977FF1624F8C4DC003485E1 /* SignImageViewModel.swift */; };
+		1983DF9029878AD600A6C1A9 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF8F29878AD600A6C1A9 /* ApiKeys.swift */; };
+		1983DF922990B7D600A6C1A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1983DF912990B7D600A6C1A9 /* GoogleService-Info.plist */; };
 		1988D2BB24A99BDD0097C081 /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BA24A99BDD0097C081 /* TestUIView.swift */; };
 		1988D2BE24AEC8DA0097C081 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1988D2BD24AEC8D90097C081 /* CornerRadius.swift */; };
-		1995383C2572122300F3760B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995383B2572122300F3760B /* APIKeys.swift */; };
 		1999D54D252D77B900E07D0C /* EMHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999D54C252D77B900E07D0C /* EMHostingController.swift */; };
 		19B186722605BCB00001C25F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 19B186712605BCB00001C25F /* Configuration.storekit */; };
 		19BCB22924ECEB3C0058A22C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCB22824ECEB3C0058A22C /* ProgressBar.swift */; };
@@ -92,8 +91,6 @@
 		194C064A250DFB26002AB3F1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		194C064C250F18BB002AB3F1 /* Alphabet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alphabet.png; sourceTree = "<group>"; };
 		194C064E25107FC3002AB3F1 /* GraphQLRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLRequests.swift; sourceTree = "<group>"; };
-		194D9AA025856F380085A3DD /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
-		194D9AA125856F380085A3DD /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		196E469625809AA100649998 /* TextCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCache.swift; sourceTree = "<group>"; };
 		19737A49246CDE42006A32D6 /* Mirnova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirnova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19737A4C246CDE42006A32D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,10 +108,11 @@
 		19737A75246DBE80006A32D6 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		1977FF1424F8BCD7003485E1 /* SignImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignImageView.swift; sourceTree = "<group>"; };
 		1977FF1624F8C4DC003485E1 /* SignImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignImageViewModel.swift; sourceTree = "<group>"; };
+		1983DF8F29878AD600A6C1A9 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		1983DF912990B7D600A6C1A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1988D2BA24A99BDD0097C081 /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		1988D2BD24AEC8D90097C081 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		199538382572031C00F3760B /* Mirnova.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirnova.entitlements; sourceTree = "<group>"; };
-		1995383B2572122300F3760B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1999D54C252D77B900E07D0C /* EMHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMHostingController.swift; sourceTree = "<group>"; };
 		19B186712605BCB00001C25F /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		19BCB22824ECEB3C0058A22C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		34FA10B03E6F15E720D12B87 /* Pods_MirnovaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MirnovaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF060DE3B82BF0762D67A19 /* Pods_Mirnova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirnova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A309FBAF68644D3912AC83 /* Pods-MirnovaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.release.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.release.xcconfig"; sourceTree = "<group>"; };
-		BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		C41FA65020549DCF0677AF76 /* Pods-MirnovaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MirnovaTests.debug.xcconfig"; path = "Target Support Files/Pods-MirnovaTests/Pods-MirnovaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF2D6796B0B535429B6C00F9 /* Pods-Mirnova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirnova.release.xcconfig"; path = "Target Support Files/Pods-Mirnova/Pods-Mirnova.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,15 +155,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06881911054D4C778E60D96C /* AmplifyConfig */ = {
-			isa = PBXGroup;
-			children = (
-				BD3684CAC7C74AF1BCA17EDB /* amplifytools.xcconfig */,
-			);
-			name = AmplifyConfig;
-			path = .;
-			sourceTree = "<group>";
-		};
 		19235611249BEDEF0074ABF9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				194C064A250DFB26002AB3F1 /* Colors.swift */,
-				1995383B2572122300F3760B /* APIKeys.swift */,
+				1983DF8F29878AD600A6C1A9 /* ApiKeys.swift */,
 				194AC59026104B8900E7EA09 /* StoreKit.swift */,
 			);
 			path = Constants;
@@ -191,7 +179,6 @@
 		19737A40246CDE42006A32D6 = {
 			isa = PBXGroup;
 			children = (
-				06881911054D4C778E60D96C /* AmplifyConfig */,
 				19737A4B246CDE42006A32D6 /* Mirnova */,
 				19737A62246CDE45006A32D6 /* MirnovaTests */,
 				19737A4A246CDE42006A32D6 /* Products */,
@@ -212,8 +199,7 @@
 		19737A4B246CDE42006A32D6 /* Mirnova */ = {
 			isa = PBXGroup;
 			children = (
-				194D9AA025856F380085A3DD /* amplifyconfiguration.json */,
-				194D9AA125856F380085A3DD /* awsconfiguration.json */,
+				1983DF912990B7D600A6C1A9 /* GoogleService-Info.plist */,
 				199538382572031C00F3760B /* Mirnova.entitlements */,
 				194C0649250DFB14002AB3F1 /* Constants */,
 				19E342D4249DC0EB003C968E /* ViewControllers */,
@@ -385,7 +371,6 @@
 				19737A46246CDE42006A32D6 /* Frameworks */,
 				19737A47246CDE42006A32D6 /* Resources */,
 				C2A0BF0CE2C0C9E1A79C0B17 /* [CP] Embed Pods Frameworks */,
-				6F32D445BC5564817C01541B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -460,14 +445,13 @@
 			files = (
 				194C0648250DFA75002AB3F1 /* MirnovaLogo.png in Resources */,
 				194C064D250F18BB002AB3F1 /* Alphabet.png in Resources */,
-				194D9AA325856F380085A3DD /* awsconfiguration.json in Resources */,
+				1983DF922990B7D600A6C1A9 /* GoogleService-Info.plist in Resources */,
 				19737A59246CDE45006A32D6 /* LaunchScreen.storyboard in Resources */,
 				19737A56246CDE45006A32D6 /* Preview Assets.xcassets in Resources */,
 				19235613249BEDFE0074ABF9 /* A.jpg in Resources */,
 				19D7AF7724B41648000A6A38 /* Results.storyboard in Resources */,
 				19B186722605BCB00001C25F /* Configuration.storekit in Resources */,
 				19ED93D32485F99000EE6E51 /* schema.graphql in Resources */,
-				194D9AA225856F380085A3DD /* amplifyconfiguration.json in Resources */,
 				19E342CB249C353E003C968E /* schema.json in Resources */,
 				19E342CF249D52E8003C968E /* Test.storyboard in Resources */,
 				19737A53246CDE45006A32D6 /* Assets.xcassets in Resources */,
@@ -502,23 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" Services/GraphQLRequests.swift\n";
-		};
-		6F32D445BC5564817C01541B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirnova/Pods-Mirnova-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		AFCAC6FCE7F96FA361A563F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -588,7 +555,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1995383C2572122300F3760B /* APIKeys.swift in Sources */,
 				196E469725809AA100649998 /* TextCache.swift in Sources */,
 				19737A72246DB6F7006A32D6 /* CourseData.swift in Sources */,
 				1977FF1724F8C4DC003485E1 /* SignImageViewModel.swift in Sources */,
@@ -597,6 +563,7 @@
 				19D7AF7924B41657000A6A38 /* ResultsViewController.swift in Sources */,
 				1921E15024707BAB001B7697 /* DualButton.swift in Sources */,
 				19737A4D246CDE42006A32D6 /* AppDelegate.swift in Sources */,
+				1983DF9029878AD600A6C1A9 /* ApiKeys.swift in Sources */,
 				19E342D2249D5311003C968E /* TestViewController.swift in Sources */,
 				19062DE5247385FC00C478E8 /* Network.swift in Sources */,
 				19737A76246DBE80006A32D6 /* CourseViewModel.swift in Sources */,
